@@ -5,6 +5,7 @@ export type FullyQualifiedName = string;
 export type FqnPathElements = MeasureableName[];
 export interface MeasureableProperties {
     unit?: Unit;
+    description?: string;
 }
 
 export class Measureable {
@@ -14,6 +15,15 @@ export class Measureable {
     protected _parent?: Measureable;
     public get parent() {
         return this._parent;
+    }
+    /**
+     * Return the unit of this node
+     */
+    public get unit() {
+        return this.properties.unit;
+    }
+    public get description() {
+        return this.properties.description;
     }
 
     constructor(name: string, properties: MeasureableProperties, children?: Measureable[]) {
@@ -55,7 +65,6 @@ export class Measureable {
      * Iterate over all elements in this tree
      */
     *[Symbol.iterator](): Generator<Measureable> {
-        console.log("entering iterator for", this.name);
         if (!this.children) {
             yield this;
             return;
@@ -82,7 +91,7 @@ export class Measureable {
      * Is this element a Leaf (i.e. has no more children)?
      */
     public get isLeaf() {
-        return !!this.children;
+        return !this.children;
     }
 
     public toString() {

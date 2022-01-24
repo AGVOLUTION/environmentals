@@ -9,3 +9,8 @@ export const root = new Measureable("ROOT", {},[env, dev]);
 export function deserialize(fqn: FullyQualifiedName) {
     return root.find(fqn.split("__"));
 }
+
+/**
+ * Get the leaf nodes
+ */
+export const getLeafs = () => [...root].filter(x=>x.isLeaf)
