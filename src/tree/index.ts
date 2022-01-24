@@ -6,10 +6,10 @@ export type NodeProperties = {
     measuread: boolean;
 };
 
-export abstract class TreeNode {
+export class TreeNode {
     protected name: string;
     protected parent?: TreeNode;
-    protected children: TreeNode[] = [];
+    protected _children: TreeNode[] = [];
     protected defaultModel?: TreeNode[];
     protected properties: Partial<NodeProperties>;
 
@@ -17,7 +17,7 @@ export abstract class TreeNode {
         this.name = name;
         this.parent = parent;
         if (this.parent) {
-            this.parent.children.push(this);
+            this.parent._children.push(this);
         }
         this.properties = properties || {};
     }
@@ -28,7 +28,7 @@ export abstract class TreeNode {
      * @returns True if this node has no children
      */
     public get isLeaf(): boolean {
-        return this.children.length === 0;
+        return this._children.length === 0;
     }
 
     /**
@@ -52,6 +52,10 @@ export abstract class TreeNode {
 
         return `${this.parent.fqn}__${this.name}`;
     }
+
+    public get children(){
+        return this._children
+    }
 }
 
 export class RootNode extends TreeNode {
@@ -65,7 +69,17 @@ export class Tree {
     constructor(root: TreeNode) {
         this.root = root;
     }
+
+    public get children() {
+        return this.root.children
+    }
 }
 
 export const root = new RootNode();
 export const tree = new Tree(root);
+
+const env = new TreeNode('ENV', root)
+const atmo  = new TreeNode('ATMO', env)
+const t = new TreeNode('T', atmo)
+const p = new TreeNode('P',atmo)
+const rh = new TreeNode('RH',atmo)
