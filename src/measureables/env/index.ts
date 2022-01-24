@@ -1,4 +1,4 @@
-import {atmo} from './atmo'
-import {ENV} from './base';
+import { atmo } from "./atmo";
+import { ENV } from "./base";
 
-export const env = new ENV("ENV", [atmo]);
+export const env = new ENV("ENV", {}, [atmo]);
