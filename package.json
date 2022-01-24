@@ -1,0 +1,20 @@
+{
+  "name": "measureables",
+  "version": "1.0.0",
+  "description": "Definition of measureable parameters",
+  "main": "dist/index.js",
+  "repository": "https://github.com/AGVOLUTION/measureables",
+  "author": "Marcel Schneider <m.schneider@agvolution.com>",
+  "license": "PROPRIETARY",
+  "private": true,
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@agv/prettier-config": "^1.0.6",
+    "@types/prettier": "^2",
+    "prettier": "^2.5.1"
+  },
+  "prettier": "@agv/prettier-config"
+}
