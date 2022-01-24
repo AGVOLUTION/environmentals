@@ -7,14 +7,22 @@
   "author": "Marcel Schneider <m.schneider@agvolution.com>",
   "license": "PROPRIETARY",
   "private": true,
+  "scripts": {
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
+  },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
     "typescript": "^4.5.5"
   },
   "devDependencies": {
     "@agv/prettier-config": "^1.0.6",
+    "@types/chai": "^4",
+    "@types/mocha": "^9",
     "@types/prettier": "^2",
-    "prettier": "^2.5.1"
+    "chai": "^4.3.4",
+    "mocha": "^9.1.4",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0"
   },
   "prettier": "@agv/prettier-config"
 }
