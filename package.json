@@ -19,6 +19,7 @@
     "@agv/prettier-config": "^1.0.6",
     "@types/chai": "^4",
     "@types/mocha": "^9",
+    "@types/node": "^17.0.10",
     "@types/prettier": "^2",
     "chai": "^4.3.4",
     "madge": "^5.0.1",

@@ -29,3 +29,6 @@ export class Unit {
 export const degC = new Unit("°C");
 export const kelvin = new Unit("K");
 export const percent = new Unit("%", { de: "Prozent", en: "percent" });
+export const hPa = new Unit("hPa");
+export const Jpm2 = new Unit("J/m²");
+export const mm = new Unit("mm");
