@@ -32,3 +32,4 @@ export const percent = new Unit("%", { de: "Prozent", en: "percent" });
 export const hPa = new Unit("hPa");
 export const Jpm2 = new Unit("J/m²");
 export const mm = new Unit("mm");
+export const yesno = new Unit("yes/no");

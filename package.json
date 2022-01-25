@@ -29,7 +29,8 @@
     "madge": "^5.0.1",
     "mocha": "^9.1.4",
     "prettier": "^2.5.1",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "type-graphql": "^1.1.1"
   },
   "prettier": "@agv/prettier-config",
   "lint-staged": {
