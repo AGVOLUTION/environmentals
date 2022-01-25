@@ -1,3 +1,6 @@
+/*
+ * THIS IS A GENERATED FILE. DO NOT EDIT !!!
+*/
 import { registerEnumType } from "type-graphql";
 export const MeasurableParameterNames = {
     ENV__ATMO__T: "ENV__ATMO__T",
@@ -8,6 +11,6 @@ export const MeasurableParameterNames = {
     ENV__ATMO__WIND__SPD__STD: "ENV__ATMO__WIND__SPD__STD",
     ENV__ATMO__WIND__DIR: "ENV__ATMO__WIND__DIR",
     DEV__ENERGY__VCAP: "DEV__ENERGY__VCAP",
-    DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT",
+    DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT"
 };
 registerEnumType(MeasurableParameterNames, { name: "MeasurableParameterNames" });
