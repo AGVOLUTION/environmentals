@@ -1,12 +1,15 @@
 {
-  "name": "measureables",
-  "version": "1.0.0",
-  "description": "Definition of measureable parameters",
+  "name": "@agv/environmentals",
+  "version": "0.1.0",
+  "description": "Definition of environmental parameters",
   "main": "dist/index.js",
   "repository": "https://github.com/AGVOLUTION/measureables",
   "author": "Marcel Schneider <m.schneider@agvolution.com>",
   "license": "PROPRIETARY",
-  "private": true,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://agv-000000000000.d.codeartifact.eu-central-1.amazonaws.com/npm/agv-node/"
+  },
   "scripts": {
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
     "build": "yarn tsc",
@@ -31,7 +34,7 @@
     "mocha": "^9.1.4",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "AGVOLUTION/type-graphql#v1.1.1-withExtendType-package"
   },
   "prettier": "@agv/prettier-config",
   "lint-staged": {
