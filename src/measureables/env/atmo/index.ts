@@ -1,7 +1,6 @@
 import { degC, hPa, Jpm2, percent } from "../../../unit";
-import { ENV } from "../base";
+import { ATMO } from "./base";
 
-export class ATMO extends ENV {}
 export const T = new ATMO("T", {
     unit: degC,
     description: "Atmospheric temperature",
