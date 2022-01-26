@@ -14,7 +14,7 @@ export interface MeasureableProperties {
 export class Measureable {
     public readonly name: MeasureableName;
     public readonly properties: MeasureableProperties;
-    protected readonly children?: Map<MeasureableName, Measureable>;
+    public readonly children?: Map<MeasureableName, Measureable>;
     protected _parent?: Measureable;
     public get parent() {
         return this._parent;
@@ -29,15 +29,14 @@ export class Measureable {
         return this.properties.description;
     }
 
-    constructor(
-        name: string,
-        properties: MeasureableProperties,
-        children?: Measureable[]
-    ) {
+    public readonly childrenKeys?: MeasureableName[];
+
+    constructor(name: string, properties: MeasureableProperties, children?: Measureable[]) {
         this.name = name;
         this.properties = properties;
         if (children) {
             this.children = new Map(children.map((c) => [c.name, c]));
+            this.childrenKeys = children.map((c) => c.name);
             for (const child of children) {
                 child._parent = this;
             }
@@ -109,9 +108,7 @@ export class Measureable {
         return `Measureable ${this.name}`;
     }
 
-    public map<U>(
-        callbackfn: (value: Measureable, children: Measureable[]) => U
-    ): U[] {
+    public map<U>(callbackfn: (value: Measureable, children: Measureable[]) => U): U[] {
         if (!this.children) {
             return [callbackfn(this, [])];
         }
