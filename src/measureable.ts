@@ -8,6 +8,9 @@ export interface MeasureableProperties {
     description?: string;
 }
 
+/**
+ * Base class for all nodes
+ */
 export class Measureable {
     public readonly name: MeasureableName;
     public readonly properties: MeasureableProperties;
@@ -26,7 +29,11 @@ export class Measureable {
         return this.properties.description;
     }
 
-    constructor(name: string, properties: MeasureableProperties, children?: Measureable[]) {
+    constructor(
+        name: string,
+        properties: MeasureableProperties,
+        children?: Measureable[]
+    ) {
         this.name = name;
         this.properties = properties;
         if (children) {
@@ -100,5 +107,19 @@ export class Measureable {
 
     [Symbol.toPrimitive](hint: string) {
         return `Measureable ${this.name}`;
+    }
+
+    public map<U>(
+        callbackfn: (value: Measureable, children: Measureable[]) => U
+    ): U[] {
+        if (!this.children) {
+            return [callbackfn(this, [])];
+        }
+
+        let result = [callbackfn(this, [...this.children.values()])];
+        for (const child of this.children.values()) {
+            result.push(...child.map(callbackfn));
+        }
+        return result;
     }
 }
