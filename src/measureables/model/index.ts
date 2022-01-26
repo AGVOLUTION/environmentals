@@ -1,4 +1,4 @@
 import { MODEL } from "./base";
-import { env } from "./env";
+import { num } from "./num";
 
-export const model = new MODEL("MODEL", {}, [env]);
+export const model = new MODEL("MODEL", {}, [num]);

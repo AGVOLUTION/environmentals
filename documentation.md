@@ -121,21 +121,21 @@
 | Description | undefined |
 | Unit        | undefined |
 
-## MODEL**ENV**ATMO**SNOW**HEIGHT
+## MODEL**NUM**ENV**ATMO**SNOW\_\_HEIGHT
 
 | Property    | Value       |
 | ----------- | ----------- |
 | Description | Snow height |
 | Unit        | undefined   |
 
-## MODEL**ENV**ATMO**SNOW**MELT
+## MODEL**NUM**ENV**ATMO**SNOW\_\_MELT
 
 | Property    | Value     |
 | ----------- | --------- |
 | Description | undefined |
 | Unit        | undefined |
 
-## MODEL**ENV**ATMO**SNOW**INSULATION
+## MODEL**NUM**ENV**ATMO**SNOW\_\_INSULATION
 
 | Property    | Value                                                          |
 | ----------- | -------------------------------------------------------------- |
