@@ -30,54 +30,96 @@
 | Description | Irradiation, usually expressed as radiation power per surface after traversing the atmosphere - if not otherwise noted |
 | Unit        | J/m²                                                                                                                   |
 
-## ENV**ATMO**WIND**SPD**AVG
-
-| Property    | Value                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Description | Average wind speed. Obtained from multiple samples within the last packet cycle. Appropriate units: km h-1, mp h-1, m s-1. |
-| Unit        | undefined                                                                                                                  |
-
-## ENV**ATMO**WIND**SPD**STD
+## ENV**ATMO**WIND\_\_SPEED
 
 | Property    | Value     |
 | ----------- | --------- |
 | Description | undefined |
 | Unit        | undefined |
 
-## ENV**ATMO**WIND\_\_DIR
+## ENV**ATMO**WIND\_\_GUSTINESS
 
 | Property    | Value     |
 | ----------- | --------- |
 | Description | undefined |
 | Unit        | undefined |
 
-## DEV**ENERGY**LATITUDE
+## ENV**ATMO**WIND\_\_DIRECTION
 
 | Property    | Value     |
 | ----------- | --------- |
 | Description | undefined |
 | Unit        | undefined |
 
-## DEV**ENERGY**LONGITUDE
+## ENV**ATMO**SNOW\_\_HEIGHT
 
 | Property    | Value     |
 | ----------- | --------- |
 | Description | undefined |
 | Unit        | undefined |
 
-## DEV**ALERT**TRIGGERED
+## ENV**ATMO**SNOW\_\_INSULATION
 
-| Property    | Value                                                  |
-| ----------- | ------------------------------------------------------ |
-| Description | A device alert (motion, theft detection) was triggered |
-| Unit        | undefined                                              |
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
 
-## DEV**ALERT**ARMED
+## ENV**ATMO**SNOW\_\_MELT
 
-| Property    | Value                                                                                   |
-| ----------- | --------------------------------------------------------------------------------------- |
-| Description | The internal alert (motion, theft detection) is active and listening for trigger events |
-| Unit        | undefined                                                                               |
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## ENV**SOIL**T
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## ENV**SOIL**EC
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## ENV**SOIL**NORM_ER
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## ENV**SOIL**VWC
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## ENV**SOIL**MATRIX_POTENTIAL
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## DEV\_\_LIQUIDLEVEL
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
+
+## DEV\_\_WEIGHT
+
+| Property    | Value     |
+| ----------- | --------- |
+| Description | undefined |
+| Unit        | undefined |
 
 ## MODEL**ENV**ATMO**SNOW**HEIGHT
 

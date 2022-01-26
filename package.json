@@ -11,6 +11,7 @@
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
     "build": "yarn tsc",
     "generate": "yarn node -r ts-node/register bin/generate.ts",
+    "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
     "postinstall": "husky install"
   },
   "packageManager": "yarn@3.1.1",

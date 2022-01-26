@@ -5,8 +5,10 @@ import { dev } from "./dev";
 export { dev } from "./dev";
 import { model } from "./model";
 export { model } from "./model";
+import { obj } from "./obj";
+export { obj } from "./obj";
 
-export const root = new Measureable("ROOT", {}, [env, dev, model]);
+export const root = new Measureable("ROOT", {}, [env, dev, model, obj]);
 
 export function deserialize(fqn: FullyQualifiedName) {
     return root.find(fqn.split("__"));
