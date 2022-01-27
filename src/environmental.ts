@@ -1,9 +1,9 @@
 import { Unit } from "./unit";
 
-export type MeasureableName = string;
+export type EnvironmentalName = string;
 export type FullyQualifiedName = string;
-export type FqnPathElements = MeasureableName[];
-export interface MeasureableProperties {
+export type FqnPathElements = EnvironmentalName[];
+export interface EnvironmentalProperties {
     unit?: Unit;
     description?: string;
 }
@@ -11,11 +11,11 @@ export interface MeasureableProperties {
 /**
  * Base class for all nodes
  */
-export class Measureable {
-    public readonly name: MeasureableName;
-    public readonly properties: MeasureableProperties;
-    protected readonly _children?: Map<MeasureableName, Measureable>;
-    protected _parent?: Measureable;
+export class Environmental {
+    public readonly name: EnvironmentalName;
+    public readonly properties: EnvironmentalProperties;
+    protected readonly _children?: Map<EnvironmentalName, Environmental>;
+    protected _parent?: Environmental;
     public get parent() {
         return this._parent;
     }
@@ -29,7 +29,7 @@ export class Measureable {
         return this.properties.description;
     }
 
-    public readonly childrenKeys?: MeasureableName[];
+    public readonly childrenKeys?: EnvironmentalName[];
     /**
      * Return this nodes children. If there are none, return an empty Array
      */
@@ -37,7 +37,7 @@ export class Measureable {
         return [...(this._children?.values() || [])];
     }
 
-    constructor(name: string, properties: MeasureableProperties, children?: Measureable[]) {
+    constructor(name: string, properties: EnvironmentalProperties, children?: Environmental[]) {
         this.name = name;
         this.properties = properties;
         if (children) {
@@ -49,7 +49,7 @@ export class Measureable {
         }
     }
 
-    public find(path: FqnPathElements): Measureable {
+    public find(path: FqnPathElements): Environmental {
         if (path.length === 1) {
             const hit = this._children?.get(path[0]);
             if (hit) {
@@ -76,7 +76,7 @@ export class Measureable {
     /**
      * Iterate over all elements in this tree
      */
-    *[Symbol.iterator](): Generator<Measureable> {
+    *[Symbol.iterator](): Generator<Environmental> {
         if (!this._children) {
             yield this;
             return;
@@ -107,14 +107,14 @@ export class Measureable {
     }
 
     public toString() {
-        return `Measureable ${this.name}`;
+        return `Environmental ${this.name}`;
     }
 
     [Symbol.toPrimitive](hint: string) {
-        return `Measureable ${this.name}`;
+        return `Environmental ${this.name}`;
     }
 
-    public map<U>(callbackfn: (value: Measureable, children: Measureable[]) => U): U[] {
+    public map<U>(callbackfn: (value: Environmental, children: Environmental[]) => U): U[] {
         if (!this._children) {
             return [callbackfn(this, [])];
         }

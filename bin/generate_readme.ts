@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import {getLeafs} from "../src/measureables"
+import {getLeafs} from "../src/parameters"
 
 export async function main(){
     const leafText = getLeafs().map(leaf=>`## ${leaf.fqn}
@@ -10,7 +10,7 @@ Description | ${leaf.description}
 Unit | ${leaf.unit?.symbol}
 `)
     const content = `<!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->
-# Measureable Documentation
+# Environmental Documentation
 
 ${leafText.join('\n')}
     `

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Definition of environmental parameters",
   "main": "index.js",
-  "repository": "https://github.com/AGVOLUTION/measureables",
+  "repository": "https://github.com/AGVOLUTION/environmentals",
   "author": "Marcel Schneider <m.schneider@agvolution.com>",
   "license": "PROPRIETARY",
   "publishConfig": {

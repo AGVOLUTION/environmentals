@@ -7,7 +7,7 @@ export * as MODELEnums from './MODEL'
 export * as OBJEnums from './OBJ'
 
 import { registerEnumType } from "type-graphql";
-export const MeasurableParameterNames = {
+export const EnvironmentalParameterNames = {
     ENV__ATMO__T: "ENV__ATMO__T",
     ENV__ATMO__P: "ENV__ATMO__P",
     ENV__ATMO__RH: "ENV__ATMO__RH",
@@ -35,7 +35,7 @@ export const MeasurableParameterNames = {
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
     OBJ__WEIGHT: "OBJ__WEIGHT"
 };
-registerEnumType(MeasurableParameterNames, { name: "MeasurableParameterNames" });
+registerEnumType(EnvironmentalParameterNames, { name: "EnvironmentalParameterNames" });
 
 
 export const EnumObject = {

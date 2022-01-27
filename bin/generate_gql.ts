@@ -2,8 +2,7 @@ import fs from "fs/promises";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
 import { root } from "../src/";
-import { Measureable } from "../src/measureable";
-import {dev} from "../src/measureables/dev"
+import { Environmental } from "../src/environmental";
 
 (async function () {
     await main();
@@ -64,7 +63,7 @@ function generateAstForGqlEnum() {
             factory.createVariableDeclarationList(
                 [
                     factory.createVariableDeclaration(
-                        factory.createIdentifier("MeasurableParameterNames"),
+                        factory.createIdentifier("EnvironmentalParameterNames"),
                         undefined,
                         undefined,
                         factory.createObjectLiteralExpression(
@@ -89,12 +88,12 @@ function generateAstForGqlEnum() {
         ),
         factory.createExpressionStatement(
             factory.createCallExpression(factory.createIdentifier("registerEnumType"), undefined, [
-                factory.createIdentifier("MeasurableParameterNames"),
+                factory.createIdentifier("EnvironmentalParameterNames"),
                 factory.createObjectLiteralExpression(
                     [
                         factory.createPropertyAssignment(
                             factory.createIdentifier("name"),
-                            factory.createStringLiteral("MeasurableParameterNames")
+                            factory.createStringLiteral("EnvironmentalParameterNames")
                         ),
                     ],
                     false
@@ -109,7 +108,7 @@ function generateAstForGqlEnum() {
     );
 }
 
-function generateEnumObject(m: Measureable): any {
+function generateEnumObject(m: Environmental): any {
     if (m.isLeaf) {
         return { [m.name]: m.name };
     }
@@ -121,12 +120,12 @@ function generateEnumObject(m: Measureable): any {
     return { [m.name]: _.merge({}, ...childObjects) };
 }
 
-function generateCategoryEnum(m: Measureable) {
+function generateCategoryEnum(m: Environmental) {
     const names = [...m].filter((x) => x.isLeaf).map((x) => x.fqn.replace(`${m.fqn}__`, ""));
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
-async function writeCategoryEnumFile(m:Measureable){
+async function writeCategoryEnumFile(m:Environmental){
     const enumObjects = m.children.map(child=>[child.name, generateCategoryEnum(child)])
     const exports = enumObjects.map(o=>`export const Enum${o[0]} = ${JSON.stringify(o[1], undefined,4)}`)
     const fileName = `src/gql/${m.name}.ts`
