@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import { deserialize, env, root } from "../src";
-import { T, atmo } from "../src/measureables/env/atmo";
+import { T, atmo } from "../src/parameters/env/atmo";
 import { degC } from "../src/unit";
 
-describe("measureables", function () {
+describe("environmentals", function () {
     describe("#deserialize", function () {
         it("should correctly deserialize a FQN", function () {
             const fqn = "ENV__ATMO__T";

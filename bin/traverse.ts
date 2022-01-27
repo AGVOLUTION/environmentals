@@ -1,6 +1,6 @@
 import { root } from "../src";
-import { DEV } from "../src/measureables/dev/base";
-import { T } from "../src/measureables/env/atmo";
+import { DEV } from "../src/parameters/dev/base";
+import { T } from "../src/parameters/env/atmo";
 
 function main() {
     const leafs = [...root];
