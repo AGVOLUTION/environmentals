@@ -2,7 +2,7 @@
   "name": "@agv/environmentals",
   "version": "0.1.0",
   "description": "Definition of environmental parameters",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": "https://github.com/AGVOLUTION/measureables",
   "author": "Marcel Schneider <m.schneider@agvolution.com>",
   "license": "PROPRIETARY",
@@ -13,10 +13,10 @@
   "scripts": {
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
     "prepack": "yarn build",
-    "build": "yarn generate && yarn tsc && cp package.json ./dist",
+    "build": "yarn generate && yarn tsc && cp package.json ./dist/src",
     "generate": "yarn node -r ts-node/register bin/generate.ts",
     "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
-    "yalc-push": "cd dist && yalc push",
+    "yalc-push": "cd dist/src && yalc push",
     "clean": "rm -r dist"
   },
   "packageManager": "yarn@3.1.1",

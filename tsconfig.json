@@ -1,5 +1,5 @@
 {
-    "exclude": ["./tests/", "./node_modules/", "./dist/"],
+    "exclude": ["./tests/", "./node_modules/", "./dist/", "/bin/"],
     "compilerOptions": {
         "incremental": true /* Enable incremental compilation */,
         "target": "ES2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
