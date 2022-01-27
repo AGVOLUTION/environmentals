@@ -5,10 +5,23 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@agv/agv-bump@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@agv/agv-bump@npm:0.0.11::__archiveUrl=https%3A%2F%2Fagv-293859034925.d.codeartifact.eu-central-1.amazonaws.com%3A443%2Fnpm%2Fagv-node%2F%40agv%2Fagv-bump%2F-%2Fagv-bump-0.0.11.tgz"
+  dependencies:
+    "@agv/prettier-config": ^1.0.6
+    semver: ^7.3.5
+  bin:
+    agv-bump: dist/cli.js
+  checksum: 12e2b930aa1e9a5176982ca0b564abd1cd6d1788e8a2bb7314e39bd793aad6350515588f79d5e0bb5fbd16702fe9ca563fce6c0f9b7427567438cc14d32cd0f0
+  languageName: node
+  linkType: hard
+
 "@agv/environmentals@workspace:.":
   version: 0.0.0-use.local
   resolution: "@agv/environmentals@workspace:."
   dependencies:
+    "@agv/agv-bump": ^0.0.11
     "@agv/prettier-config": ^1.0.6
     "@types/chai": ^4
     "@types/lodash": ^4
