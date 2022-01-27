@@ -14,21 +14,13 @@ import {dev} from "../src/measureables/dev"
  */
 export async function main() {
     const enumObject = JSON.stringify(generateEnumObject(root)["ROOT"], undefined, 4);
-    //const categoryEnums = root.children.map(
-        //(cat) =>
-            //`export const Enum${cat.name} = ${JSON.stringify(
-                //generateCategoryEnum(cat),
-                //undefined,
-                //4
-            //)}`
-    //);
     
     // generate enums for level below first level categories
     const categoryEnumFileNames = await Promise.all(root.children.map(writeCategoryEnumFile))
     const categoryEnums  = categoryEnumFileNames.map(c=>`export * as ${c[0]}Enums from './${c[0]}'`)
 
     const resultFile = ts.createSourceFile(
-        "gql/index.ts",
+        "src/gql/index.ts",
         "",
         ts.ScriptTarget.ES2021,
         false,
@@ -141,7 +133,7 @@ function generateCategoryEnum(m: Measureable) {
 async function writeCategoryEnumFile(m:Measureable){
     const enumObjects = m.children.map(child=>[child.name, generateCategoryEnum(child)])
     const exports = enumObjects.map(o=>`export const Enum${o[0]} = ${JSON.stringify(o[1], undefined,4)}`)
-    const fileName = `gql/${m.name}.ts`
+    const fileName = `src/gql/${m.name}.ts`
     const str = `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
 export const Enum${m.name} = ${JSON.stringify(generateCategoryEnum(m),undefined,4)}
 
