@@ -14,7 +14,7 @@ export interface MeasureableProperties {
 export class Measureable {
     public readonly name: MeasureableName;
     public readonly properties: MeasureableProperties;
-    public readonly children?: Map<MeasureableName, Measureable>;
+    protected readonly _children?: Map<MeasureableName, Measureable>;
     protected _parent?: Measureable;
     public get parent() {
         return this._parent;
@@ -30,12 +30,18 @@ export class Measureable {
     }
 
     public readonly childrenKeys?: MeasureableName[];
+    /**
+     * Return this nodes children. If there are none, return an empty Array
+     */
+    public get children() {
+        return [...(this._children?.values() || [])];
+    }
 
     constructor(name: string, properties: MeasureableProperties, children?: Measureable[]) {
         this.name = name;
         this.properties = properties;
         if (children) {
-            this.children = new Map(children.map((c) => [c.name, c]));
+            this._children = new Map(children.map((c) => [c.name, c]));
             this.childrenKeys = children.map((c) => c.name);
             for (const child of children) {
                 child._parent = this;
@@ -45,14 +51,14 @@ export class Measureable {
 
     public find(path: FqnPathElements): Measureable {
         if (path.length === 1) {
-            const hit = this.children?.get(path[0]);
+            const hit = this._children?.get(path[0]);
             if (hit) {
                 return hit;
             }
             throw Error(`Did not find a child with name ${path[0]}`);
         }
 
-        const result = this.children?.get(path[0])?.find(path.slice(1));
+        const result = this._children?.get(path[0])?.find(path.slice(1));
         if (result) {
             return result;
         }
@@ -71,7 +77,7 @@ export class Measureable {
      * Iterate over all elements in this tree
      */
     *[Symbol.iterator](): Generator<Measureable> {
-        if (!this.children) {
+        if (!this._children) {
             yield this;
             return;
         }
@@ -81,7 +87,7 @@ export class Measureable {
             yield this;
         }
 
-        for (const child of this.children.values()) {
+        for (const child of this._children.values()) {
             yield* child;
         }
     }
@@ -97,7 +103,7 @@ export class Measureable {
      * Is this element a Leaf (i.e. has no more children)?
      */
     public get isLeaf() {
-        return !this.children;
+        return !this._children;
     }
 
     public toString() {
@@ -109,12 +115,12 @@ export class Measureable {
     }
 
     public map<U>(callbackfn: (value: Measureable, children: Measureable[]) => U): U[] {
-        if (!this.children) {
+        if (!this._children) {
             return [callbackfn(this, [])];
         }
 
-        let result = [callbackfn(this, [...this.children.values()])];
-        for (const child of this.children.values()) {
+        let result = [callbackfn(this, [...this._children.values()])];
+        for (const child of this._children.values()) {
             result.push(...child.map(callbackfn));
         }
         return result;

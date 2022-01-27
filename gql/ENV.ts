@@ -1,0 +1,40 @@
+/*
+ * THIS IS A GENERATED FILE. DO NOT EDIT !!!
+*/
+export const EnumENV = {
+    "ATMO__T": "ATMO__T",
+    "ATMO__P": "ATMO__P",
+    "ATMO__RH": "ATMO__RH",
+    "ATMO__IRRADIATION": "ATMO__IRRADIATION",
+    "ATMO__WIND__SPEED": "ATMO__WIND__SPEED",
+    "ATMO__WIND__GUSTINESS": "ATMO__WIND__GUSTINESS",
+    "ATMO__WIND__DIRECTION": "ATMO__WIND__DIRECTION",
+    "ATMO__SNOW__HEIGHT": "ATMO__SNOW__HEIGHT",
+    "ATMO__SNOW__INSULATION": "ATMO__SNOW__INSULATION",
+    "ATMO__SNOW__MELT": "ATMO__SNOW__MELT",
+    "SOIL__T": "SOIL__T",
+    "SOIL__EC": "SOIL__EC",
+    "SOIL__NORM_ER": "SOIL__NORM_ER",
+    "SOIL__VWC": "SOIL__VWC",
+    "SOIL__MATRIX_POTENTIAL": "SOIL__MATRIX_POTENTIAL"
+}
+
+export const EnumATMO = {
+    "T": "T",
+    "P": "P",
+    "RH": "RH",
+    "IRRADIATION": "IRRADIATION",
+    "WIND__SPEED": "WIND__SPEED",
+    "WIND__GUSTINESS": "WIND__GUSTINESS",
+    "WIND__DIRECTION": "WIND__DIRECTION",
+    "SNOW__HEIGHT": "SNOW__HEIGHT",
+    "SNOW__INSULATION": "SNOW__INSULATION",
+    "SNOW__MELT": "SNOW__MELT"
+}
+export const EnumSOIL = {
+    "T": "T",
+    "EC": "EC",
+    "NORM_ER": "NORM_ER",
+    "VWC": "VWC",
+    "MATRIX_POTENTIAL": "MATRIX_POTENTIAL"
+}
