@@ -1,8 +1,28 @@
 import { Unit } from "./unit";
 
+/**
+ * The Name of an Environmental
+ *
+ * This is the name of the actual node in the tree, not the {@link FullyQualifiedName}.
+ */
 export type EnvironmentalName = string;
+
+/**
+ * A fully qualified name (FQN) of an environmental.
+ *
+ * @example
+ * `ENV__ATMO__T`
+ */
 export type FullyQualifiedName = string;
+
+/**
+ * The Path elements of a FQN
+ */
 export type FqnPathElements = EnvironmentalName[];
+
+/**
+ * Properties of an Environmental
+ */
 export interface EnvironmentalProperties {
     unit?: Unit;
     description?: string;
@@ -12,10 +32,19 @@ export interface EnvironmentalProperties {
  * Base class for all nodes
  */
 export class Environmental {
+    /**
+     * The name of this Node
+     */
     public readonly name: EnvironmentalName;
+    /**
+     * Properties of this node
+     */
     public readonly properties: EnvironmentalProperties;
     protected readonly _children?: Map<EnvironmentalName, Environmental>;
     protected _parent?: Environmental;
+    /**
+     * Parent node. Undefined if this is the root element
+     */
     public get parent() {
         return this._parent;
     }
@@ -37,6 +66,13 @@ export class Environmental {
         return [...(this._children?.values() || [])];
     }
 
+    /**
+     * Create a new Environmental
+     *
+     * @param name - Name of this node
+     * @param properties - Properties of this node
+     * @param children - Children of the node. Provide only if this is a category
+     */
     constructor(name: string, properties: EnvironmentalProperties, children?: Environmental[]) {
         this.name = name;
         this.properties = properties;
@@ -49,6 +85,12 @@ export class Environmental {
         }
     }
 
+    /**
+     * Find the element according to the path elements
+     *
+     * @param path - Path as elements
+     * @returns The element specified by the path
+     */
     public find(path: FqnPathElements): Environmental {
         if (path.length === 1) {
             const hit = this._children?.get(path[0]);
@@ -65,6 +107,14 @@ export class Environmental {
         throw Error(`Did not find a child with name ${path[0]}`);
     }
 
+    /**
+     * Return the fully qualified name (FQN) of this node.
+     *
+     * This basically acts as a deserialisation method, as this string is unique and is used as a
+     * string representation by the GraphQL APIs.
+     *
+     * @returns FullyQualifiedName of this node
+     */
     public get fqn(): FullyQualifiedName {
         if (!this.parent?.parent) {
             return this.name;
@@ -110,8 +160,8 @@ export class Environmental {
         return `Environmental ${this.name}`;
     }
 
-    [Symbol.toPrimitive](hint: string) {
-        return `Environmental ${this.name}`;
+    [Symbol.toPrimitive](_hint: string) {
+        return this.fqn;
     }
 
     public map<U>(callbackfn: (value: Environmental, children: Environmental[]) => U): U[] {
