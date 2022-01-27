@@ -1,6 +1,11 @@
 /*
  * THIS IS A GENERATED FILE. DO NOT EDIT !!!
- */
+*/
+export * as ENVEnums from './ENV'
+export * as DEVEnums from './DEV'
+export * as MODELEnums from './MODEL'
+export * as OBJEnums from './OBJ'
+
 import { registerEnumType } from "type-graphql";
 export const MeasurableParameterNames = {
     ENV__ATMO__T: "ENV__ATMO__T",
@@ -18,13 +23,76 @@ export const MeasurableParameterNames = {
     ENV__SOIL__NORM_ER: "ENV__SOIL__NORM_ER",
     ENV__SOIL__VWC: "ENV__SOIL__VWC",
     ENV__SOIL__MATRIX_POTENTIAL: "ENV__SOIL__MATRIX_POTENTIAL",
-    DEV__LIQUIDLEVEL: "DEV__LIQUIDLEVEL",
-    DEV__WEIGHT: "DEV__WEIGHT",
+    DEV__ENERGY__VCAP: "DEV__ENERGY__VCAP",
+    DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT",
+    DEV__ALERT__TRIGGERED: "DEV__ALERT__TRIGGERED",
+    DEV__ALERT__ARMED: "DEV__ALERT__ARMED",
+    DEV__POSITION__LATITUDE: "DEV__POSITION__LATITUDE",
+    DEV__POSITION__LONGITUDE: "DEV__POSITION__LONGITUDE",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT",
     MODEL__NUM__ENV__ATMO__SNOW__MELT: "MODEL__NUM__ENV__ATMO__SNOW__MELT",
-    MODEL__NUM__ENV__ATMO__SNOW__INSULATION:
-        "MODEL__NUM__ENV__ATMO__SNOW__INSULATION",
+    MODEL__NUM__ENV__ATMO__SNOW__INSULATION: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION",
+    OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
+    OBJ__WEIGHT: "OBJ__WEIGHT"
 };
-registerEnumType(MeasurableParameterNames, {
-    name: "MeasurableParameterNames",
-});
+registerEnumType(MeasurableParameterNames, { name: "MeasurableParameterNames" });
+
+
+export const EnumObject = {
+    "ENV": {
+        "ATMO": {
+            "T": "T",
+            "P": "P",
+            "RH": "RH",
+            "IRRADIATION": "IRRADIATION",
+            "WIND": {
+                "SPEED": "SPEED",
+                "GUSTINESS": "GUSTINESS",
+                "DIRECTION": "DIRECTION"
+            },
+            "SNOW": {
+                "HEIGHT": "HEIGHT",
+                "INSULATION": "INSULATION",
+                "MELT": "MELT"
+            }
+        },
+        "SOIL": {
+            "T": "T",
+            "EC": "EC",
+            "NORM_ER": "NORM_ER",
+            "VWC": "VWC",
+            "MATRIX_POTENTIAL": "MATRIX_POTENTIAL"
+        }
+    },
+    "DEV": {
+        "ENERGY": {
+            "VCAP": "VCAP",
+            "LOWLIGHT": "LOWLIGHT"
+        },
+        "ALERT": {
+            "TRIGGERED": "TRIGGERED",
+            "ARMED": "ARMED"
+        },
+        "POSITION": {
+            "LATITUDE": "LATITUDE",
+            "LONGITUDE": "LONGITUDE"
+        }
+    },
+    "MODEL": {
+        "NUM": {
+            "ENV": {
+                "ATMO": {
+                    "SNOW": {
+                        "HEIGHT": "HEIGHT",
+                        "MELT": "MELT",
+                        "INSULATION": "INSULATION"
+                    }
+                }
+            }
+        }
+    },
+    "OBJ": {
+        "LIQUIDLEVEL": "LIQUIDLEVEL",
+        "WEIGHT": "WEIGHT"
+    }
+} 
