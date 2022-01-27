@@ -123,10 +123,6 @@ function generateEnumObject(m: Measureable): any {
 
 function generateCategoryEnum(m: Measureable) {
     const names = [...m].filter((x) => x.isLeaf).map((x) => x.fqn.replace(`${m.fqn}__`, ""));
-    //return names.reduce((prev, curr) => {
-    //prev[curr] = curr;
-    //return prev;
-    //}, {});
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
