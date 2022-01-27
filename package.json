@@ -1,6 +1,6 @@
 {
   "name": "@agv/environmentals",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Definition of environmental parameters",
   "main": "index.js",
   "repository": "https://github.com/AGVOLUTION/environmentals",
