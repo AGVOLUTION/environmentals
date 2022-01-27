@@ -16,13 +16,15 @@
     "generate": "yarn node -r ts-node/register bin/generate.ts",
     "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
     "yalc-push": "cd dist/src && yalc push",
-    "clean": "rm -r dist"
+    "clean": "rm -r dist",
+    "bump": "yarn run agv-bump --root"
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
     "typescript": "^4.5.5"
   },
   "devDependencies": {
+    "@agv/agv-bump": "^0.0.11",
     "@agv/prettier-config": "^1.0.6",
     "@types/chai": "^4",
     "@types/lodash": "^4",
