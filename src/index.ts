@@ -1,3 +1,4 @@
+import "reflect-metadata"
 export { root, deserialize, env, dev } from "./parameters";
 export {
     Environmental,
@@ -6,3 +7,5 @@ export {
     FqnPathElements,
     FullyQualifiedName,
 } from "./environmental";
+
+export  * as GQL from "./gql";
