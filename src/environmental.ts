@@ -1,3 +1,4 @@
+import { Translation } from "./localisation";
 import { Unit } from "./unit";
 
 /**
@@ -26,6 +27,7 @@ export type FqnPathElements = EnvironmentalName[];
 export interface EnvironmentalProperties {
     unit?: Unit;
     description?: string;
+    translation?: Translation;
 }
 
 /**
