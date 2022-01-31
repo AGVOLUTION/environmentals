@@ -1,4 +1,4 @@
-import { Locale, Translation } from "./localisation";
+import { Locale, Translation } from "./localization";
 import { Unit } from "./unit";
 
 /**
