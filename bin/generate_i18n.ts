@@ -1,4 +1,4 @@
-import { Locale, Locales } from "../src/localisation";
+import { Locale, Locales } from "../src/localization";
 import { writeFile, ensureDir } from "fs-extra";
 import { root } from "../src";
 

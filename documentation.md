@@ -33,6 +33,14 @@ Name | irradiation
 Description | Irradiation, usually expressed as radiation power per surface after traversing the atmosphere - if not otherwise noted
 Unit | J/m²
 
+## ENV__ATMO__RAIN
+
+Property | Value
+---------|-------
+Name | rain
+Description | undefined
+Unit | undefined
+
 ## ENV__ATMO__WIND__SPEED
 
 Property | Value
