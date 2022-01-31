@@ -62,4 +62,4 @@ export const snow = new ATMO("SNOW", { translation: { "de-de": "Schnee", "en-us"
     MELT,
 ]);
 
-export const atmo = new ATMO("ATMO", {}, [T, P, RH, IRRADIATION, wind, snow]);
+export const atmo = new ATMO("ATMO", {}, [T, P, RH, IRRADIATION, RAIN, wind, snow]);
