@@ -14,3 +14,9 @@ As a user of this package your most probably will start with `deserialize`.
 This function takes a FQN (t.ex. `ENV__ATMO__T`) and returns the respective
 object. If you want to serialize such an object back to a string, you can use
 the objects attribute `.fqn`.
+
+## Adding/modifying parameters
+
+Please [create a new issue](https://github.com/AGVOLUTION/environmentals/issues/new/choose) and
+choose the proper template to either add a new parameter or modify an existing
+one.
