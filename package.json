@@ -4,6 +4,7 @@
   "description": "Definition of environmental parameters",
   "main": "dist/src/index.js",
   "files": [
+    "translations",
     "dist/src/**/*"
   ],
   "repository": "https://github.com/AGVOLUTION/environmentals",
