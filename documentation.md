@@ -5,6 +5,7 @@
 
 Property | Value
 ---------|-------
+Name | temperature
 Description | Atmospheric temperature
 Unit | °C
 
@@ -12,6 +13,7 @@ Unit | °C
 
 Property | Value
 ---------|-------
+Name | pressure
 Description | Atmospheric pressure
 Unit | %
 
@@ -19,6 +21,7 @@ Unit | %
 
 Property | Value
 ---------|-------
+Name | relative humidity
 Description | Relative humidity
 Unit | hPa
 
@@ -26,6 +29,7 @@ Unit | hPa
 
 Property | Value
 ---------|-------
+Name | irradiation
 Description | Irradiation, usually expressed as radiation power per surface after traversing the atmosphere - if not otherwise noted
 Unit | J/m²
 
@@ -33,6 +37,7 @@ Unit | J/m²
 
 Property | Value
 ---------|-------
+Name | wind speed
 Description | undefined
 Unit | undefined
 
@@ -40,6 +45,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | wind gustiness
 Description | undefined
 Unit | undefined
 
@@ -47,6 +53,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | wind direction
 Description | undefined
 Unit | undefined
 
@@ -54,6 +61,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | snow height
 Description | undefined
 Unit | undefined
 
@@ -61,6 +69,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | snow insulation
 Description | undefined
 Unit | undefined
 
@@ -68,6 +77,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | snow melt
 Description | undefined
 Unit | undefined
 
@@ -75,6 +85,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | soil temperature
 Description | undefined
 Unit | undefined
 
@@ -82,6 +93,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__EC
 Description | undefined
 Unit | undefined
 
@@ -89,6 +101,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__NORM_ER
 Description | undefined
 Unit | undefined
 
@@ -96,6 +109,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__VWC
 Description | undefined
 Unit | undefined
 
@@ -103,6 +117,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__MATRIX_POTENTIAL
 Description | undefined
 Unit | undefined
 
@@ -110,6 +125,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__CAPACITANCE__ABSOLUTE
 Description | undefined
 Unit | undefined
 
@@ -117,6 +133,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__CAPACITANCE__DIFFERENTIAL
 Description | undefined
 Unit | undefined
 
@@ -124,6 +141,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__CAPACITANCE__LEG_A
 Description | undefined
 Unit | undefined
 
@@ -131,6 +149,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__CAPACITANCE__LEG_B
 Description | undefined
 Unit | undefined
 
@@ -138,6 +157,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | ENV__SOIL__CAPACITANCE__OFFSET
 Description | undefined
 Unit | undefined
 
@@ -145,6 +165,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__ENERGY__VCAP
 Description | undefined
 Unit | undefined
 
@@ -152,6 +173,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__ENERGY__LOWLIGHT
 Description | undefined
 Unit | undefined
 
@@ -159,6 +181,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__ALERT__TRIGGERED
 Description | A device alert (motion, theft detection) was triggered
 Unit | undefined
 
@@ -166,6 +189,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__ALERT__ARMED
 Description | The internal alert (motion, theft detection) is active and listening for trigger events
 Unit | undefined
 
@@ -173,6 +197,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | latitude
 Description | undefined
 Unit | undefined
 
@@ -180,6 +205,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | longitude
 Description | undefined
 Unit | undefined
 
@@ -187,6 +213,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__RF__RSSI
 Description | undefined
 Unit | undefined
 
@@ -194,6 +221,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__RF__RSRP
 Description | undefined
 Unit | undefined
 
@@ -201,6 +229,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__RF__RSRQ
 Description | undefined
 Unit | undefined
 
@@ -208,6 +237,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | DEV__RF__SINR
 Description | undefined
 Unit | undefined
 
@@ -215,6 +245,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | MODEL__NUM__ENV__ATMO__SNOW__HEIGHT
 Description | Snow height
 Unit | undefined
 
@@ -222,6 +253,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | MODEL__NUM__ENV__ATMO__SNOW__MELT
 Description | undefined
 Unit | undefined
 
@@ -229,6 +261,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | MODEL__NUM__ENV__ATMO__SNOW__INSULATION
 Description | Indicates it there was an insulation induced by the snow layer
 Unit | yes/no
 
@@ -236,6 +269,7 @@ Unit | yes/no
 
 Property | Value
 ---------|-------
+Name | liquid level
 Description | undefined
 Unit | undefined
 
@@ -243,6 +277,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
+Name | weight
 Description | undefined
 Unit | undefined
 
