@@ -19,7 +19,7 @@ Unit | %
 
 Property | Value
 ---------|-------
-Description | Atmospheric pressure
+Description | Relative humidity
 Unit | hPa
 
 ## ENV__ATMO__IRRADIATION
