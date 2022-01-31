@@ -1,4 +1,4 @@
-import {Locale, Translation} from "./localisation";
+import {Locale, Translation} from "./localization";
 
 export class Unit {
     public readonly symbol: string;
