@@ -1,4 +1,4 @@
-import { Translation } from "./localisation";
+import { Locale, Translation } from "./localisation";
 import { Unit } from "./unit";
 
 /**
@@ -66,6 +66,17 @@ export class Environmental {
      */
     public get children() {
         return [...(this._children?.values() || [])];
+    }
+
+    /**
+     * Return translation for locale.
+     *
+     * if no translations provided, the FQN of this node will be returned
+     *
+     * @param locale - Locale code
+     */
+    public translation(locale: Locale) {
+        return this.properties.translation?.[locale] || this.fqn;
     }
 
     /**
