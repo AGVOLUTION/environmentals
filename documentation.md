@@ -106,6 +106,41 @@ Property | Value
 Description | undefined
 Unit | undefined
 
+## ENV__SOIL__CAPACITANCE__ABSOLUTE
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## ENV__SOIL__CAPACITANCE__DIFFERENTIAL
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## ENV__SOIL__CAPACITANCE__LEG_A
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## ENV__SOIL__CAPACITANCE__LEG_B
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## ENV__SOIL__CAPACITANCE__OFFSET
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
 ## DEV__ENERGY__VCAP
 
 Property | Value
@@ -142,6 +177,34 @@ Description | undefined
 Unit | undefined
 
 ## DEV__POSITION__LONGITUDE
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## DEV__RF__RSSI
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## DEV__RF__RSRP
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## DEV__RF__RSRQ
+
+Property | Value
+---------|-------
+Description | undefined
+Unit | undefined
+
+## DEV__RF__SINR
 
 Property | Value
 ---------|-------
