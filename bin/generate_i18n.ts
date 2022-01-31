@@ -11,8 +11,8 @@ function getTranslations(locale: Locale) {
 
 async function writeTranslationFile(locale: Locale) {
     const translations = getTranslations(locale);
-    await ensureDir("src/translations");
-    await writeFile(`src/translations/${locale}.json`, JSON.stringify(translations, undefined, 4));
+    await ensureDir("translations");
+    await writeFile(`translations/${locale}.json`, JSON.stringify(translations, undefined, 4));
 }
 
 export async function main() {
