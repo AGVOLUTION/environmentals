@@ -6,6 +6,7 @@ export async function main(){
 
 Property | Value
 ---------|-------
+Name | ${leaf.translation('en-us')}
 Description | ${leaf.description}
 Unit | ${leaf.unit?.symbol}
 `)
