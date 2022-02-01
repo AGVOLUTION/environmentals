@@ -1,4 +1,4 @@
-import { degC, hPa, Jpm2, percent } from "../../../unit";
+import { degC, hPa, Jpm2, mm, percent } from "../../../unit";
 import { ATMO } from "./base";
 
 export const T = new ATMO("T", {
@@ -10,7 +10,7 @@ export const T = new ATMO("T", {
     },
 });
 export const P = new ATMO("P", {
-    unit: percent,
+    unit: hPa,
     description: "Atmospheric pressure",
     translation: {
         "de-de": "Druck",
@@ -18,7 +18,7 @@ export const P = new ATMO("P", {
     },
 });
 export const RH = new ATMO("RH", {
-    unit: hPa,
+    unit: percent,
     description: "Relative humidity",
     translation: { "de-de": "Relative Luftfeuchtigkeit", "en-us": "relative humidity" },
 });
@@ -28,7 +28,7 @@ export const IRRADIATION = new ATMO("IRRADIATION", {
         "Irradiation, usually expressed as radiation power per surface after traversing the atmosphere - if not otherwise noted",
     translation: { "de-de": "Globale Strahlung", "en-us": "irradiation" },
 });
-export const RAIN = new ATMO("RAIN", { translation: { "de-de": "Regen", "en-us": "rain" } });
+export const RAIN = new ATMO("RAIN", { translation: { "de-de": "Regen", "en-us": "rain" }, unit: mm });
 
 export class WIND extends ATMO {}
 export const SPEED = new WIND("SPEED", {

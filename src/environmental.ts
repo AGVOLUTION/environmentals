@@ -103,6 +103,8 @@ export class Environmental {
      *
      * @param path - Path as elements
      * @returns The element specified by the path
+     * @throws Error - There could no child with the specified path be found. The Object will
+     * contain the missing child's name
      */
     public find(path: FqnPathElements): Environmental {
         if (path.length === 1) {
