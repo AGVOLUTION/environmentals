@@ -14,15 +14,6 @@ export { obj } from "./obj";
 export const root = new Environmental("ROOT", {}, [env, dev, model, obj]);
 
 /**
- * Deserialize a FullyQualifiedName (FQN) to the object
- *
- * @param fqn - String with the FullyQualifiedName
- */
-export function deserialize(fqn: FullyQualifiedName) {
-    return root.find(fqn.split("__"));
-}
-
-/**
  * Try to deserialize a FQN to it's object.
  *
  * If no object can be found, undefined will be returned.
@@ -31,7 +22,7 @@ export function deserialize(fqn: FullyQualifiedName) {
  */
 export function tryDeserialize(fqn: FullyQualifiedName) {
     try {
-        return deserialize(fqn);
+        return root.find(fqn.split("__"));
     } catch (e) {
         if (e instanceof Error) {
             console.error(e.message);

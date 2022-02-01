@@ -1,23 +1,23 @@
-import fs from 'fs/promises'
-import {getLeafs} from "../src/parameters"
+import { writeFileSync } from "fs";
+import { getLeafs } from "../src/parameters";
 
-export async function main(){
-    const leafText = getLeafs().map(leaf=>`## ${leaf.fqn}
+export function main() {
+    const leafText = getLeafs().map(
+        (leaf) => `## ${leaf.fqn}
 
 Property | Value
 ---------|-------
-Name | ${leaf.translation('en-us')}
+Name | ${leaf.translation("en-us")}
 Description | ${leaf.description}
 Unit | ${leaf.unit?.symbol}
-`)
+`
+    );
     const content = `<!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->
 # Environmental Documentation
 
-${leafText.join('\n')}
-    `
-    await fs.writeFile('./documentation.md', content)
+${leafText.join("\n")}
+    `;
+    writeFileSync("./documentation.md", content);
 }
 
-(async function() {
-    await main()
-}());
+main();

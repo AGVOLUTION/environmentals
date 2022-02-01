@@ -1,3 +1,4 @@
+import { assert } from "console";
 import { Locale, Translation } from "./localization";
 import { Unit } from "./unit";
 
@@ -92,7 +93,6 @@ export class Environmental {
      *
      * @param path - Path as elements
      * @returns The element specified by the path
-     * @throws Error - There could no child with the specified path be found. The Object will
      * contain the missing child's name
      */
     public find(path: FqnPathElements): Environmental {
@@ -107,10 +107,9 @@ export class Environmental {
         const result = this.children
             .find((e) => e.name === path[0])
             ?.find(path.slice(1));
-        if (result) {
-            return result;
-        }
-        throw Error(`Did not find a child with name ${path[0]}`);
+
+        assert(result);
+        return result!;
     }
 
     /**
@@ -129,16 +128,16 @@ export class Environmental {
         return `${this.parent.fqn}__${this.name}`;
     }
 
-    /**
-     * Iterate over all elements in this tree
-     */
+    // /**
+    //  * Iterate over all elements in this tree
+    //  */
     *[Symbol.iterator](): Generator<Environmental> {
         if (!this.children) {
             yield this;
             return;
         }
 
-        if (!this.isRoot) {
+        if (this.name !== "ROOT") {
             // we don't want the helper 'ROOT' element in our output
             yield this;
         }
@@ -146,13 +145,6 @@ export class Environmental {
         for (const child of this.children) {
             yield* child;
         }
-    }
-
-    /**
-     * Is this element the root node?
-     */
-    public get isRoot() {
-        return this.name === "ROOT";
     }
 
     /**
@@ -166,17 +158,7 @@ export class Environmental {
         return `Environmental ${this.name}`;
     }
 
-    [Symbol.toPrimitive](_hint: string) {
-        return this.fqn;
-    }
-
-    public map<U>(
-        callbackfn: (value: Environmental, children: Environmental[]) => U
-    ): U[] {
-        let result = [callbackfn(this, [...this.children])];
-        for (const child of this.children) {
-            result.push(...child.map(callbackfn));
-        }
-        return result;
+    public map<U>(callbackfn: (value: Environmental) => U): U[] {
+        return [...this].map((val, _i) => callbackfn(val));
     }
 }

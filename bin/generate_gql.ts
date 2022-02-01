@@ -1,3 +1,4 @@
+import { writeFileSync } from "fs";
 import fs from "fs/promises";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
@@ -11,12 +12,18 @@ import { Environmental } from "../src/environmental";
 /**
  * Generate the GQL Enum containing all FQNs
  */
-export async function main() {
-    const enumObject = JSON.stringify(generateEnumObject(root)["ROOT"], undefined, 4);
-    
+export function main() {
+    const enumObject = JSON.stringify(
+        generateEnumObject(root)["ROOT"],
+        undefined,
+        4
+    );
+
     // generate enums for level below first level categories
-    const categoryEnumFileNames = await Promise.all(root.children.map(writeCategoryEnumFile))
-    const categoryEnums  = categoryEnumFileNames.map(c=>`export * as ${c[0]}Enums from './${c[0]}'`)
+    const categoryEnumFileNames = root.children.map(writeCategoryEnumFile);
+    const categoryEnums = categoryEnumFileNames.map(
+        (c) => `export * as ${c[0]}Enums from './${c[0]}'`
+    );
 
     const resultFile = ts.createSourceFile(
         "src/gql/index.ts",
@@ -26,11 +33,15 @@ export async function main() {
         ts.ScriptKind.TS
     );
     const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
-    const result = printer.printNode(ts.EmitHint.Unspecified, generateAstForGqlEnum(), resultFile);
-    await fs.writeFile(
+    const result = printer.printNode(
+        ts.EmitHint.Unspecified,
+        generateAstForGqlEnum(),
+        resultFile
+    );
+    writeFileSync(
         resultFile.fileName,
         `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
-${categoryEnums.join('\n')}
+${categoryEnums.join("\n")}
 
 ${result}
 
@@ -87,18 +98,24 @@ function generateAstForGqlEnum() {
             )
         ),
         factory.createExpressionStatement(
-            factory.createCallExpression(factory.createIdentifier("registerEnumType"), undefined, [
-                factory.createIdentifier("EnvironmentalParameterNames"),
-                factory.createObjectLiteralExpression(
-                    [
-                        factory.createPropertyAssignment(
-                            factory.createIdentifier("name"),
-                            factory.createStringLiteral("EnvironmentalParameterNames")
-                        ),
-                    ],
-                    false
-                ),
-            ])
+            factory.createCallExpression(
+                factory.createIdentifier("registerEnumType"),
+                undefined,
+                [
+                    factory.createIdentifier("EnvironmentalParameterNames"),
+                    factory.createObjectLiteralExpression(
+                        [
+                            factory.createPropertyAssignment(
+                                factory.createIdentifier("name"),
+                                factory.createStringLiteral(
+                                    "EnvironmentalParameterNames"
+                                )
+                            ),
+                        ],
+                        false
+                    ),
+                ]
+            )
         ),
     ];
     return factory.createSourceFile(
@@ -121,21 +138,31 @@ function generateEnumObject(m: Environmental): any {
 }
 
 function generateCategoryEnum(m: Environmental) {
-    const names = [...m].filter((x) => x.isLeaf).map((x) => x.fqn.replace(`${m.fqn}__`, ""));
+    const names = [...m]
+        .filter((x) => x.isLeaf)
+        .map((x) => x.fqn.replace(`${m.fqn}__`, ""));
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
-async function writeCategoryEnumFile(m:Environmental){
-    const enumObjects = m.children.map(child=>[child.name, generateCategoryEnum(child)])
-    const exports = enumObjects.map(o=>`export const Enum${o[0]} = ${JSON.stringify(o[1], undefined,4)}`)
-    const fileName = `src/gql/${m.name}.ts`
+function writeCategoryEnumFile(m: Environmental) {
+    const enumObjects = m.children.map((child) => [
+        child.name,
+        generateCategoryEnum(child),
+    ]);
+    const exports = enumObjects.map(
+        (o) =>
+            `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`
+    );
+    const fileName = `src/gql/${m.name}.ts`;
     const str = `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
-export const Enum${m.name} = ${JSON.stringify(generateCategoryEnum(m),undefined,4)}
+export const Enum${m.name} = ${JSON.stringify(
+        generateCategoryEnum(m),
+        undefined,
+        4
+    )}
 
-${exports.join("\n")}`
-    await fs.writeFile(fileName, str)
+${exports.join("\n")}`;
+    writeFileSync(fileName, str);
 
-    return [m.name, fileName]
+    return [m.name, fileName];
 }
-
-

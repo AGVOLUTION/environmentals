@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { deserialize, env, root } from "../src";
+import { tryDeserialize, env, root } from "../src";
 import { T, atmo } from "../src/parameters/env/atmo";
 import { degC } from "../src/unit";
 
@@ -7,7 +7,7 @@ describe("environmentals", function () {
     describe("#deserialize", function () {
         it("should correctly deserialize a FQN", function () {
             const fqn = "ENV__ATMO__T";
-            const de = deserialize(fqn);
+            const de = tryDeserialize(fqn)!;
             expect(de).to.equal(T);
             expect(de.fqn).to.eq("ENV__ATMO__T");
         });
@@ -23,11 +23,11 @@ describe("environmentals", function () {
 
     describe("#isRoot", function () {
         it("should detect only ROOT as root", function () {
-            expect(root.isRoot, "root is not detected").to.be.true;
+            expect(root.name === "ROOT", "root is not detected").to.be.true;
         });
         it("should detect others not as root", function () {
-            expect(env.isRoot, "env is falsely detected").to.be.false;
-            expect(T.isRoot, "T is falsely detected").to.be.false;
+            expect(env.name === "ROOT", "env is falsely detected").to.be.false;
+            expect(T.name === "ROOT", "T is falsely detected").to.be.false;
         });
     });
     describe("properties", function () {

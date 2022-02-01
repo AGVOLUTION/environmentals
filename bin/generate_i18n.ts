@@ -1,5 +1,5 @@
 import { Locale, Locales } from "../src/localization";
-import { writeFile, ensureDir } from "fs-extra";
+import { ensureDirSync, writeFileSync } from "fs-extra";
 import { root } from "../src";
 
 function getTranslations(locale: Locale) {
@@ -9,16 +9,17 @@ function getTranslations(locale: Locale) {
     return translations;
 }
 
-async function writeTranslationFile(locale: Locale) {
+function writeTranslationFile(locale: Locale) {
     const translations = getTranslations(locale);
-    await ensureDir("translations");
-    await writeFile(`translations/${locale}.json`, JSON.stringify(translations, undefined, 4));
+    ensureDirSync("translations");
+    writeFileSync(
+        `translations/${locale}.json`,
+        JSON.stringify(translations, undefined, 4)
+    );
 }
 
-export async function main() {
-    await Promise.all(Locales.map(writeTranslationFile));
+export function main() {
+    Locales.map(writeTranslationFile);
 }
 
-(async function () {
-    await main();
-})();
+main();

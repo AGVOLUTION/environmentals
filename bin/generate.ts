@@ -7,10 +7,4 @@ const tasks = [generateReadme, generateGql, generateI18n];
 /**
  * Execute all generation functions concurrently
  */
-async function main() {
-    await Promise.all(tasks.map((fn) => fn()));
-}
-
-(async function () {
-    await main();
-})();
+tasks.map((fn) => fn());
