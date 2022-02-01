@@ -15,7 +15,7 @@ Property | Value
 ---------|-------
 Name | pressure
 Description | Atmospheric pressure
-Unit | %
+Unit | hPa
 
 ## ENV__ATMO__RH
 
@@ -23,7 +23,7 @@ Property | Value
 ---------|-------
 Name | relative humidity
 Description | Relative humidity
-Unit | hPa
+Unit | %
 
 ## ENV__ATMO__IRRADIATION
 
@@ -39,7 +39,7 @@ Property | Value
 ---------|-------
 Name | rain
 Description | undefined
-Unit | undefined
+Unit | mm
 
 ## ENV__ATMO__WIND__SPEED
 

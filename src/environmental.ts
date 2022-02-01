@@ -42,14 +42,8 @@ export class Environmental {
      * Properties of this node
      */
     public readonly properties: EnvironmentalProperties;
-    protected readonly _children?: Map<EnvironmentalName, Environmental>;
-    protected _parent?: Environmental;
-    /**
-     * Parent node. Undefined if this is the root element
-     */
-    public get parent() {
-        return this._parent;
-    }
+    readonly children: Environmental[];
+    protected parent?: Environmental;
     /**
      * Return the unit of this node
      */
@@ -58,14 +52,6 @@ export class Environmental {
     }
     public get description() {
         return this.properties.description;
-    }
-
-    public readonly childrenKeys?: EnvironmentalName[];
-    /**
-     * Return this nodes children. If there are none, return an empty Array
-     */
-    public get children() {
-        return [...(this._children?.values() || [])];
     }
 
     /**
@@ -86,15 +72,18 @@ export class Environmental {
      * @param properties - Properties of this node
      * @param children - Children of the node. Provide only if this is a category
      */
-    constructor(name: string, properties: EnvironmentalProperties, children?: Environmental[]) {
+    constructor(
+        name: string,
+        properties: EnvironmentalProperties,
+        children?: Environmental[]
+    ) {
+        const childs = children ? children : [];
+
         this.name = name;
         this.properties = properties;
-        if (children) {
-            this._children = new Map(children.map((c) => [c.name, c]));
-            this.childrenKeys = children.map((c) => c.name);
-            for (const child of children) {
-                child._parent = this;
-            }
+        this.children = childs;
+        for (const child of childs) {
+            child.parent = this;
         }
     }
 
@@ -108,14 +97,16 @@ export class Environmental {
      */
     public find(path: FqnPathElements): Environmental {
         if (path.length === 1) {
-            const hit = this._children?.get(path[0]);
+            const hit = this.children.find((e) => e.name === path[0]);
             if (hit) {
                 return hit;
             }
             throw Error(`Did not find a child with name ${path[0]}`);
         }
 
-        const result = this._children?.get(path[0])?.find(path.slice(1));
+        const result = this.children
+            .find((e) => e.name === path[0])
+            ?.find(path.slice(1));
         if (result) {
             return result;
         }
@@ -142,7 +133,7 @@ export class Environmental {
      * Iterate over all elements in this tree
      */
     *[Symbol.iterator](): Generator<Environmental> {
-        if (!this._children) {
+        if (!this.children) {
             yield this;
             return;
         }
@@ -152,7 +143,7 @@ export class Environmental {
             yield this;
         }
 
-        for (const child of this._children.values()) {
+        for (const child of this.children) {
             yield* child;
         }
     }
@@ -168,7 +159,7 @@ export class Environmental {
      * Is this element a Leaf (i.e. has no more children)?
      */
     public get isLeaf() {
-        return !this._children;
+        return this.children.length === 0;
     }
 
     public toString() {
@@ -179,13 +170,11 @@ export class Environmental {
         return this.fqn;
     }
 
-    public map<U>(callbackfn: (value: Environmental, children: Environmental[]) => U): U[] {
-        if (!this._children) {
-            return [callbackfn(this, [])];
-        }
-
-        let result = [callbackfn(this, [...this._children.values()])];
-        for (const child of this._children.values()) {
+    public map<U>(
+        callbackfn: (value: Environmental, children: Environmental[]) => U
+    ): U[] {
+        let result = [callbackfn(this, [...this.children])];
+        for (const child of this.children) {
             result.push(...child.map(callbackfn));
         }
         return result;
