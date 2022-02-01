@@ -249,29 +249,29 @@ Name | DEV__RF__SINR
 Description | undefined
 Unit | undefined
 
-## MODEL__NUM__ENV__ATMO__SNOW__HEIGHT
+## MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
 
 Property | Value
 ---------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__HEIGHT
-Description | Snow height
-Unit | undefined
-
-## MODEL__NUM__ENV__ATMO__SNOW__MELT
-
-Property | Value
----------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__MELT
+Name | MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
 Description | undefined
 Unit | undefined
 
-## MODEL__NUM__ENV__ATMO__SNOW__INSULATION
+## MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS
 
 Property | Value
 ---------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__INSULATION
+Name | MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS
 Description | Indicates it there was an insulation induced by the snow layer
 Unit | yes/no
+
+## MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS
+
+Property | Value
+---------|-------
+Name | MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS
+Description | undefined
+Unit | undefined
 
 ## OBJ__LIQUIDLEVEL
 

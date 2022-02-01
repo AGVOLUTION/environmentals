@@ -39,9 +39,9 @@ export const EnvironmentalParameterNames = {
     DEV__RF__RSRP: "DEV__RF__RSRP",
     DEV__RF__RSRQ: "DEV__RF__RSRQ",
     DEV__RF__SINR: "DEV__RF__SINR",
-    MODEL__NUM__ENV__ATMO__SNOW__HEIGHT: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT",
-    MODEL__NUM__ENV__ATMO__SNOW__MELT: "MODEL__NUM__ENV__ATMO__SNOW__MELT",
-    MODEL__NUM__ENV__ATMO__SNOW__INSULATION: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION",
+    MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
     OBJ__WEIGHT: "OBJ__WEIGHT"
 };
@@ -107,9 +107,15 @@ export const EnumObject = {
             "ENV": {
                 "ATMO": {
                     "SNOW": {
-                        "HEIGHT": "HEIGHT",
-                        "MELT": "MELT",
-                        "INSULATION": "INSULATION"
+                        "HEIGHT": {
+                            "SNOW_MAUS": "SNOW_MAUS"
+                        },
+                        "INSULATION": {
+                            "SNOW_MAUS": "SNOW_MAUS"
+                        },
+                        "MELT": {
+                            "SNOW_MAUS": "SNOW_MAUS"
+                        }
                     }
                 }
             }
