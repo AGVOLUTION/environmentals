@@ -23,6 +23,24 @@ export function deserialize(fqn: FullyQualifiedName) {
 }
 
 /**
+ * Try to deserialize a FQN to it's object.
+ *
+ * If no object can be found, undefined will be returned.
+ *
+ * @param fqn - String with the FullyQualifiedName
+ */
+export function tryDeserialize(fqn: FullyQualifiedName) {
+    try {
+        return deserialize(fqn);
+    } catch (e) {
+        if (e instanceof Error) {
+            console.error(e.message);
+        }
+        return undefined;
+    }
+}
+
+/**
  * Get the leaf nodes
  */
 export const getLeafs = () => [...root].filter((x) => x.isLeaf);
