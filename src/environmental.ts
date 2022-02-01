@@ -3,26 +3,6 @@ import { Locale, Translation } from "./localization";
 import { Unit } from "./unit";
 
 /**
- * The Name of an Environmental
- *
- * This is the name of the actual node in the tree, not the {@link FullyQualifiedName}.
- */
-export type EnvironmentalName = string;
-
-/**
- * A fully qualified name (FQN) of an environmental.
- *
- * @example
- * `ENV__ATMO__T`
- */
-export type FullyQualifiedName = string;
-
-/**
- * The Path elements of a FQN
- */
-export type FqnPathElements = EnvironmentalName[];
-
-/**
  * Properties of an Environmental
  */
 export interface EnvironmentalProperties {
@@ -38,7 +18,7 @@ export class Environmental {
     /**
      * The name of this Node
      */
-    public readonly name: EnvironmentalName;
+    public readonly name: string;
     /**
      * Properties of this node
      */
@@ -95,7 +75,7 @@ export class Environmental {
      * @returns The element specified by the path
      * contain the missing child's name
      */
-    public find(path: FqnPathElements): Environmental {
+    public find(path: string[]): Environmental {
         if (path.length === 1) {
             const hit = this.children.find((e) => e.name === path[0]);
             if (hit) {
@@ -120,7 +100,7 @@ export class Environmental {
      *
      * @returns FullyQualifiedName of this node
      */
-    public get fqn(): FullyQualifiedName {
+    public get fqn(): string {
         if (!this.parent?.parent) {
             return this.name;
         }

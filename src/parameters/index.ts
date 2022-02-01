@@ -1,4 +1,4 @@
-import { FullyQualifiedName, Environmental } from "../environmental";
+import { Environmental } from "../environmental";
 import { env } from "./env";
 export { env } from "./env";
 import { dev } from "./dev";
@@ -20,7 +20,7 @@ export const root = new Environmental("ROOT", {}, [env, dev, model, obj]);
  *
  * @param fqn - String with the FullyQualifiedName
  */
-export function tryDeserialize(fqn: FullyQualifiedName) {
+export function tryDeserialize(fqn: string) {
     try {
         return root.find(fqn.split("__"));
     } catch (e) {
