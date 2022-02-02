@@ -1,8 +1,14 @@
-import fs from "fs/promises";
+//import fs from "fs/promises";
+import fs from "fs-extra";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
 import { root } from "../src/";
 import { Environmental } from "../src/environmental";
+import { atmo } from "../src/parameters/env/atmo";
+import { ETO } from "../src/parameters/model/num/env/atmo";
+
+const DESTINATION_FOLDER = "generated/gql";
+const GENERATED_HINT = "/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/";
 
 (async function () {
     await main();
@@ -12,14 +18,17 @@ import { Environmental } from "../src/environmental";
  * Generate the GQL Enum containing all FQNs
  */
 export async function main() {
-    const enumObject = JSON.stringify(generateEnumObject(root)["ROOT"], undefined, 4);
-    
+    await fs.ensureDir(DESTINATION_FOLDER);
+    const enumObject = JSON.stringify(generateEnumObjectForTree(root)["ROOT"], undefined, 4);
+
     // generate enums for level below first level categories
-    const categoryEnumFileNames = await Promise.all(root.children.map(writeCategoryEnumFile))
-    const categoryEnums  = categoryEnumFileNames.map(c=>`export * as ${c[0]}Enums from './${c[0]}'`)
+    const categoryEnumFileNames = await Promise.all(root.children.map(writeCategoryEnumFile));
+    const categoryEnums = categoryEnumFileNames.map(
+        (c) => `export * as ${c[0]}Enums from './${c[0]}'`
+    );
 
     const resultFile = ts.createSourceFile(
-        "src/gql/index.ts",
+        `${DESTINATION_FOLDER}/index.ts`,
         "",
         ts.ScriptTarget.ES2021,
         false,
@@ -27,14 +36,19 @@ export async function main() {
     );
     const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
     const result = printer.printNode(ts.EmitHint.Unspecified, generateAstForGqlEnum(), resultFile);
+
+    const weatherDataNumericType = generateWeatherEnum();
+
     await fs.writeFile(
         resultFile.fileName,
         `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
-${categoryEnums.join('\n')}
+${categoryEnums.join("\n")}
 
 ${result}
 
-export const EnumObject = ${enumObject} `
+export const EnumObject = ${enumObject}
+${weatherDataNumericType}
+`
     );
 }
 
@@ -108,14 +122,20 @@ function generateAstForGqlEnum() {
     );
 }
 
-function generateEnumObject(m: Environmental): any {
+/**
+ * Generate an enum object for the given environmental and all of it's children
+ *
+ * @param m -
+ * @returns
+ */
+function generateEnumObjectForTree(m: Environmental): any {
     if (m.isLeaf) {
         return { [m.name]: m.name };
     }
 
     let childObjects = [];
     for (const child of m.children) {
-        childObjects.push(generateEnumObject(child));
+        childObjects.push(generateEnumObjectForTree(child));
     }
     return { [m.name]: _.merge({}, ...childObjects) };
 }
@@ -125,17 +145,33 @@ function generateCategoryEnum(m: Environmental) {
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
-async function writeCategoryEnumFile(m:Environmental){
-    const enumObjects = m.children.map(child=>[child.name, generateCategoryEnum(child)])
-    const exports = enumObjects.map(o=>`export const Enum${o[0]} = ${JSON.stringify(o[1], undefined,4)}`)
-    const fileName = `src/gql/${m.name}.ts`
-    const str = `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
-export const Enum${m.name} = ${JSON.stringify(generateCategoryEnum(m),undefined,4)}
+async function writeCategoryEnumFile(m: Environmental) {
+    const enumObjects = m.children.map((child) => [child.name, generateCategoryEnum(child)]);
+    const exports = enumObjects.map(
+        (o) => `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`
+    );
+    const fileName = `${DESTINATION_FOLDER}/${m.name}.ts`;
+    const str = `${GENERATED_HINT}
+export const Enum${m.name} = ${JSON.stringify(generateCategoryEnum(m), undefined, 4)}
 
-${exports.join("\n")}`
-    await fs.writeFile(fileName, str)
+${exports.join("\n")}`;
+    await fs.writeFile(fileName, str);
 
-    return [m.name, fileName]
+    return [m.name, fileName];
 }
 
+function generateWeatherEnum() {
+    const weatherParams = [...[...atmo].filter((e) => e.isLeaf), ETO];
+    const sourceCode = `export const WeatherDataNumericType = ${JSON.stringify(
+        generateEnumObject(weatherParams),
+        undefined,
+        4
+    )}
+`;
+    return sourceCode;
+}
 
+function generateEnumObject(environmentals: Environmental[]) {
+    const entries = environmentals.map((e) => [e.fqn, e.fqn]);
+    return Object.fromEntries(entries);
+}

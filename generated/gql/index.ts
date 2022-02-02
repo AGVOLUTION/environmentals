@@ -42,6 +42,7 @@ export const EnvironmentalParameterNames = {
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__ETO: "MODEL__NUM__ENV__ATMO__ETO",
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
     OBJ__WEIGHT: "OBJ__WEIGHT"
 };
@@ -116,7 +117,8 @@ export const EnumObject = {
                         "MELT": {
                             "SNOW_MAUS": "SNOW_MAUS"
                         }
-                    }
+                    },
+                    "ETO": "ETO"
                 }
             }
         }
@@ -125,4 +127,19 @@ export const EnumObject = {
         "LIQUIDLEVEL": "LIQUIDLEVEL",
         "WEIGHT": "WEIGHT"
     }
-} 
+}
+export const WeatherDataNumericType = {
+    "ENV__ATMO__T": "ENV__ATMO__T",
+    "ENV__ATMO__P": "ENV__ATMO__P",
+    "ENV__ATMO__RH": "ENV__ATMO__RH",
+    "ENV__ATMO__IRRADIATION": "ENV__ATMO__IRRADIATION",
+    "ENV__ATMO__RAIN": "ENV__ATMO__RAIN",
+    "ENV__ATMO__WIND__SPEED": "ENV__ATMO__WIND__SPEED",
+    "ENV__ATMO__WIND__GUSTINESS": "ENV__ATMO__WIND__GUSTINESS",
+    "ENV__ATMO__WIND__DIRECTION": "ENV__ATMO__WIND__DIRECTION",
+    "ENV__ATMO__SNOW__HEIGHT": "ENV__ATMO__SNOW__HEIGHT",
+    "ENV__ATMO__SNOW__INSULATION": "ENV__ATMO__SNOW__INSULATION",
+    "ENV__ATMO__SNOW__MELT": "ENV__ATMO__SNOW__MELT",
+    "MODEL__NUM__ENV__ATMO__ETO": "MODEL__NUM__ENV__ATMO__ETO"
+}
+
