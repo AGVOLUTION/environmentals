@@ -1,4 +1,6 @@
-import { OBJ } from "./base";
+import { Environmental } from "../../environmental";
+
+export class OBJ extends Environmental {}
 
 export const LIQUIDLEVEL = new OBJ("LIQUIDLEVEL", {
     translation: { "de-de": "Flüssigkeitsstand", "en-us": "liquid level" },
@@ -6,7 +8,8 @@ export const LIQUIDLEVEL = new OBJ("LIQUIDLEVEL", {
 export const WEIGHT = new OBJ("WEIGHT", {
     translation: { "de-de": "Gewicht", "en-us": "weight" },
 });
-export const obj = new OBJ("OBJ", { translation: { "de-de": "Objekt", "en-us": "object" } }, [
-    LIQUIDLEVEL,
-    WEIGHT,
-]);
+export const obj = new OBJ(
+    "OBJ",
+    { translation: { "de-de": "Objekt", "en-us": "object" } },
+    [LIQUIDLEVEL, WEIGHT]
+);
