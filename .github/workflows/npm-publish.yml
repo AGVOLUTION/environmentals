@@ -30,4 +30,9 @@ jobs:
         run: echo "::add-mask::$CODEARTIFACT_AUTH_TOKEN"
       - run: yarn
       - run: yarn build
-      - run: yarn npm publish
+      - name: update version of gql package
+        run: yarn ts-node bin/update-versions.ts
+      - name: publish generated gql package
+        run: yarn workspace @agv/environmentals-gql run publish
+      - name: publish actual package
+        run: yarn npm publish

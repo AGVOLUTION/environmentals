@@ -48,5 +48,8 @@
     "ts-node": "^10.4.0",
     "type-graphql": "AGVOLUTION/type-graphql#v1.1.1-withExtendType-package"
   },
-  "prettier": "@agv/prettier-config"
+  "prettier": "@agv/prettier-config",
+  "workspaces": [
+    "generated/*"
+  ]
 }

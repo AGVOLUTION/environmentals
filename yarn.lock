@@ -17,6 +17,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@agv/environmentals-gql@workspace:generated/gql":
+  version: 0.0.0-use.local
+  resolution: "@agv/environmentals-gql@workspace:generated/gql"
+  dependencies:
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
 "@agv/environmentals@workspace:.":
   version: 0.0.0-use.local
   resolution: "@agv/environmentals@workspace:."
