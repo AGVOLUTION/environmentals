@@ -1,6 +1,8 @@
 import { expect } from "chai";
 import { deserialize, env, root } from "../src";
 import { T, atmo } from "../src/parameters/env/atmo";
+import { MODEL } from "../src/parameters/model/base";
+import { SNOW_MAUS } from "../src/parameters/model/num/env/atmo/snow/height";
 import { degC } from "../src/unit";
 
 describe("environmentals", function () {
@@ -33,6 +35,13 @@ describe("environmentals", function () {
     describe("properties", function () {
         it("should proxy the properties to the object", function () {
             expect(T.unit).to.equal(degC);
+        });
+    });
+
+    describe("Model hierarchy", function () {
+        it("should correctly recognise models by its superclass", function () {
+            expect(SNOW_MAUS).to.be.instanceof(MODEL);
+            expect(SNOW_MAUS instanceof MODEL).to.be.true;
         });
     });
 });
