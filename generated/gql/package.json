@@ -1,0 +1,26 @@
+{
+    "name": "@agv/environmentals-gql",
+    "description": "Generated types for GQL",
+    "main": "index.js",
+    "files": [
+        "*.js",
+        "*.js.map",
+        "*.d.ts",
+        "*.d.ts.map"
+    ],
+    "license": "PROPRIETARY",
+    "publishConfig": {
+        "access": "restricted",
+        "registry": "https://agv-293859034925.d.codeartifact.eu-central-1.amazonaws.com/npm/agv-node/"
+    },
+    "packageManager": "yarn@3.1.1",
+    "scripts": {
+        "build": "yarn tsc",
+        "pack": "yarn run build && yarn pack",
+        "publish": "yarn run build && yarn npm publish"
+    },
+    "devDependencies": {
+        "typescript": "^4.5.5"
+    },
+    "version": "0.1.15"
+}
