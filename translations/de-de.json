@@ -41,6 +41,8 @@
     "DEV__RF__RSRP": "DEV__RF__RSRP",
     "DEV__RF__RSRQ": "DEV__RF__RSRQ",
     "DEV__RF__SINR": "DEV__RF__SINR",
+    "DEV__SOILSENSOR": "DEV__SOILSENSOR",
+    "DEV__SOILSENSOR__ID": "DEV__SOILSENSOR__ID",
     "MODEL": "MODEL",
     "MODEL__NUM": "MODEL__NUM",
     "MODEL__NUM__ENV": "MODEL__NUM__ENV",
