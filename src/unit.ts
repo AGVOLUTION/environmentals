@@ -1,4 +1,4 @@
-import {Locale, Translation} from "./localization";
+import { Locale, Translation } from "./localization";
 
 export class Unit {
     public readonly symbol: string;
@@ -20,8 +20,12 @@ export class Unit {
 
 export const degC = new Unit("°C");
 export const kelvin = new Unit("K");
-export const percent = new Unit("%", { "de-de": "Prozent", "en-us": "percent" });
+export const percent = new Unit("%", {
+    "de-de": "Prozent",
+    "en-us": "percent",
+});
 export const hPa = new Unit("hPa");
 export const Jpm2 = new Unit("J/m²");
 export const mm = new Unit("mm");
 export const yesno = new Unit("yes/no");
+export const Wpm2 = new Unit("W/m²");

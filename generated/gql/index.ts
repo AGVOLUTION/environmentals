@@ -12,6 +12,7 @@ export const EnvironmentalParameterNames = {
     ENV__ATMO__P: "ENV__ATMO__P",
     ENV__ATMO__RH: "ENV__ATMO__RH",
     ENV__ATMO__IRRADIATION: "ENV__ATMO__IRRADIATION",
+    ENV__ATMO__RADIANT_EXPOSURE: "ENV__ATMO__RADIANT_EXPOSURE",
     ENV__ATMO__RAIN: "ENV__ATMO__RAIN",
     ENV__ATMO__WIND__SPEED: "ENV__ATMO__WIND__SPEED",
     ENV__ATMO__WIND__GUSTINESS: "ENV__ATMO__WIND__GUSTINESS",
@@ -57,6 +58,7 @@ export const EnumObject = {
             "P": "P",
             "RH": "RH",
             "IRRADIATION": "IRRADIATION",
+            "RADIANT_EXPOSURE": "RADIANT_EXPOSURE",
             "RAIN": "RAIN",
             "WIND": {
                 "SPEED": "SPEED",
@@ -137,6 +139,7 @@ export const WeatherDataNumericType = {
     "ENV__ATMO__P": "ENV__ATMO__P",
     "ENV__ATMO__RH": "ENV__ATMO__RH",
     "ENV__ATMO__IRRADIATION": "ENV__ATMO__IRRADIATION",
+    "ENV__ATMO__RADIANT_EXPOSURE": "ENV__ATMO__RADIANT_EXPOSURE",
     "ENV__ATMO__RAIN": "ENV__ATMO__RAIN",
     "ENV__ATMO__WIND__SPEED": "ENV__ATMO__WIND__SPEED",
     "ENV__ATMO__WIND__GUSTINESS": "ENV__ATMO__WIND__GUSTINESS",
