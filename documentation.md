@@ -249,6 +249,14 @@ Name | DEV__RF__SINR
 Description | undefined
 Unit | undefined
 
+## DEV__SOILSENSOR__ID
+
+Property | Value
+---------|-------
+Name | DEV__SOILSENSOR__ID
+Description | The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.
+Unit | undefined
+
 ## MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
 
 Property | Value

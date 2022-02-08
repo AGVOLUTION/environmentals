@@ -39,6 +39,7 @@ export const EnvironmentalParameterNames = {
     DEV__RF__RSRP: "DEV__RF__RSRP",
     DEV__RF__RSRQ: "DEV__RF__RSRQ",
     DEV__RF__SINR: "DEV__RF__SINR",
+    DEV__SOILSENSOR__ID: "DEV__SOILSENSOR__ID",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
@@ -101,6 +102,9 @@ export const EnumObject = {
             "RSRP": "RSRP",
             "RSRQ": "RSRQ",
             "SINR": "SINR"
+        },
+        "SOILSENSOR": {
+            "ID": "ID"
         }
     },
     "MODEL": {

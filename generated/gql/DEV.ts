@@ -11,7 +11,8 @@ export const EnumDEV = {
     "RF__RSSI": "RF__RSSI",
     "RF__RSRP": "RF__RSRP",
     "RF__RSRQ": "RF__RSRQ",
-    "RF__SINR": "RF__SINR"
+    "RF__SINR": "RF__SINR",
+    "SOILSENSOR__ID": "SOILSENSOR__ID"
 }
 
 export const EnumENERGY = {
@@ -31,4 +32,7 @@ export const EnumRF = {
     "RSRP": "RSRP",
     "RSRQ": "RSRQ",
     "SINR": "SINR"
+}
+export const EnumSOILSENSOR = {
+    "ID": "ID"
 }
