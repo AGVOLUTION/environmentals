@@ -5,6 +5,7 @@
     "ENV__ATMO__P": "pressure",
     "ENV__ATMO__RH": "relative humidity",
     "ENV__ATMO__IRRADIATION": "irradiation",
+    "ENV__ATMO__RADIANT_EXPOSURE": "radiant exposure",
     "ENV__ATMO__RAIN": "rain",
     "ENV__ATMO__WIND": "wind",
     "ENV__ATMO__WIND__SPEED": "wind speed",

@@ -30,7 +30,15 @@ Unit | %
 Property | Value
 ---------|-------
 Name | irradiation
-Description | Irradiation, usually expressed as radiation power per surface after traversing the atmosphere - if not otherwise noted
+Description | Irradiance or irradiation (deutsch: Bestrahlungsstärke) is a radiation power per area (unit: W/m2). Such a measurement is specifically bound to the time of the measurement.
+Unit | W/m²
+
+## ENV__ATMO__RADIANT_EXPOSURE
+
+Property | Value
+---------|-------
+Name | radiant exposure
+Description | Radiant exposure (deutsch: Bestrahlung) is the radiation energy (power integrated over time) received by an area (unit: J/m2). This measurement is bound to the integration time, mostly a packet cycle.
 Unit | J/m²
 
 ## ENV__ATMO__RAIN
