@@ -26,8 +26,8 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__MATRIX_POTENTIAL: "ENV__SOIL__MATRIX_POTENTIAL",
     ENV__SOIL__CAPACITANCE__ABSOLUTE: "ENV__SOIL__CAPACITANCE__ABSOLUTE",
     ENV__SOIL__CAPACITANCE__DIFFERENTIAL: "ENV__SOIL__CAPACITANCE__DIFFERENTIAL",
-    ENV__SOIL__CAPACITANCE__LEG_A: "ENV__SOIL__CAPACITANCE__LEG_A",
-    ENV__SOIL__CAPACITANCE__LEG_B: "ENV__SOIL__CAPACITANCE__LEG_B",
+    ENV__SOIL__CAPACITANCE__A: "ENV__SOIL__CAPACITANCE__A",
+    ENV__SOIL__CAPACITANCE__B: "ENV__SOIL__CAPACITANCE__B",
     ENV__SOIL__CAPACITANCE__OFFSET: "ENV__SOIL__CAPACITANCE__OFFSET",
     DEV__ENERGY__VCAP: "DEV__ENERGY__VCAP",
     DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT",
@@ -77,8 +77,8 @@ export const EnumObject = {
             "CAPACITANCE": {
                 "ABSOLUTE": "ABSOLUTE",
                 "DIFFERENTIAL": "DIFFERENTIAL",
-                "LEG_A": "LEG_A",
-                "LEG_B": "LEG_B",
+                "A": "A",
+                "B": "B",
                 "OFFSET": "OFFSET"
             }
         }

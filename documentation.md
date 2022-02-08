@@ -145,20 +145,20 @@ Name | ENV__SOIL__CAPACITANCE__DIFFERENTIAL
 Description | undefined
 Unit | undefined
 
-## ENV__SOIL__CAPACITANCE__LEG_A
+## ENV__SOIL__CAPACITANCE__A
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__LEG_A
-Description | undefined
+Name | ENV__SOIL__CAPACITANCE__A
+Description | Leg A of the soil sensor
 Unit | undefined
 
-## ENV__SOIL__CAPACITANCE__LEG_B
+## ENV__SOIL__CAPACITANCE__B
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__LEG_B
-Description | undefined
+Name | ENV__SOIL__CAPACITANCE__B
+Description | Leg B of the soil sensor
 Unit | undefined
 
 ## ENV__SOIL__CAPACITANCE__OFFSET
