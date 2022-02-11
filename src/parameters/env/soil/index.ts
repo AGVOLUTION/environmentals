@@ -34,7 +34,7 @@ export const capacitance = new CAPACITANCE(
     [ABSOLUTE, DIFFERENTIAL, A, B, OFFSET]
 );
 
-export const soil = new ENV("SOIL", { storeInTimestream: true }, [
+export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     T,
     EC,
     NORM_ER,
