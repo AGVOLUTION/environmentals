@@ -163,7 +163,6 @@ export const StoreInTimestreamParameters = [
     "ENV__ATMO__SNOW__HEIGHT",
     "ENV__ATMO__SNOW__INSULATION",
     "ENV__ATMO__SNOW__MELT",
-    "ENV__SOIL",
     "ENV__SOIL__T",
     "ENV__SOIL__EC",
     "ENV__SOIL__NORM_ER",

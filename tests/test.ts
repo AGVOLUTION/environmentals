@@ -1,8 +1,10 @@
 import { expect } from "chai";
 import { deserialize, env, root } from "../src";
+import { RSSI } from "../src/parameters/dev/rf";
 import { T, atmo } from "../src/parameters/env/atmo";
 import { MODEL } from "../src/parameters/model/base";
 import { SNOW_MAUS } from "../src/parameters/model/num/env/atmo/snow/height";
+import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
 
 describe("environmentals", function () {
@@ -42,6 +44,15 @@ describe("environmentals", function () {
         it("should correctly recognise models by its superclass", function () {
             expect(SNOW_MAUS).to.be.instanceof(MODEL);
             expect(SNOW_MAUS instanceof MODEL).to.be.true;
+        });
+    });
+
+    describe("Formatting", function () {
+        it("should format values correctly", function () {
+            const value = 3.25432;
+            expect(T.format(value), "T").eq("3.25");
+            expect(RSSI.format(value), "RSSI").eq("3");
+            expect(WEIGHT.format(value), "WEIGHT").eq("3.254");
         });
     });
 });

@@ -1,4 +1,5 @@
 import { Locale, Translation } from "./localization";
+import { format } from "d3-format";
 import { Unit } from "./unit";
 
 /**
@@ -32,6 +33,10 @@ export interface EnvironmentalProperties {
      * Should this parameter be stored in the timestream database?
      */
     storeInTimestream: boolean;
+    /**
+     * Format string passed to d3-format to nicely display numeric values
+     */
+    format?: string;
 }
 
 /**
@@ -77,6 +82,13 @@ export class Environmental {
      */
     public get storeInTimestream() {
         return this.properties.storeInTimestream;
+    }
+
+    /**
+     * Format a value according to this parameters formatting specification
+     */
+    public format(value: number): string {
+        return format(this.properties.format || "")(value);
     }
 
     /**

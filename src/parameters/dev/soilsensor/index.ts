@@ -26,6 +26,10 @@ export const ID = new SOILSENSOR("ID", {
     description:
         "The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.",
     storeInTimestream: true,
+    translation: {
+        "de-de": "Bodenfeuchtesensor ID",
+        "en-us": "Soil Moisture Sensor ID",
+    },
 });
 
 export const soilsensor = new SOILSENSOR(

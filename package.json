@@ -25,12 +25,14 @@
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
+    "d3-format": "2",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
     "@agv/agv-bump": "^0.0.11",
     "@agv/prettier-config": "^1.0.6",
     "@types/chai": "^4",
+    "@types/d3-format": "^2",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash": "^4",
     "@types/mocha": "^9",

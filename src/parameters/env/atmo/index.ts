@@ -1,4 +1,14 @@
-import { degC, hPa, Jpm2, mm, percent, Wpm2 } from "../../../unit";
+import {
+    degC,
+    degree,
+    hPa,
+    Jpm2,
+    kmh,
+    mm,
+    mmpsqm,
+    percent,
+    Wpm2,
+} from "../../../unit";
 import { ATMO } from "./base";
 
 export const T = new ATMO("T", {
@@ -6,27 +16,30 @@ export const T = new ATMO("T", {
     description: "Atmospheric temperature",
     translation: {
         "de-de": "Temperatur",
-        "en-us": "temperature",
+        "en-us": "Temperature",
     },
     storeInTimestream: true,
+    format: ".2f",
 });
 export const P = new ATMO("P", {
     unit: hPa,
     description: "Atmospheric pressure",
     translation: {
         "de-de": "Druck",
-        "en-us": "pressure",
+        "en-us": "Pressure",
     },
     storeInTimestream: true,
+    format: ".2f",
 });
 export const RH = new ATMO("RH", {
     unit: percent,
     description: "Relative humidity",
     translation: {
-        "de-de": "Relative Luftfeuchtigkeit",
-        "en-us": "relative humidity",
+        "de-de": "Rel. Feuchte",
+        "en-us": "Rel. Humidity",
     },
     storeInTimestream: true,
+    format: "d",
 });
 export const IRRADIATION = new ATMO("IRRADIATION", {
     unit: Wpm2,
@@ -34,32 +47,40 @@ export const IRRADIATION = new ATMO("IRRADIATION", {
         "Irradiance or irradiation (deutsch: Bestrahlungsstärke) is a radiation power per area (unit: W/m2). Such a measurement is specifically bound to the time of the measurement.",
     translation: { "de-de": "Bestrahlungsstärke", "en-us": "irradiation" },
     storeInTimestream: true,
+    format: "d",
 });
 export const RADIANT_EXPOSURE = new ATMO("RADIANT_EXPOSURE", {
     description:
         "Radiant exposure (deutsch: Bestrahlung) is the radiation energy (power integrated over time) received by an area (unit: J/m2). This measurement is bound to the integration time, mostly a packet cycle.",
     unit: Jpm2,
     storeInTimestream: true,
-    translation: { "de-de": "Bestrahlung", "en-us": "radiant exposure" },
+    translation: { "de-de": "Globalstrahlung", "en-us": "Global Radiation" },
+    format: ".0e",
 });
 export const RAIN = new ATMO("RAIN", {
-    translation: { "de-de": "Regen", "en-us": "rain" },
+    translation: { "de-de": "Niederschlag", "en-us": "Precipitation" },
     storeInTimestream: true,
-    unit: mm,
+    unit: mmpsqm,
 });
 
 export class WIND extends ATMO {}
 export const SPEED = new WIND("SPEED", {
-    translation: { "de-de": "Windgeschwindigkeit", "en-us": "wind speed" },
+    translation: { "de-de": "Windgeschwindigkeit", "en-us": "Wind Speed" },
     storeInTimestream: true,
+    format: ".1f",
+    unit: kmh,
 });
 export const GUSTINESS = new WIND("GUSTINESS", {
-    translation: { "de-de": "Windböe", "en-us": "wind gustiness" },
+    translation: { "de-de": "Böigkeit", "en-us": "Gustiness" },
     storeInTimestream: true,
+    format: ".1f",
+    unit: kmh,
 });
 export const DIRECTION = new WIND("DIRECTION", {
-    translation: { "de-de": "Windrichtung", "en-us": "wind direction" },
+    translation: { "de-de": "Windrichtung", "en-us": "Wind Direction" },
     storeInTimestream: true,
+    format: "d",
+    unit: degree,
 });
 export const wind = new ATMO(
     "WIND",

@@ -5,7 +5,7 @@
 
 Property | Value
 ---------|-------
-Name | temperature
+Name | Temperature
 Description | Atmospheric temperature
 Unit | °C
 
@@ -13,7 +13,7 @@ Unit | °C
 
 Property | Value
 ---------|-------
-Name | pressure
+Name | Pressure
 Description | Atmospheric pressure
 Unit | hPa
 
@@ -21,7 +21,7 @@ Unit | hPa
 
 Property | Value
 ---------|-------
-Name | relative humidity
+Name | Rel. Humidity
 Description | Relative humidity
 Unit | %
 
@@ -37,7 +37,7 @@ Unit | W/m²
 
 Property | Value
 ---------|-------
-Name | radiant exposure
+Name | Global Radiation
 Description | Radiant exposure (deutsch: Bestrahlung) is the radiation energy (power integrated over time) received by an area (unit: J/m2). This measurement is bound to the integration time, mostly a packet cycle.
 Unit | J/m²
 
@@ -45,33 +45,33 @@ Unit | J/m²
 
 Property | Value
 ---------|-------
-Name | rain
+Name | Precipitation
 Description | undefined
-Unit | mm
+Unit | mm/m²
 
 ## ENV__ATMO__WIND__SPEED
 
 Property | Value
 ---------|-------
-Name | wind speed
+Name | Wind Speed
 Description | undefined
-Unit | undefined
+Unit | km/h
 
 ## ENV__ATMO__WIND__GUSTINESS
 
 Property | Value
 ---------|-------
-Name | wind gustiness
+Name | Gustiness
 Description | undefined
-Unit | undefined
+Unit | km/h
 
 ## ENV__ATMO__WIND__DIRECTION
 
 Property | Value
 ---------|-------
-Name | wind direction
+Name | Wind Direction
 Description | undefined
-Unit | undefined
+Unit | °
 
 ## ENV__ATMO__SNOW__HEIGHT
 
@@ -101,23 +101,23 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | soil temperature
+Name | Soil Temperature
 Description | undefined
-Unit | undefined
+Unit | °C
 
 ## ENV__SOIL__EC
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__EC
+Name | Electrical Coductivity
 Description | undefined
-Unit | undefined
+Unit | µS/cm
 
 ## ENV__SOIL__NORM_ER
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__NORM_ER
+Name | Norm. Permittivity
 Description | undefined
 Unit | undefined
 
@@ -125,71 +125,71 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__VWC
+Name | Volumetric Water Content
 Description | undefined
-Unit | undefined
+Unit | %
 
 ## ENV__SOIL__MATRIX_POTENTIAL
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__MATRIX_POTENTIAL
+Name | Matrix Potential
 Description | undefined
-Unit | undefined
+Unit | cbar
 
 ## ENV__SOIL__CAPACITANCE__ABSOLUTE
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__ABSOLUTE
+Name | Capacitance abs.
 Description | undefined
-Unit | undefined
+Unit | pF
 
 ## ENV__SOIL__CAPACITANCE__DIFFERENTIAL
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__DIFFERENTIAL
+Name | Capacitance diff.
 Description | undefined
-Unit | undefined
+Unit | pF
 
 ## ENV__SOIL__CAPACITANCE__A
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__A
+Name | Capacitance A
 Description | Leg A of the soil sensor
-Unit | undefined
+Unit | pF
 
 ## ENV__SOIL__CAPACITANCE__B
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__B
+Name | Capacitance B
 Description | Leg B of the soil sensor
-Unit | undefined
+Unit | pF
 
 ## ENV__SOIL__CAPACITANCE__OFFSET
 
 Property | Value
 ---------|-------
-Name | ENV__SOIL__CAPACITANCE__OFFSET
+Name | Capacitance Offset
 Description | undefined
-Unit | undefined
+Unit | pF
 
 ## DEV__ENERGY__VCAP
 
 Property | Value
 ---------|-------
-Name | DEV__ENERGY__VCAP
+Name | Battery
 Description | undefined
-Unit | undefined
+Unit | %
 
 ## DEV__ENERGY__LOWLIGHT
 
 Property | Value
 ---------|-------
-Name | DEV__ENERGY__LOWLIGHT
+Name | Low Light
 Description | undefined
 Unit | undefined
 
@@ -197,7 +197,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | DEV__ALERT__TRIGGERED
+Name | Alarm triggered
 Description | A device alert (motion, theft detection) was triggered
 Unit | undefined
 
@@ -205,7 +205,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | DEV__ALERT__ARMED
+Name | Alarm active
 Description | The internal alert (motion, theft detection) is active and listening for trigger events
 Unit | undefined
 
@@ -215,7 +215,7 @@ Property | Value
 ---------|-------
 Name | latitude
 Description | undefined
-Unit | undefined
+Unit | °
 
 ## DEV__POSITION__LONGITUDE
 
@@ -223,7 +223,7 @@ Property | Value
 ---------|-------
 Name | longitude
 Description | undefined
-Unit | undefined
+Unit | °
 
 ## DEV__RF__RSSI
 
@@ -231,7 +231,7 @@ Property | Value
 ---------|-------
 Name | DEV__RF__RSSI
 Description | undefined
-Unit | undefined
+Unit | dBm
 
 ## DEV__RF__RSRP
 
@@ -239,7 +239,7 @@ Property | Value
 ---------|-------
 Name | DEV__RF__RSRP
 Description | undefined
-Unit | undefined
+Unit | dBm
 
 ## DEV__RF__RSRQ
 
@@ -247,7 +247,7 @@ Property | Value
 ---------|-------
 Name | DEV__RF__RSRQ
 Description | undefined
-Unit | undefined
+Unit | dB
 
 ## DEV__RF__SINR
 
@@ -255,13 +255,13 @@ Property | Value
 ---------|-------
 Name | DEV__RF__SINR
 Description | undefined
-Unit | undefined
+Unit | dB
 
 ## DEV__SOILSENSOR__ID
 
 Property | Value
 ---------|-------
-Name | DEV__SOILSENSOR__ID
+Name | Soil Moisture Sensor ID
 Description | The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.
 Unit | undefined
 
@@ -293,7 +293,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | MODEL__NUM__ENV__ATMO__ETO
+Name | Reference Evapotranspiration
 Description | Evapotranspiration model
 Unit | undefined
 
@@ -301,16 +301,16 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | liquid level
+Name | Level
 Description | undefined
-Unit | undefined
+Unit | mm
 
 ## OBJ__WEIGHT
 
 Property | Value
 ---------|-------
-Name | weight
+Name | Weight
 Description | undefined
-Unit | undefined
+Unit | kg
 
     
