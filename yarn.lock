@@ -32,6 +32,7 @@ __metadata:
     "@agv/agv-bump": ^0.0.11
     "@agv/prettier-config": ^1.0.6
     "@types/chai": ^4
+    "@types/d3-format": ^2
     "@types/fs-extra": ^9.0.13
     "@types/lodash": ^4
     "@types/mocha": ^9
@@ -39,6 +40,7 @@ __metadata:
     "@types/prettier": ^2
     chai: ^4.3.4
     class-validator: ^0.13.2
+    d3-format: 2
     fs-extra: ^10.0.0
     graphql: ^16.3.0
     lodash: ^4.17.21
@@ -196,6 +198,13 @@ __metadata:
   version: 4.3.0
   resolution: "@types/chai@npm:4.3.0"
   checksum: 3e393e094263db65df28a0123dc13f342937c1bab6cd173eae913d593c5b9a16b555713a08c34863a1fbf079aa7222b96197c70380a5c130549d6b2f6845a989
+  languageName: node
+  linkType: hard
+
+"@types/d3-format@npm:^2":
+  version: 2.0.2
+  resolution: "@types/d3-format@npm:2.0.2"
+  checksum: 592a57f880915754f1e14d4113ff231e80c1854dd8186f3c7fb5a7c094db31c52b3727bc0ad83d1fe4297bc5ec2209be34efaa588f72700c1a133b603d168f3b
   languageName: node
   linkType: hard
 
@@ -727,6 +736,13 @@ __metadata:
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
+  languageName: node
+  linkType: hard
+
+"d3-format@npm:2":
+  version: 2.0.0
+  resolution: "d3-format@npm:2.0.0"
+  checksum: c4d3c8f9941d097d514d3986f54f21434e08e5876dc08d1d65226447e8e167600d5b9210235bb03fd45327225f04f32d6e365f08f76d2f4b8bff81594851aaf7
   languageName: node
   linkType: hard
 

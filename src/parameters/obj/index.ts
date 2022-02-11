@@ -1,12 +1,17 @@
+import { kg, mm } from "../../unit";
 import { OBJ } from "./base";
 
 export const LIQUIDLEVEL = new OBJ("LIQUIDLEVEL", {
-    translation: { "de-de": "Flüssigkeitsstand", "en-us": "liquid level" },
     storeInTimestream: true,
+    translation: { "de-de": "Füllhöhe", "en-us": "Level" },
+    unit: mm,
+    format: "d",
 });
 export const WEIGHT = new OBJ("WEIGHT", {
-    translation: { "de-de": "Gewicht", "en-us": "weight" },
     storeInTimestream: true,
+    translation: { "de-de": "Gewicht", "en-us": "Weight" },
+    unit: kg,
+    format: ".3f",
 });
 export const obj = new OBJ(
     "OBJ",
