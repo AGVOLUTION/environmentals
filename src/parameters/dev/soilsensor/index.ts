@@ -9,6 +9,11 @@ export class SOILSENSOR extends DEV {}
 export const ID = new SOILSENSOR("ID", {
     description:
         "The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.",
+    storeInTimestream: true,
 });
 
-export const soilsensor = new SOILSENSOR("SOILSENSOR", {}, [ID]);
+export const soilsensor = new SOILSENSOR(
+    "SOILSENSOR",
+    { storeInTimestream: false },
+    [ID]
+);

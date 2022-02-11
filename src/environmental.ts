@@ -28,6 +28,10 @@ export interface EnvironmentalProperties {
     unit?: Unit;
     description?: string;
     translation?: Translation;
+    /**
+     * Should this parameter be stored in the timestream database?
+     */
+    storeInTimestream: boolean;
 }
 
 /**
@@ -69,6 +73,13 @@ export class Environmental {
     }
 
     /**
+     * Should this item be stored in TimeStream?
+     */
+    public get storeInTimestream() {
+        return this.properties.storeInTimestream;
+    }
+
+    /**
      * Return translation for locale.
      *
      * if no translations provided, the FQN of this node will be returned
@@ -86,7 +97,11 @@ export class Environmental {
      * @param properties - Properties of this node
      * @param children - Children of the node. Provide only if this is a category
      */
-    constructor(name: string, properties: EnvironmentalProperties, children?: Environmental[]) {
+    constructor(
+        name: string,
+        properties: EnvironmentalProperties,
+        children?: Environmental[]
+    ) {
         this.name = name;
         this.properties = properties;
         if (children) {
@@ -179,7 +194,9 @@ export class Environmental {
         return this.fqn;
     }
 
-    public map<U>(callbackfn: (value: Environmental, children: Environmental[]) => U): U[] {
+    public map<U>(
+        callbackfn: (value: Environmental, children: Environmental[]) => U
+    ): U[] {
         if (!this._children) {
             return [callbackfn(this, [])];
         }
