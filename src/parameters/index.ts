@@ -11,7 +11,12 @@ export { obj } from "./obj";
 /**
  * The root node for the environmentals tree
  */
-export const root = new Environmental("ROOT", {}, [env, dev, model, obj]);
+export const root = new Environmental("ROOT", { storeInTimestream: false }, [
+    env,
+    dev,
+    model,
+    obj,
+]);
 
 /**
  * Deserialize a FullyQualifiedName (FQN) to the object

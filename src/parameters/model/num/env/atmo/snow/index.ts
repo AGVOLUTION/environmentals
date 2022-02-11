@@ -3,4 +3,8 @@ import { height } from "./height";
 import { insulation } from "./insulation";
 import { melt } from "./melt";
 
-export const snow = new ATMO("SNOW", {}, [height, insulation, melt]);
+export const snow = new ATMO("SNOW", { storeInTimestream: false }, [
+    height,
+    insulation,
+    melt,
+]);
