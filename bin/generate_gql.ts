@@ -19,10 +19,16 @@ const GENERATED_HINT = "/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/";
  */
 export async function main() {
     await fs.ensureDir(DESTINATION_FOLDER);
-    const enumObject = JSON.stringify(generateEnumObjectForTree(root)["ROOT"], undefined, 4);
+    const enumObject = JSON.stringify(
+        generateEnumObjectForTree(root)["ROOT"],
+        undefined,
+        4
+    );
 
     // generate enums for level below first level categories
-    const categoryEnumFileNames = await Promise.all(root.children.map(writeCategoryEnumFile));
+    const categoryEnumFileNames = await Promise.all(
+        root.children.map(writeCategoryEnumFile)
+    );
     const categoryEnums = categoryEnumFileNames.map(
         (c) => `export * as ${c[0]}Enums from './${c[0]}'`
     );
@@ -35,9 +41,14 @@ export async function main() {
         ts.ScriptKind.TS
     );
     const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
-    const result = printer.printNode(ts.EmitHint.Unspecified, generateAstForGqlEnum(), resultFile);
+    const result = printer.printNode(
+        ts.EmitHint.Unspecified,
+        generateAstForGqlEnum(),
+        resultFile
+    );
 
     const weatherDataNumericType = generateWeatherEnum();
+    const storeInTimestreamList = generateStoreInTimestreamList();
 
     await fs.writeFile(
         resultFile.fileName,
@@ -48,6 +59,7 @@ ${result}
 
 export const EnumObject = ${enumObject}
 ${weatherDataNumericType}
+${storeInTimestreamList}
 `
     );
 }
@@ -101,18 +113,24 @@ function generateAstForGqlEnum() {
             )
         ),
         factory.createExpressionStatement(
-            factory.createCallExpression(factory.createIdentifier("registerEnumType"), undefined, [
-                factory.createIdentifier("EnvironmentalParameterNames"),
-                factory.createObjectLiteralExpression(
-                    [
-                        factory.createPropertyAssignment(
-                            factory.createIdentifier("name"),
-                            factory.createStringLiteral("EnvironmentalParameterNames")
-                        ),
-                    ],
-                    false
-                ),
-            ])
+            factory.createCallExpression(
+                factory.createIdentifier("registerEnumType"),
+                undefined,
+                [
+                    factory.createIdentifier("EnvironmentalParameterNames"),
+                    factory.createObjectLiteralExpression(
+                        [
+                            factory.createPropertyAssignment(
+                                factory.createIdentifier("name"),
+                                factory.createStringLiteral(
+                                    "EnvironmentalParameterNames"
+                                )
+                            ),
+                        ],
+                        false
+                    ),
+                ]
+            )
         ),
     ];
     return factory.createSourceFile(
@@ -141,18 +159,28 @@ function generateEnumObjectForTree(m: Environmental): any {
 }
 
 function generateCategoryEnum(m: Environmental) {
-    const names = [...m].filter((x) => x.isLeaf).map((x) => x.fqn.replace(`${m.fqn}__`, ""));
+    const names = [...m]
+        .filter((x) => x.isLeaf)
+        .map((x) => x.fqn.replace(`${m.fqn}__`, ""));
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
 async function writeCategoryEnumFile(m: Environmental) {
-    const enumObjects = m.children.map((child) => [child.name, generateCategoryEnum(child)]);
+    const enumObjects = m.children.map((child) => [
+        child.name,
+        generateCategoryEnum(child),
+    ]);
     const exports = enumObjects.map(
-        (o) => `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`
+        (o) =>
+            `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`
     );
     const fileName = `${DESTINATION_FOLDER}/${m.name}.ts`;
     const str = `${GENERATED_HINT}
-export const Enum${m.name} = ${JSON.stringify(generateCategoryEnum(m), undefined, 4)}
+export const Enum${m.name} = ${JSON.stringify(
+        generateCategoryEnum(m),
+        undefined,
+        4
+    )}
 
 ${exports.join("\n")}`;
     await fs.writeFile(fileName, str);
@@ -168,6 +196,16 @@ function generateWeatherEnum() {
         4
     )}
 `;
+    return sourceCode;
+}
+
+function generateStoreInTimestreamList() {
+    const storeParams = [...root].filter((x) => x.storeInTimestream);
+    const sourceCode = `export const StoreInTimestreamParameters = ${JSON.stringify(
+        Object.values(generateEnumObject(storeParams)),
+        undefined,
+        4
+    )}`;
     return sourceCode;
 }
 
