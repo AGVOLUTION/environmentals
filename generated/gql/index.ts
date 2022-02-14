@@ -189,3 +189,28 @@ export const StoreInTimestreamParameters = [
     "OBJ__LIQUIDLEVEL",
     "OBJ__WEIGHT"
 ] as const
+export const ModelNames = {
+/**
+ * Provides:
+    - MODEL__NUM__ENV__ATMO__SNOW__HEIGHT
+    */
+    MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS"
+,
+/**
+ * Provides:
+    - MODEL__NUM__ENV__ATMO__SNOW__INSULATION
+    */
+    MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS"
+,
+/**
+ * Provides:
+    - MODEL__NUM__ENV__ATMO__SNOW__MELT
+    */
+    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS"
+,
+/**
+ * Provides:
+    - MODEL__NUM__ENV__ATMO
+    */
+    MODEL__NUM__ENV__ATMO__ETO: "MODEL__NUM__ENV__ATMO__ETO"
+} as const
