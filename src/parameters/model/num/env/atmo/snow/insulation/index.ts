@@ -1,3 +1,4 @@
+import { ModelNames } from "../../../../../../../../generated/gql";
 import { yesno } from "../../../../../../../unit";
 import { SNOW } from "../base";
 
@@ -8,6 +9,8 @@ export const SNOW_MAUS = new INSULATION("SNOW_MAUS", {
     unit: yesno,
     storeInTimestream: true,
 });
-export const insulation = new SNOW("INSULATION", { storeInTimestream: false }, [
-    SNOW_MAUS,
-]);
+export const insulation = new SNOW(
+    "INSULATION",
+    { storeInTimestream: false, defaultModel: SNOW_MAUS },
+    [SNOW_MAUS]
+);
