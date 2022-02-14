@@ -177,13 +177,10 @@ export const StoreInTimestreamParameters = [
     "DEV__ENERGY__LOWLIGHT",
     "DEV__ALERT__TRIGGERED",
     "DEV__ALERT__ARMED",
-    "DEV__POSITION__LATITUDE",
-    "DEV__POSITION__LONGITUDE",
     "DEV__RF__RSSI",
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",
     "DEV__RF__SINR",
-    "DEV__SOILSENSOR__ID",
     "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     "MODEL__NUM__ENV__ATMO__SNOW__MELT",
@@ -191,4 +188,4 @@ export const StoreInTimestreamParameters = [
     "MODEL__NUM__ENV__ATMO__ETO",
     "OBJ__LIQUIDLEVEL",
     "OBJ__WEIGHT"
-]
+] as const
