@@ -20,7 +20,7 @@ export const position = new POSITION(
     "POSITION",
     {
         translation: { "de-de": "Position", "en-us": "position" },
-        storeInTimestream: false,
+        storeInTimestream: true,
     },
     [LATITUDE, LONGITUDE]
 );
