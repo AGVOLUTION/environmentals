@@ -205,7 +205,7 @@ function generateStoreInTimestreamList() {
         Object.values(generateEnumObject(storeParams)),
         undefined,
         4
-    )}`;
+    )} as const`;
     return sourceCode;
 }
 
