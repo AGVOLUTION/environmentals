@@ -6,7 +6,7 @@ export { dev } from "./dev";
 import { obj } from "./obj";
 import { FqnPathElements } from "..";
 import { ENV } from "./env/base";
-import { MODEL } from "./model/base";
+import { MODEL } from "../model";
 export { obj } from "./obj";
 
 /**

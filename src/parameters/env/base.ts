@@ -1,6 +1,6 @@
 import { EnvironmentalProperties } from "../..";
 import { Environmental } from "../../environmental";
-import { MODEL } from "../model/base";
+import { MODEL } from "../../model";
 
 export interface EnvProperties extends EnvironmentalProperties {
     models?: MODEL[];

@@ -4,7 +4,7 @@ import { RSSI } from "../src/parameters/dev/rf";
 import { T, atmo, HEIGHT, MELT, INSULATION } from "../src/parameters/env/atmo";
 import { SNOW_MAUS } from "../src/parameters/env/atmo/models";
 import { ENV } from "../src/parameters/env/base";
-import { MODEL, RequestedModel } from "../src/parameters/model/base";
+import { MODEL, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
 
