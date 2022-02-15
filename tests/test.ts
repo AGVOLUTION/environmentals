@@ -1,19 +1,45 @@
 import { expect } from "chai";
 import { deserialize, env, root } from "../src";
 import { RSSI } from "../src/parameters/dev/rf";
-import { T, atmo } from "../src/parameters/env/atmo";
-import { MODEL } from "../src/parameters/model/base";
-import { SNOW_MAUS } from "../src/parameters/model/num/env/atmo/snow/height";
+import { T, atmo, HEIGHT, MELT, INSULATION } from "../src/parameters/env/atmo";
+import { SNOW_MAUS } from "../src/parameters/env/atmo/models";
+import { ENV } from "../src/parameters/env/base";
+import { MODEL, RequestedModel } from "../src/parameters/model/base";
 import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
 
 describe("environmentals", function () {
     describe("#deserialize", function () {
-        it("should correctly deserialize a FQN", function () {
+        it("should correctly deserialize an ENV FQN", function () {
             const fqn = "ENV__ATMO__T";
             const de = deserialize(fqn);
             expect(de).to.equal(T);
             expect(de.fqn).to.eq("ENV__ATMO__T");
+        });
+        it("should get the model of a modelled ENV", function () {
+            const fqn = "ENV__ATMO__SNOW__HEIGHT";
+            let de = deserialize(fqn);
+            expect(de).to.be.instanceof(ENV);
+            if (de instanceof ENV) {
+                expect(de.model?.name).eq("SNOW_MAUS");
+            }
+        });
+        it("should deserialize a modelled ENV to its default model", function () {
+            const fqn = "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT";
+            const de = deserialize(fqn);
+            expect(de).to.be.instanceof(MODEL);
+            if (de instanceof MODEL) {
+                expect(de.name).eq("SNOW_MAUS");
+            }
+        });
+
+        it("should deserialize a model fqn to the model", function () {
+            const fqn = "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS";
+            const de = deserialize(fqn);
+            expect(de).to.be.instanceof(MODEL);
+            if (de instanceof MODEL) {
+                expect(de.name).eq("SNOW_MAUS");
+            }
         });
     });
 
@@ -40,13 +66,6 @@ describe("environmentals", function () {
         });
     });
 
-    describe("Model hierarchy", function () {
-        it("should correctly recognise models by its superclass", function () {
-            expect(SNOW_MAUS).to.be.instanceof(MODEL);
-            expect(SNOW_MAUS instanceof MODEL).to.be.true;
-        });
-    });
-
     describe("Formatting", function () {
         it("should format values correctly", function () {
             const value = 3.25432;
@@ -54,5 +73,23 @@ describe("environmentals", function () {
             expect(RSSI.format(value), "RSSI").eq("3");
             expect(WEIGHT.format(value), "WEIGHT").eq("3.254");
         });
+    });
+});
+
+describe("models", function () {
+    describe("#withParam", function () {
+        it("should create a correct subclass object", function () {
+            const mod = SNOW_MAUS.withParameter(HEIGHT);
+            expect(mod).to.be.instanceof(RequestedModel);
+            if (mod instanceof RequestedModel) {
+                expect(mod.requestedParameter).eq(HEIGHT);
+            }
+        });
+    });
+
+    it("should have all defined provided parameters", function () {
+        expect(SNOW_MAUS.provides).to.include(HEIGHT);
+        expect(SNOW_MAUS.provides).to.include(MELT);
+        expect(SNOW_MAUS.provides).to.include(INSULATION);
     });
 });

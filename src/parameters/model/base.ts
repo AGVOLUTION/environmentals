@@ -1,19 +1,23 @@
 import { EnvironmentalProperties } from "../..";
 import { Environmental } from "../../environmental";
+import { ENV } from "../env/base";
 
-export interface ModelProperties extends EnvironmentalProperties {
-    defaultModel?: MODEL;
-}
+//export interface ModelProperties extends EnvironmentalProperties {
+//defaultModel?: MODEL;
+//}
 
 export class MODEL extends Environmental {
-    public readonly properties: ModelProperties;
+    public provides: Set<ENV> = new Set();
     constructor(
         name: string,
-        properties: ModelProperties,
+        properties: EnvironmentalProperties,
         children?: Environmental[]
     ) {
         super(name, properties, children);
-        this.properties = properties;
+    }
+
+    public withParameter(requestedParameter: ENV) {
+        return new RequestedModel(this, requestedParameter);
     }
 
     /**
@@ -27,21 +31,19 @@ export class MODEL extends Environmental {
      *
      * @returns Default model implementation for this calculated parameter
      */
-    public get model(): MODEL | undefined {
-        if (this.isLeaf) {
-            return this;
-        }
-        return this.properties.defaultModel;
-    }
+    //public get model(): MODEL | undefined {
+    //if (this.isLeaf) {
+    //return this;
+    //}
+    //return this.properties.defaultModel;
+    //}
 }
 
-const test = {
-    /**
-     * Provides:
-       - first
-       - second
-     */
-    first: "yoyo",
-};
+export class RequestedModel extends MODEL {
+    public readonly requestedParameter: ENV;
 
-test.first;
+    constructor(model: MODEL, requestedParameter: ENV) {
+        super(model.name, model.properties, model.children);
+        this.requestedParameter = requestedParameter;
+    }
+}
