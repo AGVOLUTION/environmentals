@@ -10,6 +10,7 @@ import {
     Wpm2,
 } from "../../../unit";
 import { ATMO } from "./base";
+import { SNOW_MAUS } from "./models";
 
 export const T = new ATMO("T", {
     unit: degC,
@@ -95,14 +96,17 @@ export class SNOW extends ATMO {}
 export const HEIGHT = new SNOW("HEIGHT", {
     translation: { "de-de": "Schneehöhe", "en-us": "snow height" },
     storeInTimestream: true,
+    models: [SNOW_MAUS],
 });
 export const INSULATION = new SNOW("INSULATION", {
     storeInTimestream: true,
     translation: { "de-de": "Schneeisolierung", "en-us": "snow insulation" },
+    models: [SNOW_MAUS],
 });
 export const MELT = new SNOW("MELT", {
     storeInTimestream: true,
     translation: { "de-de": "Schneeschmelze", "en-us": "snow melt" },
+    models: [SNOW_MAUS],
 });
 export const snow = new ATMO(
     "SNOW",
