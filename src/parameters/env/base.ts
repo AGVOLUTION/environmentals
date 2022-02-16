@@ -1,9 +1,9 @@
 import { EnvironmentalProperties } from "../..";
 import { Environmental } from "../../environmental";
-import { MODEL } from "../../model";
+import { Model } from "../../model";
 
 export interface EnvProperties extends EnvironmentalProperties {
-    models?: MODEL[];
+    models?: Model[];
 }
 
 export class ENV extends Environmental {
@@ -30,7 +30,7 @@ export class ENV extends Environmental {
      * The default model is always the first model provided in the models property
      *
      */
-    public get model(): MODEL | undefined {
+    public get model(): Model | undefined {
         return this.properties.models?.[0];
     }
 }
