@@ -3,7 +3,6 @@
 */
 export * as ENVEnums from './ENV'
 export * as DEVEnums from './DEV'
-export * as MODELEnums from './MODEL'
 export * as OBJEnums from './OBJ'
 
 import { registerEnumType } from "type-graphql";
@@ -41,12 +40,11 @@ export const EnvironmentalParameterNames = {
     DEV__RF__RSRQ: "DEV__RF__RSRQ",
     DEV__RF__SINR: "DEV__RF__SINR",
     DEV__SOILSENSOR__ID: "DEV__SOILSENSOR__ID",
+    OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
+    OBJ__WEIGHT: "OBJ__WEIGHT",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
-    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
-    MODEL__NUM__ENV__ATMO__ETO: "MODEL__NUM__ENV__ATMO__ETO",
-    OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
-    OBJ__WEIGHT: "OBJ__WEIGHT"
+    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS"
 };
 registerEnumType(EnvironmentalParameterNames, { name: "EnvironmentalParameterNames" });
 
@@ -109,47 +107,11 @@ export const EnumObject = {
             "ID": "ID"
         }
     },
-    "MODEL": {
-        "NUM": {
-            "ENV": {
-                "ATMO": {
-                    "SNOW": {
-                        "HEIGHT": {
-                            "SNOW_MAUS": "SNOW_MAUS"
-                        },
-                        "INSULATION": {
-                            "SNOW_MAUS": "SNOW_MAUS"
-                        },
-                        "MELT": {
-                            "SNOW_MAUS": "SNOW_MAUS"
-                        }
-                    },
-                    "ETO": "ETO"
-                }
-            }
-        }
-    },
     "OBJ": {
         "LIQUIDLEVEL": "LIQUIDLEVEL",
         "WEIGHT": "WEIGHT"
     }
 }
-export const WeatherDataNumericType = {
-    "ENV__ATMO__T": "ENV__ATMO__T",
-    "ENV__ATMO__P": "ENV__ATMO__P",
-    "ENV__ATMO__RH": "ENV__ATMO__RH",
-    "ENV__ATMO__IRRADIATION": "ENV__ATMO__IRRADIATION",
-    "ENV__ATMO__RADIANT_EXPOSURE": "ENV__ATMO__RADIANT_EXPOSURE",
-    "ENV__ATMO__RAIN": "ENV__ATMO__RAIN",
-    "ENV__ATMO__WIND__SPEED": "ENV__ATMO__WIND__SPEED",
-    "ENV__ATMO__WIND__GUSTINESS": "ENV__ATMO__WIND__GUSTINESS",
-    "ENV__ATMO__WIND__DIRECTION": "ENV__ATMO__WIND__DIRECTION",
-    "ENV__ATMO__SNOW__HEIGHT": "ENV__ATMO__SNOW__HEIGHT",
-    "ENV__ATMO__SNOW__INSULATION": "ENV__ATMO__SNOW__INSULATION",
-    "ENV__ATMO__SNOW__MELT": "ENV__ATMO__SNOW__MELT",
-    "MODEL__NUM__ENV__ATMO__ETO": "MODEL__NUM__ENV__ATMO__ETO"
-}
-
 export const StoreInTimestreamParameters = [
     "ENV__ATMO__T",
     "ENV__ATMO__P",
@@ -181,36 +143,14 @@ export const StoreInTimestreamParameters = [
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",
     "DEV__RF__SINR",
-    "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
-    "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
-    "MODEL__NUM__ENV__ATMO__SNOW__MELT",
-    "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
-    "MODEL__NUM__ENV__ATMO__ETO",
     "OBJ__LIQUIDLEVEL",
     "OBJ__WEIGHT"
 ] as const
 export const ModelNames = {
 /**
- * Provides:
-    - MODEL__NUM__ENV__ATMO__SNOW__HEIGHT
-    */
-    MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS"
-,
-/**
- * Provides:
-    - MODEL__NUM__ENV__ATMO__SNOW__INSULATION
-    */
-    MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS"
-,
-/**
- * Provides:
-    - MODEL__NUM__ENV__ATMO__SNOW__MELT
-    */
-    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS"
-,
-/**
- * Provides:
-    - MODEL__NUM__ENV__ATMO
-    */
-    MODEL__NUM__ENV__ATMO__ETO: "MODEL__NUM__ENV__ATMO__ETO"
-} as const
+ * Provides
+  - ENV__ATMO__SNOW__HEIGHT
+  - ENV__ATMO__SNOW__INSULATION
+  - ENV__ATMO__SNOW__MELT
+ */
+SNOW_MAUS:'SNOW_MAUS'} as const
