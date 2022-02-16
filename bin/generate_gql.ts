@@ -97,20 +97,26 @@ function generateAstForGqlEnum() {
                         factory.createIdentifier("EnvironmentalParameterNames"),
                         undefined,
                         undefined,
-                        factory.createObjectLiteralExpression(
-                            leafs
-                                .map((l) => l.fqn) // transform to fqns
-                                .map(
-                                    (
-                                        fqn // create properties from it
-                                    ) =>
-                                        factory.createPropertyAssignment(
-                                            factory.createIdentifier(fqn),
-                                            factory.createStringLiteral(fqn)
-                                        )
-                                ),
+                        factory.createAsExpression(
+                            factory.createObjectLiteralExpression(
+                                leafs
+                                    .map((l) => l.fqn) // transform to fqns
+                                    .map(
+                                        (
+                                            fqn // create properties from it
+                                        ) =>
+                                            factory.createPropertyAssignment(
+                                                factory.createIdentifier(fqn),
+                                                factory.createStringLiteral(fqn)
+                                            )
+                                    ),
 
-                            true
+                                true
+                            ),
+                            factory.createTypeReferenceNode(
+                                factory.createIdentifier("const"),
+                                undefined
+                            )
                         )
                     ),
                 ],
