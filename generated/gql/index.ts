@@ -49,7 +49,7 @@ export const EnvironmentalParameterNames = {
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__ETO__ETO: "MODEL__NUM__ENV__ATMO__ETO__ETO",
     MODEL__IMG__ENV__ATMO__ETC__ETC: "MODEL__IMG__ENV__ATMO__ETC__ETC"
-};
+} as const;
 registerEnumType(EnvironmentalParameterNames, { name: "EnvironmentalParameterNames" });
 
 
