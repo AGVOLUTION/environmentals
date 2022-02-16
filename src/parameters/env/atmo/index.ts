@@ -62,6 +62,7 @@ export const RAIN = new ATMO("RAIN", {
     translation: { "de-de": "Niederschlag", "en-us": "Precipitation" },
     storeInTimestream: true,
     unit: mmpsqm,
+    format: ".1f",
 });
 
 export class WIND extends ATMO {}
