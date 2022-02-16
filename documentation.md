@@ -265,38 +265,6 @@ Name | Soil Moisture Sensor ID
 Description | The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.
 Unit | undefined
 
-## MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
-
-Property | Value
----------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
-Description | undefined
-Unit | undefined
-
-## MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS
-
-Property | Value
----------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS
-Description | Indicates it there was an insulation induced by the snow layer
-Unit | yes/no
-
-## MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS
-
-Property | Value
----------|-------
-Name | MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS
-Description | undefined
-Unit | undefined
-
-## MODEL__NUM__ENV__ATMO__ETO
-
-Property | Value
----------|-------
-Name | Reference Evapotranspiration
-Description | Evapotranspiration model
-Unit | undefined
-
 ## OBJ__LIQUIDLEVEL
 
 Property | Value

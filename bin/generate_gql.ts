@@ -1,14 +1,11 @@
 //import fs from "fs/promises";
-import { assert } from "chai";
 import fs from "fs-extra";
+import * as Models from "../src/parameters/env/atmo/models";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
 import { root } from "../src/";
 import { Environmental, FullyQualifiedName } from "../src/environmental";
-import { model } from "../src/parameters";
 import { atmo } from "../src/parameters/env/atmo";
-import { MODEL } from "../src/parameters/model/base";
-import { ETO } from "../src/parameters/model/num/env/atmo";
 
 const DESTINATION_FOLDER = "generated/gql";
 const GENERATED_HINT = "/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/";
@@ -50,7 +47,6 @@ export async function main() {
         resultFile
     );
 
-    const weatherDataNumericType = generateWeatherEnum();
     const storeInTimestreamList = generateStoreInTimestreamList();
     const modelNames = generateModelsObject();
 
@@ -62,7 +58,6 @@ ${categoryEnums.join("\n")}
 ${result}
 
 export const EnumObject = ${enumObject}
-${weatherDataNumericType}
 ${storeInTimestreamList}
 ${modelNames}
 `
@@ -70,7 +65,12 @@ ${modelNames}
 }
 
 function generateAstForGqlEnum() {
-    const leafs = [...root].filter((x) => x.isLeaf);
+    const leafs = [
+        ...[...root].filter((x) => x.isLeaf),
+        ...Object.values(Models).flatMap((m) =>
+            [...m.provides.values()].map((p) => m.withParameter(p))
+        ),
+    ];
     const code = [
         factory.createImportDeclaration(
             undefined,
@@ -193,17 +193,6 @@ ${exports.join("\n")}`;
     return [m.name, fileName];
 }
 
-function generateWeatherEnum() {
-    const weatherParams = [...[...atmo].filter((e) => e.isLeaf), ETO];
-    const sourceCode = `export const WeatherDataNumericType = ${JSON.stringify(
-        generateEnumObject(weatherParams),
-        undefined,
-        4
-    )}
-`;
-    return sourceCode;
-}
-
 function generateStoreInTimestreamList() {
     const storeParams = [...root].filter((x) => x.storeInTimestream);
     const sourceCode = `export const StoreInTimestreamParameters = ${JSON.stringify(
@@ -215,29 +204,12 @@ function generateStoreInTimestreamList() {
 }
 
 function generateModelsObject() {
-    const modelLeafs = [...model].filter((x) => x.isLeaf);
-    let categories: Record<FullyQualifiedName, FullyQualifiedName[]> = {};
-    for (const model of modelLeafs) {
-        if (!model.parent) {
-            throw Error(
-                "model should have a parent. Seems like the declaration is messed up"
-            );
-        }
-        if (categories[model.fqn]) {
-            categories[model.fqn].push(model.parent.fqn);
-        } else {
-            categories[model.fqn] = [model.parent.fqn];
-        }
-    }
-
-    const strings = Object.entries(categories)
+    const strings = Object.values(Models)
         .map(
-            ([k, v]) => `/**
- * Provides:
-   ${v.map((x) => ` - ${x}`).join("\n")}
-    */
-    ${k}: "${k}"
-`
+            (m) => `/**\n * Provides
+${[...m.provides.values()].map((p) => `  - ${p.fqn}`).join("\n")}
+ */
+${m.name}:'${m.name}'`
         )
         .join(",\n");
     return `export const ModelNames = {\n${strings}} as const`;
