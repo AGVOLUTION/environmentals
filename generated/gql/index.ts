@@ -41,7 +41,10 @@ export const EnvironmentalParameterNames = {
     DEV__RF__SINR: "DEV__RF__SINR",
     DEV__SOILSENSOR__ID: "DEV__SOILSENSOR__ID",
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
-    OBJ__WEIGHT: "OBJ__WEIGHT"
+    OBJ__WEIGHT: "OBJ__WEIGHT",
+    MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS"
 };
 registerEnumType(EnvironmentalParameterNames, { name: "EnvironmentalParameterNames" });
 

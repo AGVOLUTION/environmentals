@@ -6,7 +6,7 @@ export { dev } from "./dev";
 import { obj } from "./obj";
 import { FqnPathElements } from "..";
 import { ENV } from "./env/base";
-import { MODEL } from "../model";
+import { Model } from "../model";
 export { obj } from "./obj";
 
 /**
@@ -46,7 +46,7 @@ export function deserialize(
         if (param instanceof ENV) {
             // we found the actual requested parameter. So we can return the actual model with the
             // requested parameter attached to it
-            const model: MODEL | undefined = modelName
+            const model: Model | undefined = modelName
                 ? param.properties.models?.find((x) => x.name === modelName)
                 : param.model;
             if (model) {

@@ -65,7 +65,12 @@ ${modelNames}
 }
 
 function generateAstForGqlEnum() {
-    const leafs = [...root].filter((x) => x.isLeaf);
+    const leafs = [
+        ...[...root].filter((x) => x.isLeaf),
+        ...Object.values(Models).flatMap((m) =>
+            [...m.provides.values()].map((p) => m.withParameter(p))
+        ),
+    ];
     const code = [
         factory.createImportDeclaration(
             undefined,
