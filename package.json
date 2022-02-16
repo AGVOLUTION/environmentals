@@ -1,6 +1,6 @@
 {
   "name": "@agv/environmentals",
-  "version": "0.1.21",
+  "version": "0.2.0",
   "description": "Definition of environmental parameters",
   "main": "dist/src/index.js",
   "files": [
