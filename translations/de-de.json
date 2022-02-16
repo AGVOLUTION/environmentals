@@ -7,6 +7,8 @@
     "ENV__ATMO__IRRADIATION": "Bestrahlungsstärke",
     "ENV__ATMO__RADIANT_EXPOSURE": "Globalstrahlung",
     "ENV__ATMO__RAIN": "Niederschlag",
+    "ENV__ATMO__ETO": "ENV__ATMO__ETO",
+    "ENV__ATMO__ETC": "ENV__ATMO__ETC",
     "ENV__ATMO__WIND": "Wind",
     "ENV__ATMO__WIND__SPEED": "Windgeschwindigkeit",
     "ENV__ATMO__WIND__GUSTINESS": "Böigkeit",

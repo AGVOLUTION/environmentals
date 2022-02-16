@@ -49,6 +49,22 @@ Name | Precipitation
 Description | undefined
 Unit | mm/m²
 
+## ENV__ATMO__ETO
+
+Property | Value
+---------|-------
+Name | ENV__ATMO__ETO
+Description | undefined
+Unit | undefined
+
+## ENV__ATMO__ETC
+
+Property | Value
+---------|-------
+Name | ENV__ATMO__ETC
+Description | undefined
+Unit | undefined
+
 ## ENV__ATMO__WIND__SPEED
 
 Property | Value

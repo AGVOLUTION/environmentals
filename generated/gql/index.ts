@@ -13,6 +13,8 @@ export const EnvironmentalParameterNames = {
     ENV__ATMO__IRRADIATION: "ENV__ATMO__IRRADIATION",
     ENV__ATMO__RADIANT_EXPOSURE: "ENV__ATMO__RADIANT_EXPOSURE",
     ENV__ATMO__RAIN: "ENV__ATMO__RAIN",
+    ENV__ATMO__ETO: "ENV__ATMO__ETO",
+    ENV__ATMO__ETC: "ENV__ATMO__ETC",
     ENV__ATMO__WIND__SPEED: "ENV__ATMO__WIND__SPEED",
     ENV__ATMO__WIND__GUSTINESS: "ENV__ATMO__WIND__GUSTINESS",
     ENV__ATMO__WIND__DIRECTION: "ENV__ATMO__WIND__DIRECTION",
@@ -44,7 +46,9 @@ export const EnvironmentalParameterNames = {
     OBJ__WEIGHT: "OBJ__WEIGHT",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
-    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS"
+    MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
+    MODEL__NUM__ENV__ATMO__ETO__ETO: "MODEL__NUM__ENV__ATMO__ETO__ETO",
+    MODEL__IMG__ENV__ATMO__ETC__ETC: "MODEL__IMG__ENV__ATMO__ETC__ETC"
 };
 registerEnumType(EnvironmentalParameterNames, { name: "EnvironmentalParameterNames" });
 
@@ -58,6 +62,8 @@ export const EnumObject = {
             "IRRADIATION": "IRRADIATION",
             "RADIANT_EXPOSURE": "RADIANT_EXPOSURE",
             "RAIN": "RAIN",
+            "ETO": "ETO",
+            "ETC": "ETC",
             "WIND": {
                 "SPEED": "SPEED",
                 "GUSTINESS": "GUSTINESS",
@@ -119,6 +125,7 @@ export const StoreInTimestreamParameters = [
     "ENV__ATMO__IRRADIATION",
     "ENV__ATMO__RADIANT_EXPOSURE",
     "ENV__ATMO__RAIN",
+    "ENV__ATMO__ETO",
     "ENV__ATMO__WIND__SPEED",
     "ENV__ATMO__WIND__GUSTINESS",
     "ENV__ATMO__WIND__DIRECTION",
@@ -153,4 +160,14 @@ export const ModelNames = {
   - ENV__ATMO__SNOW__INSULATION
   - ENV__ATMO__SNOW__MELT
  */
-SNOW_MAUS:'SNOW_MAUS'} as const
+SNOW_MAUS:'SNOW_MAUS',
+/**
+ * Provides
+  - ENV__ATMO__ETO
+ */
+ETO:'ETO',
+/**
+ * Provides
+  - ENV__ATMO__ETC
+ */
+ETC:'ETC'} as const

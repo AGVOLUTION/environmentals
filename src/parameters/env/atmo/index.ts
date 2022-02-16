@@ -4,13 +4,12 @@ import {
     hPa,
     Jpm2,
     kmh,
-    mm,
     mmpsqm,
     percent,
     Wpm2,
 } from "../../../unit";
 import { ATMO } from "./base";
-import { SNOW_MAUS } from "./models";
+import * as Models from "./models";
 
 export const T = new ATMO("T", {
     unit: degC,
@@ -64,6 +63,14 @@ export const RAIN = new ATMO("RAIN", {
     unit: mmpsqm,
     format: ".1f",
 });
+export const ETO = new ATMO("ETO", {
+    storeInTimestream: true,
+    models: [Models.ETO],
+});
+export const ETC = new ATMO("ETC", {
+    models: [Models.ETC],
+    storeInTimestream: false,
+});
 
 export class WIND extends ATMO {}
 export const SPEED = new WIND("SPEED", {
@@ -97,17 +104,17 @@ export class SNOW extends ATMO {}
 export const HEIGHT = new SNOW("HEIGHT", {
     translation: { "de-de": "Schneehöhe", "en-us": "snow height" },
     storeInTimestream: true,
-    models: [SNOW_MAUS],
+    models: [Models.SNOW_MAUS],
 });
 export const INSULATION = new SNOW("INSULATION", {
     storeInTimestream: true,
     translation: { "de-de": "Schneeisolierung", "en-us": "snow insulation" },
-    models: [SNOW_MAUS],
+    models: [Models.SNOW_MAUS],
 });
 export const MELT = new SNOW("MELT", {
     storeInTimestream: true,
     translation: { "de-de": "Schneeschmelze", "en-us": "snow melt" },
-    models: [SNOW_MAUS],
+    models: [Models.SNOW_MAUS],
 });
 export const snow = new ATMO(
     "SNOW",
@@ -125,6 +132,8 @@ export const atmo = new ATMO("ATMO", { storeInTimestream: false }, [
     IRRADIATION,
     RADIANT_EXPOSURE,
     RAIN,
+    ETO,
+    ETC,
     wind,
     snow,
 ]);

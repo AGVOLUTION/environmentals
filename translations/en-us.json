@@ -7,6 +7,8 @@
     "ENV__ATMO__IRRADIATION": "irradiation",
     "ENV__ATMO__RADIANT_EXPOSURE": "Global Radiation",
     "ENV__ATMO__RAIN": "Precipitation",
+    "ENV__ATMO__ETO": "ENV__ATMO__ETO",
+    "ENV__ATMO__ETC": "ENV__ATMO__ETC",
     "ENV__ATMO__WIND": "wind",
     "ENV__ATMO__WIND__SPEED": "Wind Speed",
     "ENV__ATMO__WIND__GUSTINESS": "Gustiness",
