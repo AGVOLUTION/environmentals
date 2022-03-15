@@ -4,7 +4,7 @@ import { RSSI } from "../src/parameters/dev/rf";
 import { T, atmo, HEIGHT, MELT, INSULATION } from "../src/parameters/env/atmo";
 import { SNOW_MAUS } from "../src/parameters/env/atmo/models";
 import { ENV } from "../src/parameters/env/base";
-import { MODEL, RequestedModel } from "../src/model";
+import { Model, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
 
@@ -27,8 +27,8 @@ describe("environmentals", function () {
         it("should deserialize a modelled ENV to its default model", function () {
             const fqn = "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT";
             const de = deserialize(fqn);
-            expect(de).to.be.instanceof(MODEL);
-            if (de instanceof MODEL) {
+            expect(de).to.be.instanceof(Model);
+            if (de instanceof Model) {
                 expect(de.name).eq("SNOW_MAUS");
             }
         });
@@ -36,8 +36,8 @@ describe("environmentals", function () {
         it("should deserialize a model fqn to the model", function () {
             const fqn = "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS";
             const de = deserialize(fqn);
-            expect(de).to.be.instanceof(MODEL);
-            if (de instanceof MODEL) {
+            expect(de).to.be.instanceof(Model);
+            if (de instanceof Model) {
                 expect(de.name).eq("SNOW_MAUS");
             }
         });
