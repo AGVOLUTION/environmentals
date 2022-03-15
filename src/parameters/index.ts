@@ -9,6 +9,28 @@ import { ENV } from "./env/base";
 import { Model } from "../model";
 export { obj } from "./obj";
 
+let _whitelist: FullyQualifiedName[] | undefined = undefined;
+let _blacklist: FullyQualifiedName[] | undefined = undefined;
+
+/**
+ * Initialize the black-/whitelist for this package
+ *
+ * Take a look at {@link tryFiltered} to learn more about the filter mechanism
+ *
+ * @param [whitelist] - List of parameters always to consider while deserializing
+ * @param [blacklist] - List of parameters which should not be considered while deserializing
+ */
+export function initialize({
+    whitelist,
+    blacklist,
+}: {
+    whitelist?: FullyQualifiedName[];
+    blacklist?: FullyQualifiedName[];
+}) {
+    _whitelist = whitelist;
+    _blacklist = blacklist;
+}
+
 /**
  * The root node for the environmentals tree
  */
@@ -26,6 +48,7 @@ function isFqnPathElements(x: any): x is FqnPathElements {
  * Deserialize a FullyQualifiedName (FQN) to the object
  *
  * @param fqn - String with the FullyQualifiedName
+ * @throws {Error} - Throws an Error when the supplied FQN could not be resolved or a incorrect MODEL fqn was provided
  */
 export function deserialize(
     fqn: FullyQualifiedName | FqnPathElements
@@ -76,6 +99,40 @@ export function tryDeserialize(fqn: FullyQualifiedName) {
         }
         return undefined;
     }
+}
+
+/**
+ * Try to deserialize a FQN, but consider black-/whitelist
+ *
+ * This function can be used to narrow down the resolved Parameters, for example for User
+ * Interfaces, where certain Parameters should not be displayed.
+ *
+ * For this function to work you have to call {@link initialize} first and provide either a
+ * whitelist or a blacklist or both.
+ * Parameters on the whitelist are always considered, even if also on the blacklist. If there is a
+ * whitelist provided, only the Parameters on that list will be returned.
+ * In the next step, Parameters from the blacklist are filtered out. If the Parameter is on neiher list, the
+ * function behaves just like {@link tryDeserialize}
+ *
+ * @param fqn - String with the FullyQualifiedName
+ */
+export function tryFiltered(fqn: FullyQualifiedName) {
+    if (_whitelist) {
+        // if a whitelist exists, only those params will be considered
+        if (_whitelist.includes(fqn)) {
+            // if on whitelist do search for it
+            return tryDeserialize(fqn);
+        }
+        // if not on whitelist, do not consider any further
+        return undefined;
+    }
+
+    if (_blacklist?.includes(fqn)) {
+        // if on blacklist don't search
+        return undefined;
+    }
+    // on neither list, normal handling
+    return tryDeserialize(fqn);
 }
 
 /**

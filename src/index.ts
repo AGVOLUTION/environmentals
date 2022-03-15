@@ -1,5 +1,13 @@
 import "reflect-metadata";
-export { root, deserialize, tryDeserialize, env, dev } from "./parameters";
+export {
+    root,
+    deserialize,
+    tryDeserialize,
+    env,
+    dev,
+    initialize,
+    tryFiltered,
+} from "./parameters";
 export {
     Environmental,
     EnvironmentalName,
