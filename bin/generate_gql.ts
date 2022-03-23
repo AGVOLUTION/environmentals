@@ -53,6 +53,8 @@ export async function main() {
     await fs.writeFile(
         resultFile.fileName,
         `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
+import "reflect-metadata"
+
 ${categoryEnums.join("\n")}
 
 ${result}

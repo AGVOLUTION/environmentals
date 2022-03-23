@@ -1,6 +1,8 @@
 /*
  * THIS IS A GENERATED FILE. DO NOT EDIT !!!
 */
+import "reflect-metadata"
+
 export * as ENVEnums from './ENV'
 export * as DEVEnums from './DEV'
 export * as OBJEnums from './OBJ'
