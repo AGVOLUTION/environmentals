@@ -48,5 +48,11 @@
     "DEV__SOILSENSOR__ID": "Soil Moisture Sensor ID",
     "OBJ": "object",
     "OBJ__LIQUIDLEVEL": "Level",
-    "OBJ__WEIGHT": "Weight"
+    "OBJ__WEIGHT": "Weight",
+    "SAT": "Satellite",
+    "SAT__SEN1": "Sentinel 1",
+    "SAT__SEN1__ASC": "Sentinel 1",
+    "SAT__SEN1__DESC": "Sentinel 1",
+    "SAT__SEN2": "Sentinel 2",
+    "SAT__SEN2__CL": "cloudless"
 }

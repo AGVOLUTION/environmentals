@@ -297,4 +297,28 @@ Name | Weight
 Description | undefined
 Unit | kg
 
+## SAT__SEN1__ASC
+
+Property | Value
+---------|-------
+Name | Sentinel 1
+Description | Ascending imagery from Sentinel 1
+Unit | undefined
+
+## SAT__SEN1__DESC
+
+Property | Value
+---------|-------
+Name | Sentinel 1
+Description | Descending imagery from Sentinel 1
+Unit | undefined
+
+## SAT__SEN2__CL
+
+Property | Value
+---------|-------
+Name | cloudless
+Description | Cloudless imagery from Sentinel 2
+Unit | undefined
+
     
