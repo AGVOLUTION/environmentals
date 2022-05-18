@@ -99,7 +99,16 @@ export class Environmental {
      * @param locale - Locale code
      */
     public translation(locale: Locale) {
-        return this.properties.translation?.[locale] || this.fqn;
+        if (this.properties.translation) {
+            if (typeof this.properties.translation === "string") {
+                // if the translation is a string, return it for all locales
+                return this.properties.translation;
+            }
+            // otherwise, return the translation for the specified locale
+            return this.properties.translation[locale];
+        }
+        // if no translation is specified, return the symbol
+        return this.fqn;
     }
 
     /**
