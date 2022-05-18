@@ -4,8 +4,23 @@ export class Unit {
     public readonly symbol: string;
     public readonly _translation?: Translation;
 
+    /**
+     * Get the translation for the given locale.
+     *
+     * @param locale - The locale to use for the translation
+     * @returns The translated name of the unit
+     */
     public translation(locale: Locale) {
-        return this._translation?.[locale] || this.symbol;
+        if (this._translation) {
+            if (typeof this._translation === "string") {
+                // if the translation is a string, return it for all locales
+                return this._translation;
+            }
+            // otherwise, return the translation for the specified locale
+            return this._translation[locale];
+        }
+        // if no translation is specified, return the symbol
+        return this.symbol;
     }
 
     constructor(name: string, translation?: Translation) {
