@@ -48,5 +48,11 @@
     "DEV__SOILSENSOR__ID": "Bodenfeuchtesensor ID",
     "OBJ": "Objekt",
     "OBJ__LIQUIDLEVEL": "Füllhöhe",
-    "OBJ__WEIGHT": "Gewicht"
+    "OBJ__WEIGHT": "Gewicht",
+    "SAT": "Satellite",
+    "SAT__SEN1": "Sentinel 1",
+    "SAT__SEN1__ASC": "Sentinel 1",
+    "SAT__SEN1__DESC": "Sentinel 1",
+    "SAT__SEN2": "Sentinel 2",
+    "SAT__SEN2__CL": "cloudless"
 }

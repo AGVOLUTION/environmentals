@@ -6,6 +6,7 @@ import "reflect-metadata"
 export * as ENVEnums from './ENV'
 export * as DEVEnums from './DEV'
 export * as OBJEnums from './OBJ'
+export * as SATEnums from './SAT'
 
 import { registerEnumType } from "type-graphql";
 export const EnvironmentalParameterNames = {
@@ -46,6 +47,9 @@ export const EnvironmentalParameterNames = {
     DEV__SOILSENSOR__ID: "DEV__SOILSENSOR__ID",
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
     OBJ__WEIGHT: "OBJ__WEIGHT",
+    SAT__SEN1__ASC: "SAT__SEN1__ASC",
+    SAT__SEN1__DESC: "SAT__SEN1__DESC",
+    SAT__SEN2__CL: "SAT__SEN2__CL",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
@@ -118,6 +122,15 @@ export const EnumObject = {
     "OBJ": {
         "LIQUIDLEVEL": "LIQUIDLEVEL",
         "WEIGHT": "WEIGHT"
+    },
+    "SAT": {
+        "SEN1": {
+            "ASC": "ASC",
+            "DESC": "DESC"
+        },
+        "SEN2": {
+            "CL": "CL"
+        }
     }
 }
 export const StoreInTimestreamParameters = [

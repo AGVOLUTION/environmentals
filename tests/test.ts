@@ -7,6 +7,7 @@ import { ENV } from "../src/parameters/env/base";
 import { Model, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
+import { CL, SEN2 } from "../src/parameters/sat";
 
 describe("environmentals", function () {
     describe("#deserialize", function () {
@@ -91,5 +92,20 @@ describe("models", function () {
         expect(SNOW_MAUS.provides).to.include(HEIGHT);
         expect(SNOW_MAUS.provides).to.include(MELT);
         expect(SNOW_MAUS.provides).to.include(INSULATION);
+    });
+});
+
+describe("satellite", function () {
+    it("should correctly deserialize", function () {
+        const fqn = "SAT__SEN2__CL";
+        const de = deserialize(fqn);
+        expect(de).to.be.instanceof(SEN2);
+        expect(de.fqn).to.eq(fqn);
+    });
+    describe("#resourceBucket", function () {
+        it("should return the correct bucket", function () {
+            expect(CL.fqn).to.eq("SAT__SEN2__CL");
+            expect(CL.resourceBucket).to.eq("satellite/sentinel2/cloudless");
+        });
     });
 });
