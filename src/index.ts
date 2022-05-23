@@ -16,3 +16,5 @@ export {
     FqnPathElements,
     FullyQualifiedName,
 } from "./environmental";
+
+export { NotFoundError } from "./errors";
