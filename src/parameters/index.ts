@@ -139,6 +139,7 @@ export function tryFiltered(fqn: FullyQualifiedName) {
 }
 
 /**
- * Get the leaf nodes
+ * Get the leaf nodes, optionally of a subtree
  */
-export const getLeafs = () => [...root].filter((x) => x.isLeaf);
+export const getLeafs = (rootElement: Environmental = root) =>
+    [...rootElement].filter((x) => x.isLeaf);

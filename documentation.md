@@ -301,7 +301,7 @@ Unit | kg
 
 Property | Value
 ---------|-------
-Name | Sentinel 1
+Name | Ascending
 Description | Ascending imagery from Sentinel 1
 Unit | undefined
 
@@ -309,7 +309,7 @@ Unit | undefined
 
 Property | Value
 ---------|-------
-Name | Sentinel 1
+Name | Descending
 Description | Descending imagery from Sentinel 1
 Unit | undefined
 
