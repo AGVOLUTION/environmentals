@@ -1,6 +1,7 @@
 import { Locale, Translation } from "./localization";
 import { format } from "d3-format";
 import { Unit } from "./unit";
+import { NotFoundError } from "./errors";
 
 /**
  * The Name of an Environmental
@@ -148,14 +149,14 @@ export class Environmental {
             if (hit) {
                 return hit;
             }
-            throw Error(`Did not find a child with name ${path[0]}`);
+            throw new NotFoundError(path[0]);
         }
 
         const result = this._children?.get(path[0])?.find(path.slice(1));
         if (result) {
             return result;
         }
-        throw Error(`Did not find a child with name ${path[0]}`);
+        throw new NotFoundError(path[0]);
     }
 
     /**
