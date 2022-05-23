@@ -39,4 +39,8 @@ export class SAT extends Environmental {
             "SAT.resourceBucket: parent is not a SAT. This indicates an error in the declaration hierarchy and must be fixed in code."
         );
     }
+
+    public get children(): SAT[] {
+        return super.children as SAT[];
+    }
 }
