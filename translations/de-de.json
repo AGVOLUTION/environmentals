@@ -54,5 +54,6 @@
     "SAT__SEN1__ASC": "Ascending",
     "SAT__SEN1__DESC": "Descending",
     "SAT__SEN2": "Sentinel 2",
-    "SAT__SEN2__CL": "cloudless"
+    "SAT__SEN2__CL": "cloudless",
+    "SAT__SEN2__NDVI": "NDVI"
 }

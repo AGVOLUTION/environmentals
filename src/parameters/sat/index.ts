@@ -19,7 +19,7 @@ export const sen2 = new SAT(
         storeInTimestream: false,
         translation: "Sentinel 2",
     },
-    [CL]
+    [CL, NDVI]
 );
 //#endregion}}}
 
