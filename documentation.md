@@ -313,20 +313,20 @@ Name | Descending
 Description | Descending imagery from Sentinel 1
 Unit | undefined
 
-## SAT__SEN2__CL
-
-Property | Value
----------|-------
-Name | cloudless
-Description | Cloudless imagery from Sentinel 2
-Unit | undefined
-
 ## SAT__SEN2__NDVI
 
 Property | Value
 ---------|-------
 Name | NDVI
 Description | Normalized Difference Vegetation Index (NDVI) from Sentinel 2 imagery
+Unit | undefined
+
+## SAT__SEN2__RGB
+
+Property | Value
+---------|-------
+Name | RGB
+Description | A true color image from Sentinel 2 imagery
 Unit | undefined
 
     

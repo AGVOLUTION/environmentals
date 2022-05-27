@@ -12,6 +12,13 @@ export const NDVI = new SEN2("NDVI", {
     description:
         "Normalized Difference Vegetation Index (NDVI) from Sentinel 2 imagery",
     translation: "NDVI",
+    derivedFrom: [CL],
+});
+export const RGB = new SEN2("RGB", {
+    storeInTimestream: false,
+    description: "A true color image from Sentinel 2 imagery",
+    translation: "RGB",
+    derivedFrom: [CL],
 });
 export const sen2 = new SAT(
     "SEN2",
@@ -19,7 +26,7 @@ export const sen2 = new SAT(
         storeInTimestream: false,
         translation: "Sentinel 2",
     },
-    [CL, NDVI]
+    [NDVI, RGB]
 );
 //#endregion}}}
 
