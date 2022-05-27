@@ -7,7 +7,8 @@ import { ENV } from "../src/parameters/env/base";
 import { Model, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
 import { degC } from "../src/unit";
-import { CL, SEN2 } from "../src/parameters/sat";
+import { CL, NDVI, SEN2 } from "../src/parameters/sat";
+import { SAT, VAP } from "../src/parameters/sat/base";
 
 describe("environmentals", function () {
     describe("#deserialize", function () {
@@ -96,16 +97,34 @@ describe("models", function () {
 });
 
 describe("satellite", function () {
-    it("should correctly deserialize", function () {
-        const fqn = "SAT__SEN2__CL";
-        const de = deserialize(fqn);
-        expect(de).to.be.instanceof(SEN2);
-        expect(de.fqn).to.eq(fqn);
-    });
+    //it("should correctly deserialize", function () {
+    //const fqn = "SAT__SEN2__CL";
+    //const de = deserialize(fqn);
+    //expect(de).to.be.instanceof(SEN2);
+    //expect(de.fqn).to.eq(fqn);
+    //});
+
     describe("#resourceBucket", function () {
         it("should return the correct bucket", function () {
-            expect(CL.fqn).to.eq("SAT__SEN2__CL");
-            expect(CL.resourceBucket).to.eq("satellite/sentinel2/cloudless");
+            expect(NDVI.fqn).to.eq("SAT__SEN2__NDVI");
+            expect(NDVI.resourceBucket).to.eq("satellite/sentinel2/cloudless");
         });
+    });
+
+    it("should correctly deserialize a satellite VAP", function () {
+        const fqn = "SAT__SEN2__NDVI";
+        const de = deserialize(fqn) as SAT;
+        expect(de).to.be.instanceof(SEN2);
+        expect(de.fqn).to.eq(fqn);
+        expect(de.properties.derivedFrom![0]).to.eq(CL);
+    });
+
+    it("should correctly deserialize a satellite VAP with explicit product", function () {
+        const fqn = "SAT__SEN2__NDVI__CL";
+        const de = deserialize(fqn) as SAT;
+        expect(de).to.be.instanceof(SAT);
+        expect(de).to.be.instanceof(VAP);
+        expect(de.fqn).to.eq(fqn);
+        expect(de.resourceBucket).to.eq("satellite/sentinel2/cloudless");
     });
 });

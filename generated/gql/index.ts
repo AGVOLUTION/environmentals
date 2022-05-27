@@ -49,8 +49,8 @@ export const EnvironmentalParameterNames = {
     OBJ__WEIGHT: "OBJ__WEIGHT",
     SAT__SEN1__ASC: "SAT__SEN1__ASC",
     SAT__SEN1__DESC: "SAT__SEN1__DESC",
-    SAT__SEN2__CL: "SAT__SEN2__CL",
     SAT__SEN2__NDVI: "SAT__SEN2__NDVI",
+    SAT__SEN2__RGB: "SAT__SEN2__RGB",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
@@ -130,8 +130,8 @@ export const EnumObject = {
             "DESC": "DESC"
         },
         "SEN2": {
-            "CL": "CL",
-            "NDVI": "NDVI"
+            "NDVI": "NDVI",
+            "RGB": "RGB"
         }
     }
 }
