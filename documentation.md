@@ -329,4 +329,36 @@ Name | RGB
 Description | A true color image from Sentinel 2 imagery
 Unit | undefined
 
+## SAT__SEN2__KC
+
+Property | Value
+---------|-------
+Name | KC
+Description | KC index from Sentinel 2 imagery
+Unit | undefined
+
+## SAT__SEN2__CIGREEN
+
+Property | Value
+---------|-------
+Name | CIGREEN
+Description | CIGREEN index from Sentinel 2 imagery
+Unit | undefined
+
+## SAT__SEN2__SAVI
+
+Property | Value
+---------|-------
+Name | SAVI
+Description | SAVI index from Sentinel 2 imagery
+Unit | undefined
+
+## SAT__SEN2__WDVI
+
+Property | Value
+---------|-------
+Name | WDVI
+Description | WDVI index from Sentinel 2 imagery
+Unit | undefined
+
     

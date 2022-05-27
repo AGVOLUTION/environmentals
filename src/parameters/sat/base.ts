@@ -70,6 +70,15 @@ export class SAT extends Environmental {
         return super.children as SAT[];
     }
 
+    /**
+     * Return the expression for this VAP
+     *
+     * @returns Expression to calculate a VAP from a Product
+     */
+    public get expression(): string | undefined {
+        return this.properties.expression;
+    }
+
     public find(path: FqnPathElements): SAT {
         // special case: If this SAT has no more children, we look into the products this VAP can
         // be derived from.

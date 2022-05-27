@@ -55,5 +55,9 @@
     "SAT__SEN1__DESC": "Descending",
     "SAT__SEN2": "Sentinel 2",
     "SAT__SEN2__NDVI": "NDVI",
-    "SAT__SEN2__RGB": "RGB"
+    "SAT__SEN2__RGB": "RGB",
+    "SAT__SEN2__KC": "KC",
+    "SAT__SEN2__CIGREEN": "CIGREEN",
+    "SAT__SEN2__SAVI": "SAVI",
+    "SAT__SEN2__WDVI": "WDVI"
 }
