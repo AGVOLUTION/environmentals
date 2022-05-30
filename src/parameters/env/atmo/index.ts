@@ -15,8 +15,8 @@ export const T = new ATMO("T", {
     unit: degC,
     description: "Atmospheric temperature",
     translation: {
-        "de-de": "Temperatur",
-        "en-us": "Temperature",
+        "de-de": "Lufttemperatur",
+        "en-us": "Air Temperature",
     },
     storeInTimestream: true,
     format: ".1f",
@@ -25,7 +25,7 @@ export const P = new ATMO("P", {
     unit: hPa,
     description: "Atmospheric pressure",
     translation: {
-        "de-de": "Druck",
+        "de-de": "Luftdruck",
         "en-us": "Pressure",
     },
     storeInTimestream: true,
@@ -35,7 +35,7 @@ export const RH = new ATMO("RH", {
     unit: percent,
     description: "Relative humidity",
     translation: {
-        "de-de": "Rel. Feuchte",
+        "de-de": "Rel. Luftfeuchte",
         "en-us": "Rel. Humidity",
     },
     storeInTimestream: true,
