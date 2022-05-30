@@ -19,7 +19,7 @@ export const T = new ATMO("T", {
         "en-us": "Temperature",
     },
     storeInTimestream: true,
-    format: ".2f",
+    format: ".1f",
 });
 export const P = new ATMO("P", {
     unit: hPa,
@@ -29,7 +29,7 @@ export const P = new ATMO("P", {
         "en-us": "Pressure",
     },
     storeInTimestream: true,
-    format: ".2f",
+    format: ".1f",
 });
 export const RH = new ATMO("RH", {
     unit: percent,
@@ -64,7 +64,7 @@ export const RAIN = new ATMO("RAIN", {
     format: ".1f",
 });
 export const ETO = new ATMO("ETO", {
-    storeInTimestream: true,
+    storeInTimestream: false,
     models: [Models.ETO],
 });
 export const ETC = new ATMO("ETC", {
@@ -103,16 +103,16 @@ export const wind = new ATMO(
 export class SNOW extends ATMO {}
 export const HEIGHT = new SNOW("HEIGHT", {
     translation: { "de-de": "Schneehöhe", "en-us": "snow height" },
-    storeInTimestream: true,
+    storeInTimestream: false,
     models: [Models.SNOW_MAUS],
 });
 export const INSULATION = new SNOW("INSULATION", {
-    storeInTimestream: true,
+    storeInTimestream: false,
     translation: { "de-de": "Schneeisolierung", "en-us": "snow insulation" },
     models: [Models.SNOW_MAUS],
 });
 export const MELT = new SNOW("MELT", {
-    storeInTimestream: true,
+    storeInTimestream: false,
     translation: { "de-de": "Schneeschmelze", "en-us": "snow melt" },
     models: [Models.SNOW_MAUS],
 });
