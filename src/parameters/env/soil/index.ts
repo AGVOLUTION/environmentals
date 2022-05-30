@@ -28,7 +28,7 @@ export const NORM_ER = new SOIL("NORM_ER", {
 export const VWC = new SOIL("VWC", {
     storeInTimestream: true,
     translation: {
-        "de-de": "Volumetrische Feuchte",
+        "de-de": "Volumetrische Bodenfeuchte",
         "en-us": "Volumetric Water Content",
     },
     unit: percent,
