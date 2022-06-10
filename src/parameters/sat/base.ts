@@ -95,6 +95,23 @@ export class SAT extends Environmental {
         // other cases are handled by the super class
         return super.find(path) as SAT;
     }
+
+    /**
+     * Create a VAP from this sat
+     *
+     * This creates a Concrete VAP by using the first defined product in the derivedFrom property
+     *
+     * @returns This SAT as a concrete VAP from the default sourceProduct. If this is already a
+     * VAP, it is returned as is.
+     */
+    public asVap(): VAP {
+        if (this instanceof VAP) {
+            return this;
+        }
+        // Create a new VAP from this product by using the first defined sourceProduct
+        // (which is by definition the default one)
+        return new VAP(this, this._derivedFrom!.values().next().value);
+    }
 }
 
 /**
