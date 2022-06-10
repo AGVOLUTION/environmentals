@@ -127,4 +127,14 @@ describe("satellite", function () {
         expect(de.fqn).to.eq(fqn);
         expect(de.resourceBucket).to.eq("satellite/sentinel2/cloudless");
     });
+
+    it("should create the correct objects when using asVAP", function () {
+        const fqn = "SAT__SEN2__NDVI";
+        const de = deserialize(fqn) as SAT;
+        const deVap = deserialize(`${fqn}__CL`) as VAP;
+        const vap = de.asVap();
+        expect(vap).to.be.instanceof(VAP);
+        expect(vap.fqn).to.eq(`${fqn}__CL`);
+        expect(vap.asVap()).to.eq(vap);
+    });
 });
