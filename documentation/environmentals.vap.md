@@ -29,7 +29,8 @@ If a user requests a VAP with from a specific Product, we have to store the info
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [fromProduct](./environmentals.vap.fromproduct.md) |  | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from |
 |  [resourceBucket](./environmentals.vap.resourcebucket.md) |  | string | Return the resourceBucket of this parameter |
+|  [source](./environmentals.vap.source.md) |  | [SAT](./environmentals.sat.md) | Return the source satellite of this VAP |
+|  [sourceProduct](./environmentals.vap.sourceproduct.md) |  | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from |
 |  [vap](./environmentals.vap.vap.md) |  | [SAT](./environmentals.sat.md) | Get the vap of this environmental |
 
