@@ -129,17 +129,34 @@ export class SAT extends Environmental {
  * @extends SAT
  */
 export class VAP extends SAT {
-    protected vap: SAT;
-    protected fromProduct: SAT;
+    protected _vap: SAT;
+    protected _fromProduct: SAT;
     constructor(vap: SAT, fromProduct: SAT) {
         super(fromProduct.name, fromProduct.properties, []);
-        this.vap = vap;
-        this.fromProduct = fromProduct;
+        this._vap = vap;
+        this._fromProduct = fromProduct;
         this._parent = vap;
     }
 
     public get resourceBucket(): string {
-        assert(this.vap.parent! instanceof SAT);
-        return `${this.vap.parent.resourceBucket}/${this.fromProduct.normalizedName}`;
+        assert(this._vap.parent! instanceof SAT);
+        return `${this._vap.parent.resourceBucket}/${this._fromProduct.normalizedName}`;
+    }
+
+    /**
+     * Get the vap of this environmental
+     *
+     * @example ndvi
+     */
+    public get vap(): SAT {
+        return this._vap;
+    }
+    /**
+     * Get the sourceProduct this VAP is derived from
+     *
+     * @example sen2
+     */
+    public get fromProduct(): SAT {
+        return this._fromProduct;
     }
 }
