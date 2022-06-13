@@ -5,11 +5,11 @@
 
 Property | Value
 ---------|-------
-Name | Temperature
+Name | Air Temperature
 Description | Atmospheric temperature
 Unit | °C
 StoreInTimestream | true
-Format | .2f
+Format | .1f
 
 ## ENV__ATMO__P
 
@@ -19,7 +19,7 @@ Name | Pressure
 Description | Atmospheric pressure
 Unit | hPa
 StoreInTimestream | true
-Format | .2f
+Format | .1f
 
 ## ENV__ATMO__RH
 
@@ -68,7 +68,7 @@ Property | Value
 Name | ENV__ATMO__ETO
 Description | undefined
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Models | MODEL__NUM
 
 ## ENV__ATMO__ETC
@@ -118,7 +118,7 @@ Property | Value
 Name | snow height
 Description | undefined
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Models | MODEL__NUM
 
 ## ENV__ATMO__SNOW__INSULATION
@@ -128,7 +128,7 @@ Property | Value
 Name | snow insulation
 Description | undefined
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Models | MODEL__NUM
 
 ## ENV__ATMO__SNOW__MELT
@@ -138,7 +138,7 @@ Property | Value
 Name | snow melt
 Description | undefined
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Models | MODEL__NUM
 
 ## ENV__SOIL__T

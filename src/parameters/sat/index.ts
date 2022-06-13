@@ -81,6 +81,11 @@ export const sen1 = new SAT(
 );
 //#endregion}}}
 
+/**
+ * The SAT subtree, containing all satellite imagery parameters.
+ *
+ * @public
+ */
 export const sat = new SAT(
     "SAT",
     {

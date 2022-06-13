@@ -1,7 +1,7 @@
 /**
  * This is thrown, when the provided FQN could not be resolved as there is no Parameter with the
  * specified name.
- * @extends Error
+ * @public
  */
 export class NotFoundError extends Error {
     constructor(parameterName: string) {

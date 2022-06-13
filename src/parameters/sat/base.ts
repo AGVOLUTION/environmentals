@@ -126,7 +126,6 @@ export class SAT extends Environmental {
  * somehow. Therefore this VAP class exists. This class stores the VAP and the requested Product.
  * To correctly handle functions and properties like the resourceBucket (which contains the
  * product but not the VAP, those properties are overridden in this class.
- * @extends SAT
  */
 export class VAP extends SAT {
     protected _vap: SAT;

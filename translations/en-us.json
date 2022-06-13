@@ -1,7 +1,7 @@
 {
     "ENV": "ENV",
     "ENV__ATMO": "ENV__ATMO",
-    "ENV__ATMO__T": "Temperature",
+    "ENV__ATMO__T": "Air Temperature",
     "ENV__ATMO__P": "Pressure",
     "ENV__ATMO__RH": "Rel. Humidity",
     "ENV__ATMO__IRRADIATION": "irradiation",
