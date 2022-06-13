@@ -71,7 +71,7 @@ describe("environmentals", function () {
     describe("Formatting", function () {
         it("should format values correctly", function () {
             const value = 3.25432;
-            expect(T.format(value), "T").eq("3.25");
+            expect(T.format(value), "T").eq("3.3");
             expect(RSSI.format(value), "RSSI").eq("3");
             expect(WEIGHT.format(value), "WEIGHT").eq("3.254");
         });
