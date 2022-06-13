@@ -177,7 +177,17 @@ export class VAP extends SAT {
      * @example cl
      * @public
      */
-    public get fromProduct(): SAT {
+    public get sourceProduct(): SAT {
         return this._fromProduct;
+    }
+
+    /**
+     * Return the source satellite of this VAP
+     *
+     * @example sen2
+     * @public
+     */
+    public get source(): SAT {
+        return this._vap.parent as SAT;
     }
 }

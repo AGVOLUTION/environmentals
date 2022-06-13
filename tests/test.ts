@@ -137,4 +137,13 @@ describe("satellite", function () {
         expect(vap.fqn).to.eq(`${fqn}__CL`);
         expect(vap.asVap()).to.eq(vap);
     });
+
+    it("should return the correct parts/properties of a VAP", function () {
+        const fqn = "SAT__SEN2__NDVI__CL";
+        const de = deserialize(fqn) as VAP;
+
+        expect(de.vap.name).to.eq("NDVI");
+        expect(de.sourceProduct.name).to.eq("CL");
+        expect(de.source.name).to.eq("SEN2");
+    });
 });

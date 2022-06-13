@@ -119,11 +119,12 @@ export function tryFiltered(fqn: FullyQualifiedName): Environmental | undefined;
 // @public
 export class VAP extends SAT {
     constructor(vap: SAT, fromProduct: SAT);
-    get fromProduct(): SAT;
     // @internal
     protected _fromProduct: SAT;
     // @override
     get resourceBucket(): string;
+    get source(): SAT;
+    get sourceProduct(): SAT;
     get vap(): SAT;
     // @internal
     protected _vap: SAT;
