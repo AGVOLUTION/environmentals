@@ -16,6 +16,8 @@ As a user you will most probably want to use the [deserialize()](./environmental
 |  --- | --- |
 |  [Environmental](./environmentals.environmental.md) | Base class for all nodes |
 |  [NotFoundError](./environmentals.notfounderror.md) | This is thrown, when the provided FQN could not be resolved as there is no Parameter with the specified name. |
+|  [SAT](./environmentals.sat.md) | SAT parameters describe imagery data obtained from different satellites |
+|  [VAP](./environmentals.vap.md) | A VAP (Value Added Product) is derived from a Product. |
 
 ## Functions
 

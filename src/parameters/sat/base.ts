@@ -8,6 +8,10 @@ export interface SatProperties extends EnvironmentalProperties {
     derivedFrom?: SAT[];
 }
 
+/**
+ * SAT parameters describe imagery data obtained from different satellites
+ * @public
+ */
 export class SAT extends Environmental {
     public properties: SatProperties;
     protected _derivedFrom?: Map<string, SAT> = undefined;
@@ -37,6 +41,7 @@ export class SAT extends Environmental {
     /**
      * Return the resourceBucket of this parameter
      *
+     * @remarks
      * The resourceBucket describes the storage path in S3 of this data type
      *
      * @example
@@ -117,6 +122,7 @@ export class SAT extends Environmental {
 /**
  * A VAP (Value Added Product) is derived from a Product.
  *
+ * @remarks
  * A Satellite has only a few Products, but multiple VAP can be produced from them. Most of the
  * VAPs can probably be derived from all Products.
  * A User can request a VAP without specifying the underlying Product. In that case a default
@@ -126,9 +132,19 @@ export class SAT extends Environmental {
  * somehow. Therefore this VAP class exists. This class stores the VAP and the requested Product.
  * To correctly handle functions and properties like the resourceBucket (which contains the
  * product but not the VAP, those properties are overridden in this class.
+ *
+ * @public
  */
 export class VAP extends SAT {
+    /**
+     * The actual vap parameter
+     * @internal
+     */
     protected _vap: SAT;
+    /**
+     * Reference to the sourceProduct
+     * @internal
+     */
     protected _fromProduct: SAT;
     constructor(vap: SAT, fromProduct: SAT) {
         super(fromProduct.name, fromProduct.properties, []);
@@ -137,6 +153,10 @@ export class VAP extends SAT {
         this._parent = vap;
     }
 
+    /**
+     * @override
+     * {@inheritdoc SAT.resourceBucket}
+     */
     public get resourceBucket(): string {
         assert(this._vap.parent! instanceof SAT);
         return `${this._vap.parent.resourceBucket}/${this._fromProduct.normalizedName}`;
@@ -146,6 +166,7 @@ export class VAP extends SAT {
      * Get the vap of this environmental
      *
      * @example ndvi
+     * @public
      */
     public get vap(): SAT {
         return this._vap;
@@ -153,7 +174,8 @@ export class VAP extends SAT {
     /**
      * Get the sourceProduct this VAP is derived from
      *
-     * @example sen2
+     * @example cl
+     * @public
      */
     public get fromProduct(): SAT {
         return this._fromProduct;
