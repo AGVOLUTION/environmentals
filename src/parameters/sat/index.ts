@@ -1,4 +1,6 @@
 import { SAT } from "./base";
+export { SAT };
+export { VAP } from "./base";
 
 //#region  Sentinel 2{{{
 export class SEN2 extends SAT {}

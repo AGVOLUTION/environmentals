@@ -88,8 +88,25 @@ export class NotFoundError extends Error {
 // @public
 export const root: Environmental;
 
-// Warning: (ae-forgotten-export) The symbol "SAT" needs to be exported by the entry point index.d.ts
-//
+// @public
+export class SAT extends Environmental {
+    constructor(name: string, properties: SatProperties, children?: SAT[]);
+    asVap(): VAP;
+    // (undocumented)
+    get children(): SAT[];
+    // (undocumented)
+    protected _derivedFrom?: Map<string, SAT>;
+    get expression(): string | undefined;
+    // (undocumented)
+    find(path: FqnPathElements): SAT;
+    get normalizedName(): string;
+    // Warning: (ae-forgotten-export) The symbol "SatProperties" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    properties: SatProperties;
+    get resourceBucket(): string;
+}
+
 // @public
 export const sat: SAT;
 
@@ -98,5 +115,18 @@ export function tryDeserialize(fqn: FullyQualifiedName): Environmental | undefin
 
 // @public
 export function tryFiltered(fqn: FullyQualifiedName): Environmental | undefined;
+
+// @public
+export class VAP extends SAT {
+    constructor(vap: SAT, fromProduct: SAT);
+    get fromProduct(): SAT;
+    // @internal
+    protected _fromProduct: SAT;
+    // @override
+    get resourceBucket(): string;
+    get vap(): SAT;
+    // @internal
+    protected _vap: SAT;
+}
 
 ```
