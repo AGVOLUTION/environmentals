@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@agv/environmentals](./environmentals.md) | AGV Environmentals<!-- -->The central repository for defining parameters of data representing values observed in reality or simulated by some model<!-- -->\#\# Usage<!-- -->As a user you will most probably want to use the [deserialize()](./environmentals.deserialize.md) function to deserialize a FQN string into a [Environmental](./environmentals.environmental.md) object, or one of it's concrete subclasses. |
+|  [@agv/environmentals](./environmentals.md) | The central repository for defining parameters of data representing values observed in reality or simulated by some model |
 
