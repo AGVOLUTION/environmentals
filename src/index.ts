@@ -1,10 +1,8 @@
 /**
- * AGV Environmentals
- *
  * The central repository for defining parameters of data representing values observed in
  * reality or simulated by some model
  *
- * ## Usage
+ * @remarks
  *
  * As a user you will most probably want to use the {@link @agv/environmentals#deserialize} function to deserialize
  * a FQN string into a {@link @agv/environmentals#Environmental} object, or one of it's concrete subclasses.
