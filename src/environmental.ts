@@ -7,6 +7,7 @@ import { NotFoundError } from "./errors";
  * The Name of an Environmental
  *
  * This is the name of the actual node in the tree, not the {@link FullyQualifiedName}.
+ * @public
  */
 export type EnvironmentalName = string;
 
@@ -15,16 +16,19 @@ export type EnvironmentalName = string;
  *
  * @example
  * `ENV__ATMO__T`
+ * @public
  */
 export type FullyQualifiedName = string;
 
 /**
  * The Path elements of a FQN
+ * @public
  */
 export type FqnPathElements = EnvironmentalName[];
 
 /**
  * Properties of an Environmental
+ * @public
  */
 export interface EnvironmentalProperties {
     unit?: Unit;
@@ -42,6 +46,7 @@ export interface EnvironmentalProperties {
 
 /**
  * Base class for all nodes
+ * @public
  */
 export class Environmental {
     /**

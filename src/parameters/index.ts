@@ -19,8 +19,10 @@ let _blacklist: FullyQualifiedName[] | undefined = undefined;
  *
  * Take a look at {@link tryFiltered} to learn more about the filter mechanism
  *
- * @param [whitelist] - List of parameters always to consider while deserializing
- * @param [blacklist] - List of parameters which should not be considered while deserializing
+ * @param whitelist - List of parameters always to consider while deserializing
+ * @param blacklist - List of parameters which should not be considered while deserializing
+ *
+ * @public
  */
 export function initialize({
     whitelist,
@@ -35,6 +37,7 @@ export function initialize({
 
 /**
  * The root node for the environmentals tree
+ * @public
  */
 export const root = new Environmental("ROOT", { storeInTimestream: false }, [
     env,
@@ -51,7 +54,9 @@ function isFqnPathElements(x: any): x is FqnPathElements {
  * Deserialize a FullyQualifiedName (FQN) to the object
  *
  * @param fqn - String with the FullyQualifiedName
- * @throws {Error} - Throws an Error when the supplied FQN could not be resolved or a incorrect MODEL fqn was provided
+ * @throws Error
+ * Throws an Error when the supplied FQN could not be resolved or a incorrect MODEL fqn was provided
+ * @public
  */
 export function deserialize(
     fqn: FullyQualifiedName | FqnPathElements
@@ -92,6 +97,7 @@ export function deserialize(
  * If no object can be found, undefined will be returned.
  *
  * @param fqn - String with the FullyQualifiedName
+ * @public
  */
 export function tryDeserialize(fqn: FullyQualifiedName) {
     try {
@@ -107,6 +113,7 @@ export function tryDeserialize(fqn: FullyQualifiedName) {
 /**
  * Try to deserialize a FQN, but consider black-/whitelist
  *
+ * @remarks
  * This function can be used to narrow down the resolved Parameters, for example for User
  * Interfaces, where certain Parameters should not be displayed.
  *
@@ -118,6 +125,7 @@ export function tryDeserialize(fqn: FullyQualifiedName) {
  * function behaves just like {@link tryDeserialize}
  *
  * @param fqn - String with the FullyQualifiedName
+ * @public
  */
 export function tryFiltered(fqn: FullyQualifiedName) {
     if (_whitelist) {
@@ -140,6 +148,8 @@ export function tryFiltered(fqn: FullyQualifiedName) {
 
 /**
  * Get the leaf nodes, optionally of a subtree
+ *
+ * @public
  */
 export const getLeafs = (rootElement: Environmental = root) =>
     [...rootElement].filter((x) => x.isLeaf);

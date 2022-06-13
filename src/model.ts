@@ -4,6 +4,7 @@ import { ENV } from "./parameters/env/base";
 
 /**
  * The types of models we have
+ * @public
  */
 export enum ModelTypes {
     Numerical,
@@ -13,7 +14,7 @@ export enum ModelTypes {
 /**
  * Describes a Model for a {@link ENV}
  *
- * @extends {Environmental}
+ * @public
  */
 export class Model extends Environmental {
     public readonly type: ModelTypes;
@@ -46,7 +47,7 @@ export class Model extends Environmental {
  * A model can provide multiple parameters. To still determine, which concrete parameter was
  * requested, this class contains a reference to the concrete parameter
  *
- * @extends {Model}
+ * @public
  */
 export class RequestedModel extends Model {
     public readonly requestedParameter: ENV;
