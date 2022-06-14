@@ -59,5 +59,10 @@
     "SAT__SEN2__KC": "KC",
     "SAT__SEN2__CIGREEN": "CIGREEN",
     "SAT__SEN2__SAVI": "SAVI",
-    "SAT__SEN2__WDVI": "WDVI"
+    "SAT__SEN2__WDVI": "WDVI",
+    "TOPO": "TOPO",
+    "TOPO__TWI": "Topographic Wetness Index",
+    "TOPO__DEM": "Digital Elevation Model",
+    "TOPO__SLOPE": "Slope",
+    "TOPO__EXPOSITION": "Exposition"
 }

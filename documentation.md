@@ -454,4 +454,40 @@ StoreInTimestream | false
 DerivedFrom | CL
 Expression | b8 - (1.007 * b4)
 
+## TOPO__TWI
+
+Property | Value
+---------|-------
+Name | Topographic Wetness Index
+Description | Topographic Wetness Index
+Unit | undefined
+StoreInTimestream | false
+
+## TOPO__DEM
+
+Property | Value
+---------|-------
+Name | Digital Elevation Model
+Description | Digital Elevation Model
+Unit | undefined
+StoreInTimestream | false
+
+## TOPO__SLOPE
+
+Property | Value
+---------|-------
+Name | Slope
+Description | Slope
+Unit | undefined
+StoreInTimestream | false
+
+## TOPO__EXPOSITION
+
+Property | Value
+---------|-------
+Name | Exposition
+Description | Exposition
+Unit | undefined
+StoreInTimestream | false
+
     

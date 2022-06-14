@@ -110,6 +110,10 @@ export class SAT extends Environmental {
 // @public
 export const sat: SAT;
 
+// @alpha
+export class TOPO extends Environmental {
+}
+
 // @public
 export function tryDeserialize(fqn: FullyQualifiedName): Environmental | undefined;
 
