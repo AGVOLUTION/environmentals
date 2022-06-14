@@ -7,6 +7,7 @@ export * as ENVEnums from './ENV'
 export * as DEVEnums from './DEV'
 export * as OBJEnums from './OBJ'
 export * as SATEnums from './SAT'
+export * as TOPOEnums from './TOPO'
 
 import { registerEnumType } from "type-graphql";
 export const EnvironmentalParameterNames = {
@@ -55,6 +56,10 @@ export const EnvironmentalParameterNames = {
     SAT__SEN2__CIGREEN: "SAT__SEN2__CIGREEN",
     SAT__SEN2__SAVI: "SAT__SEN2__SAVI",
     SAT__SEN2__WDVI: "SAT__SEN2__WDVI",
+    TOPO__TWI: "TOPO__TWI",
+    TOPO__DEM: "TOPO__DEM",
+    TOPO__SLOPE: "TOPO__SLOPE",
+    TOPO__EXPOSITION: "TOPO__EXPOSITION",
     MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS",
     MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS: "MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS",
@@ -141,6 +146,12 @@ export const EnumObject = {
             "SAVI": "SAVI",
             "WDVI": "WDVI"
         }
+    },
+    "TOPO": {
+        "TWI": "TWI",
+        "DEM": "DEM",
+        "SLOPE": "SLOPE",
+        "EXPOSITION": "EXPOSITION"
     }
 }
 export const StoreInTimestreamParameters = [

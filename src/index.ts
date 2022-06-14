@@ -30,3 +30,4 @@ export {
 
 export { NotFoundError } from "./errors";
 export { SAT, VAP } from "./parameters/sat";
+export { TOPO } from "./parameters/topo";
