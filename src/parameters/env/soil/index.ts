@@ -16,6 +16,7 @@ import {
     µSpcm,
 } from "../../../unit";
 import { ENV } from "../base";
+import { AGV, AG_BODEN } from "./models";
 
 export class SOIL extends ENV {}
 export const T = new SOIL("T", {
@@ -196,6 +197,7 @@ export const PWP = new SOIL("PWP", {
     storeInTimestream: false,
     description: "permanent wilting point",
     unit: mmpmm,
+    models: [AG_BODEN],
 });
 export const NH4 = new SOIL("NH4", {
     storeInTimestream: false,
@@ -213,6 +215,35 @@ export const MAI = new SOIL("MAI", {
 });
 export const LDRAIN = new SOIL("LDRAIN", {
     storeInTimestream: false,
+});
+
+export const ALB = new SOIL("ALB", {
+    storeInTimestream: false,
+    description: "Soil albedo",
+    models: [AGV],
+});
+export const SAT = new SOIL("SAT", {
+    storeInTimestream: false,
+    description: "Soil saturation",
+    models: [AG_BODEN],
+    unit: mmpmm,
+});
+export const FC = new SOIL("FC", {
+    storeInTimestream: false,
+    description: "Soil field capacity",
+    models: [AG_BODEN],
+    unit: mmpmm,
+});
+export const NFC = new SOIL("NFC", {
+    storeInTimestream: false,
+    description: "usable field capacity",
+    models: [AG_BODEN],
+    unit: mmpmm,
+});
+export const CN2BARE = new SOIL("CN2BARE", {
+    storeInTimestream: false,
+    description: "Runoff curve number",
+    models: [AGV],
 });
 
 export const soil = new ENV("SOIL", { storeInTimestream: false }, [
@@ -236,10 +267,10 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     TH,
     OM,
     RD,
-    //ALB,
-    //SAT,
-    //FC,
-    //NFC,
+    ALB,
+    SAT,
+    FC,
+    NFC,
     DRAINF,
     NORG,
     FMIN,
@@ -247,7 +278,7 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     NH4,
     NO3,
     MAI,
-    //CN2BARE,
+    CN2BARE,
     LDRAIN,
     capacitance,
 ]);
