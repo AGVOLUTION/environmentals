@@ -191,6 +191,255 @@ Unit | cbar
 StoreInTimestream | true
 Format | d
 
+## ENV__SOIL__BD
+
+Property | Value
+---------|-------
+Name | Bulk density
+Description | Bulk density of the fine earth fraction
+Unit | kg/dm³
+StoreInTimestream | false
+
+## ENV__SOIL__CEC
+
+Property | Value
+---------|-------
+Name | Cation Exchange Capacity
+Description | Cation Exchange Capacity of the soil
+Unit | mm( c )/kg
+StoreInTimestream | false
+
+## ENV__SOIL__CFVO
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CFVO
+Description | Volumetric fraction of coarse fragments (> 2 mm)
+Unit | cm³/dm³ (vol%)
+StoreInTimestream | false
+
+## ENV__SOIL__CLAY
+
+Property | Value
+---------|-------
+Name | Clay
+Description | Proportion of clay particles (< 0.002 mm) in the fine earth fraction
+Unit | g/100g (%)
+StoreInTimestream | false
+
+## ENV__SOIL__TN
+
+Property | Value
+---------|-------
+Name | Total nitrogen
+Description | Total nitrogen (N)
+Unit | g/kg
+StoreInTimestream | false
+
+## ENV__SOIL__PH
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__PH
+Description | Soil pH H2O
+Unit | pH
+StoreInTimestream | false
+
+## ENV__SOIL__SAND
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__SAND
+Description | Proportion of sand particles (> 0.05 mm) in the fine earth fraction
+Unit | g/100g (%)
+StoreInTimestream | false
+
+## ENV__SOIL__SILT
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__SILT
+Description | Proportion of silt particles (? 0.002 mm and ? 0.05 mm) in the fine earth fraction
+Unit | g/100g (%)
+StoreInTimestream | false
+
+## ENV__SOIL__SOC
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__SOC
+Description | Soil organic carbon content in the fine earth fraction
+Unit | g/kg
+StoreInTimestream | false
+
+## ENV__SOIL__OCD
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__OCD
+Description | Organic carbon density
+Unit | kg/m³
+StoreInTimestream | false
+
+## ENV__SOIL__OCS
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__OCS
+Description | Organic carbon stocks
+Unit | kg/m³
+StoreInTimestream | false
+
+## ENV__SOIL__RD
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__RD
+Description | Maxiumum rooting depth
+Unit | mm
+StoreInTimestream | false
+
+## ENV__SOIL__TH
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__TH
+Description | Layer thickness
+Unit | mm
+StoreInTimestream | false
+
+## ENV__SOIL__OM
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__OM
+Description | organic matter, OC * 1.752
+Unit | %
+StoreInTimestream | false
+
+## ENV__SOIL__ALB
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__ALB
+Description | Soil albedo
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__SAT
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__SAT
+Description | Soil saturation
+Unit | mm/mm
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__FC
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__FC
+Description | Soil field capacity
+Unit | mm/mm
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__NFC
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__NFC
+Description | usable field capacity
+Unit | mm/mm
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__DRAINF
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__DRAINF
+Description | undefined
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__NORG
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__NORG
+Description | organic nitrogen
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__FMIN
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__FMIN
+Description | mineralisable N
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__PWP
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__PWP
+Description | permanent wilting point
+Unit | mm/mm
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__NH4
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__NH4
+Description | ammonium
+Unit | kg/ha
+StoreInTimestream | false
+
+## ENV__SOIL__NO3
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__NO3
+Description | nitrate
+Unit | kg/ha
+StoreInTimestream | false
+
+## ENV__SOIL__MAI
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__MAI
+Description | Moisture index
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__CN2BARE
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CN2BARE
+Description | Runoff curve number
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__LDRAIN
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__LDRAIN
+Description | undefined
+Unit | undefined
+StoreInTimestream | false
+
 ## ENV__SOIL__CAPACITANCE__ABSOLUTE
 
 Property | Value
