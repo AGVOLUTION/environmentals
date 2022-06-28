@@ -1,6 +1,6 @@
 import { Locale, Translation } from "./localization";
 import { format } from "d3-format";
-import { Unit } from "./unit";
+import { Unit, ValueRange } from "./unit";
 import { NotFoundError } from "./errors";
 
 /**
@@ -42,6 +42,10 @@ export interface EnvironmentalProperties {
      * Format string passed to d3-format to nicely display numeric values
      */
     format?: string;
+    /**
+     * Optional range of possible Values, overrides valueRange of {@see Unit} (if present)
+     */
+    valueRange?: ValueRange;
 }
 
 /**
@@ -95,6 +99,13 @@ export class Environmental {
      */
     public format(value: number): string {
         return format(this.properties.format || "")(value);
+    }
+
+    /**
+     * Returns the valueRange of this data (if set)
+     */
+    public get valueRange() {
+        return this.properties.valueRange || this.unit?.valueRange;
     }
 
     /**
