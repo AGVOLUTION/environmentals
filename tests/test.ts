@@ -1,12 +1,19 @@
 import { expect } from "chai";
 import { deserialize, env, root } from "../src";
 import { RSSI } from "../src/parameters/dev/rf";
-import { T, atmo, HEIGHT, MELT, INSULATION } from "../src/parameters/env/atmo";
+import {
+    T,
+    atmo,
+    HEIGHT,
+    MELT,
+    INSULATION,
+    RH,
+} from "../src/parameters/env/atmo";
 import { SNOW_MAUS } from "../src/parameters/env/atmo/models";
 import { ENV } from "../src/parameters/env/base";
 import { Model, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
-import { degC } from "../src/unit";
+import { degC, ValueRange } from "../src/unit";
 import { CL, NDVI, SEN2 } from "../src/parameters/sat";
 import { SAT, VAP } from "../src/parameters/sat/base";
 
@@ -74,6 +81,14 @@ describe("environmentals", function () {
             expect(T.format(value), "T").eq("3.3");
             expect(RSSI.format(value), "RSSI").eq("3");
             expect(WEIGHT.format(value), "WEIGHT").eq("3.254");
+        });
+    });
+
+    describe("#valueRange", function () {
+        it("should return correct valueRange", function () {
+            expect(RH.valueRange).to.be.instanceof(ValueRange);
+            expect(RH.valueRange?.min).to.eq(0);
+            expect(RH.valueRange?.max).to.eq(100);
         });
     });
 });

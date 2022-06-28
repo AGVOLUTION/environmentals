@@ -1,5 +1,20 @@
 import { Locale, Translation } from "./localization";
 
+/**
+ * Class holding information about a value range (min and max values).
+ */
+export class ValueRange {
+    constructor(public min: number, public max: number) {}
+
+    public toString(): string {
+        return `${this.min}-${this.max}`;
+    }
+
+    public static positive(): ValueRange {
+        return new ValueRange(0, Infinity);
+    }
+}
+
 export class Unit {
     public readonly symbol: string;
     public readonly _translation?: Translation;
@@ -23,7 +38,11 @@ export class Unit {
         return this.symbol;
     }
 
-    constructor(name: string, translation?: Translation) {
+    constructor(
+        name: string,
+        public readonly valueRange?: ValueRange,
+        translation?: Translation
+    ) {
         this.symbol = name;
         this._translation = translation;
     }
@@ -34,8 +53,8 @@ export class Unit {
 }
 
 export const degC = new Unit("°C");
-export const kelvin = new Unit("K");
-export const percent = new Unit("%", {
+export const kelvin = new Unit("K", ValueRange.positive());
+export const percent = new Unit("%", new ValueRange(0, 100), {
     "de-de": "Prozent",
     "en-us": "percent",
 });
@@ -45,7 +64,7 @@ export const mm = new Unit("mm");
 export const yesno = new Unit("yes/no");
 export const Wpm2 = new Unit("W/m²");
 export const mmpsqm = new Unit("mm/m²");
-export const kmh = new Unit("km/h");
+export const kmh = new Unit("km/h", ValueRange.positive());
 export const degree = new Unit("°");
 export const µSpcm = new Unit("µS/cm");
 export const cbar = new Unit("cbar");
