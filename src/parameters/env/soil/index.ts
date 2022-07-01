@@ -1,9 +1,11 @@
+import { SOIL } from "./base";
 import {
     cbar,
     cm3pdm3,
     degC,
     gp100g,
     gpkg,
+    gpml,
     kgpdm3,
     kgpha,
     kgpm3,
@@ -11,14 +13,13 @@ import {
     mmcpkg,
     mmpmm,
     percent,
-    pF,
     ph,
     µSpcm,
 } from "../../../unit";
 import { ENV } from "../base";
-import { AGV, AG_BODEN } from "./models";
+import { AGV, AG_BODEN, H2O, KCL, VDLUFA_CAL, VDLUFA_CAT } from "./models";
+import { capacitance } from "./capacitance";
 
-export class SOIL extends ENV {}
 export const T = new SOIL("T", {
     translation: { "de-de": "Bodentemperatur", "en-us": "Soil Temperature" },
     storeInTimestream: true,
@@ -58,46 +59,7 @@ export const MATRIX_POTENTIAL = new SOIL("MATRIX_POTENTIAL", {
     format: "d",
 });
 
-export class CAPACITANCE extends SOIL {}
-export const ABSOLUTE = new CAPACITANCE("ABSOLUTE", {
-    storeInTimestream: true,
-    translation: { "de-de": "Kapazität abs.", "en-us": "Capacitance abs." },
-    unit: pF,
-    format: ".2f",
-});
-export const DIFFERENTIAL = new CAPACITANCE("DIFFERENTIAL", {
-    storeInTimestream: true,
-    translation: { "de-de": "Kapazität diff.", "en-us": "Capacitance diff." },
-    unit: pF,
-    format: ".2f",
-});
-export const A = new CAPACITANCE("A", {
-    description: "Leg A of the soil sensor",
-    storeInTimestream: true,
-    translation: { "de-de": "Kapazität A", "en-us": "Capacitance A" },
-    unit: pF,
-    format: ".2f",
-});
-export const B = new CAPACITANCE("B", {
-    description: "Leg B of the soil sensor",
-    storeInTimestream: true,
-    translation: { "de-de": "Kapazität B", "en-us": "Capacitance B" },
-    unit: pF,
-    format: ".2f",
-});
-export const OFFSET = new CAPACITANCE("OFFSET", {
-    storeInTimestream: true,
-    translation: { "de-de": "Kapazität Offset", "en-us": "Capacitance Offset" },
-    unit: pF,
-    format: ".2f",
-});
-export const capacitance = new CAPACITANCE(
-    "CAPACITANCE",
-    { storeInTimestream: false },
-    [ABSOLUTE, DIFFERENTIAL, A, B, OFFSET]
-);
-
-// Parameters, originally for/from isric
+// physical Parameters, originally for/from isric {{{
 export const BD = new SOIL("BD", {
     storeInTimestream: false,
     description: "Bulk density of the fine earth fraction",
@@ -127,11 +89,6 @@ export const TN = new SOIL("TN", {
     description: "Total nitrogen (N)",
     translation: "Total nitrogen",
     unit: gpkg,
-});
-export const PH = new SOIL("PH", {
-    storeInTimestream: false,
-    description: "Soil pH H2O",
-    unit: ph,
 });
 export const SAND = new SOIL("SAND", {
     storeInTimestream: false,
@@ -244,7 +201,76 @@ export const CN2BARE = new SOIL("CN2BARE", {
     storeInTimestream: false,
     description: "Runoff curve number",
     models: [AGV],
+}); //}}}
+
+// Chemical soil properties {{{
+export const PH = new SOIL("PH", {
+    storeInTimestream: false,
+    description: "Soil pH",
+    unit: ph,
+    models: [H2O, KCL],
 });
+export const K2O = new SOIL("K2O", {
+    storeInTimestream: false,
+    description: "Soil K2O",
+    unit: gpml,
+    models: [VDLUFA_CAL],
+});
+export const K = new SOIL("K", {
+    storeInTimestream: false,
+    description: "Soil K",
+    models: [VDLUFA_CAL],
+});
+export const P2O5 = new SOIL("P2O5", {
+    storeInTimestream: false,
+    description: "Soil P2O5",
+    unit: gpml,
+    models: [VDLUFA_CAL],
+});
+export const P = new SOIL("P", {
+    storeInTimestream: false,
+    description: "Soil P",
+    models: [VDLUFA_CAL],
+});
+export const MG = new SOIL("MG", {
+    storeInTimestream: false,
+    description: "Soil MG",
+});
+export const CA = new SOIL("CA", {
+    storeInTimestream: false,
+    description: "Soil CA",
+});
+
+export const CACL2 = new SOIL("CACL2", {
+    storeInTimestream: false,
+    description: "Lime",
+});
+export const B = new SOIL("B", {
+    storeInTimestream: false,
+    description: "Soil Boron",
+    models: [VDLUFA_CAT],
+});
+export const CU = new SOIL("CU", {
+    storeInTimestream: false,
+    description: "Soil Copper",
+    models: [VDLUFA_CAT],
+});
+export const S = new SOIL("S", {
+    storeInTimestream: false,
+    description: "Soil Sulfur",
+    models: [VDLUFA_CAT],
+});
+export const MN = new SOIL("MN", {
+    storeInTimestream: false,
+    description: "Soil Manganese",
+    models: [VDLUFA_CAT],
+});
+export const NA = new SOIL("NA", {
+    storeInTimestream: false,
+    description: "Soil Sodium",
+    models: [VDLUFA_CAT],
+});
+// }}}
 
 export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     T,
@@ -280,5 +306,18 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     MAI,
     CN2BARE,
     LDRAIN,
+    PH,
+    K2O,
+    K,
+    P2O5,
+    P,
+    MG,
+    CA,
+    CACL2,
+    B,
+    CU,
+    S,
+    MN,
+    NA,
     capacitance,
 ]);

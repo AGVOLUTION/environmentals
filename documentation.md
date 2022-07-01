@@ -241,9 +241,10 @@ StoreInTimestream | false
 Property | Value
 ---------|-------
 Name | ENV__SOIL__PH
-Description | Soil pH H2O
+Description | Soil pH
 Unit | pH
 StoreInTimestream | false
+Models | MODEL__IMG,MODEL__IMG
 
 ## ENV__SOIL__SAND
 
@@ -439,6 +440,123 @@ Name | ENV__SOIL__LDRAIN
 Description | undefined
 Unit | undefined
 StoreInTimestream | false
+
+## ENV__SOIL__K2O
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__K2O
+Description | Soil K2O
+Unit | g/ml
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__K
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__K
+Description | Soil K
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__P2O5
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__P2O5
+Description | Soil P2O5
+Unit | g/ml
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__P
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__P
+Description | Soil P
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__MG
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__MG
+Description | Soil MG
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__CA
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CA
+Description | Soil CA
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__CACL2
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CACL2
+Description | Lime
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__B
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__B
+Description | Soil Boron
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__CU
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CU
+Description | Soil Copper
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__S
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__S
+Description | Soil Sulfur
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__MN
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__MN
+Description | Soil Manganese
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
+
+## ENV__SOIL__NA
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__NA
+Description | Soil Sodium
+Unit | undefined
+StoreInTimestream | false
+Models | MODEL__IMG
 
 ## ENV__SOIL__CAPACITANCE__ABSOLUTE
 
