@@ -49,6 +49,8 @@ export class Environmental {
     translation(locale: Locale): string;
     // Warning: (ae-forgotten-export) The symbol "Unit" needs to be exported by the entry point index.d.ts
     get unit(): Unit | undefined;
+    // Warning: (ae-forgotten-export) The symbol "ValueRange" needs to be exported by the entry point index.d.ts
+    get valueRange(): ValueRange | undefined;
 }
 
 // @public
@@ -66,6 +68,7 @@ export interface EnvironmentalProperties {
     translation?: Translation;
     // (undocumented)
     unit?: Unit;
+    valueRange?: ValueRange;
 }
 
 // @public

@@ -21,4 +21,5 @@ export interface EnvironmentalProperties
 |  [storeInTimestream](./environmentals.environmentalproperties.storeintimestream.md) | boolean | Should this parameter be stored in the timestream database? |
 |  [translation?](./environmentals.environmentalproperties.translation.md) | Translation | <i>(Optional)</i> |
 |  [unit?](./environmentals.environmentalproperties.unit.md) | Unit | <i>(Optional)</i> |
+|  [valueRange?](./environmentals.environmentalproperties.valuerange.md) | ValueRange | <i>(Optional)</i> Optional range of possible Values, overrides valueRange of  (if present) |
 

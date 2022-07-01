@@ -81,3 +81,4 @@ export const ph = new Unit("pH");
 export const kgpm3 = new Unit("kg/m³");
 export const mmpmm = new Unit("mm/mm");
 export const kgpha = new Unit("kg/ha");
+export const gpml = new Unit("g/ml");
