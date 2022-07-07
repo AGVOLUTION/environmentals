@@ -635,7 +635,7 @@ Property | Value
 Name | Alarm triggered
 Description | A device alert (motion, theft detection) was triggered
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Format | d
 
 ## DEV__ALERT__ARMED
@@ -645,7 +645,7 @@ Property | Value
 Name | Alarm active
 Description | The internal alert (motion, theft detection) is active and listening for trigger events
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Format | d
 
 ## DEV__POSITION__LATITUDE
