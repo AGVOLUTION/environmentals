@@ -253,7 +253,6 @@ export const StoreInTimestreamParameters = [
     "ENV__SOIL__CAPACITANCE__B",
     "ENV__SOIL__CAPACITANCE__OFFSET",
     "DEV__ENERGY__VCAP",
-    "DEV__ENERGY__LOWLIGHT",
     "DEV__RF__RSSI",
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",
