@@ -10,7 +10,7 @@ export const VCAP = new ENERGY("VCAP", {
     format: "d",
 });
 export const LOWLIGHT = new ENERGY("LOWLIGHT", {
-    storeInTimestream: true,
+    storeInTimestream: false,
     translation: { "de-de": "Dunkel", "en-us": "Low Light" },
     format: "d",
 });
