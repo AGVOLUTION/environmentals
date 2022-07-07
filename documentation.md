@@ -625,7 +625,7 @@ Property | Value
 Name | Low Light
 Description | undefined
 Unit | undefined
-StoreInTimestream | true
+StoreInTimestream | false
 Format | d
 
 ## DEV__ALERT__TRIGGERED
