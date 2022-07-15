@@ -76,10 +76,17 @@ export const DESC = new SEN1("DESC", {
     description: "Descending imagery from Sentinel 1",
     translation: "Descending",
 });
+export const RAW = new SEN1("RAW", {
+    storeInTimestream: false,
+    description: "Raw imagery from Sentinel 1",
+    translation: "Raw",
+    expression: "",
+    derivedFrom: [ASC, DESC],
+});
 export const sen1 = new SAT(
     "SEN1",
     { storeInTimestream: false, translation: "Sentinel 1" },
-    [ASC, DESC]
+    [RAW]
 );
 //#endregion}}}
 
