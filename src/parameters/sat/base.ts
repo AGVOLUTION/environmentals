@@ -133,6 +133,14 @@ export class SAT extends Environmental {
  * To correctly handle functions and properties like the resourceBucket (which contains the
  * product but not the VAP, those properties are overridden in this class.
  *
+ * The FQN of a VAP is constructed in the following way:
+ * ```
+ * SAT__SEN2__NDVI__CL
+ * ```
+ *
+ * SAT | SEN2 | NDVI | CL
+ * satellite | source | vap | sourceProduct |
+ *
  * @public
  */
 export class VAP extends SAT {

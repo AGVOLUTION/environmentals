@@ -737,23 +737,16 @@ Unit | kg
 StoreInTimestream | true
 Format | .3f
 
-## SAT__SEN1__ASC
+## SAT__SEN1__RAW
 
 Property | Value
 ---------|-------
-Name | Ascending
-Description | Ascending imagery from Sentinel 1
+Name | Raw
+Description | Raw imagery from Sentinel 1
 Unit | undefined
 StoreInTimestream | false
-
-## SAT__SEN1__DESC
-
-Property | Value
----------|-------
-Name | Descending
-Description | Descending imagery from Sentinel 1
-Unit | undefined
-StoreInTimestream | false
+Expression | 
+DerivedFrom | ASC,DESC
 
 ## SAT__SEN2__NDVI
 

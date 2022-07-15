@@ -87,8 +87,7 @@ export const EnvironmentalParameterNames = {
     DEV__SOILSENSOR__ID: "DEV__SOILSENSOR__ID",
     OBJ__LIQUIDLEVEL: "OBJ__LIQUIDLEVEL",
     OBJ__WEIGHT: "OBJ__WEIGHT",
-    SAT__SEN1__ASC: "SAT__SEN1__ASC",
-    SAT__SEN1__DESC: "SAT__SEN1__DESC",
+    SAT__SEN1__RAW: "SAT__SEN1__RAW",
     SAT__SEN2__NDVI: "SAT__SEN2__NDVI",
     SAT__SEN2__RGB: "SAT__SEN2__RGB",
     SAT__SEN2__KC: "SAT__SEN2__KC",
@@ -213,8 +212,7 @@ export const EnumObject = {
     },
     "SAT": {
         "SEN1": {
-            "ASC": "ASC",
-            "DESC": "DESC"
+            "RAW": "RAW"
         },
         "SEN2": {
             "NDVI": "NDVI",
