@@ -19,6 +19,13 @@ A Satellite has only a few Products, but multiple VAP can be produced from them.
 
 If a user requests a VAP with from a specific Product, we have to store the information somehow. Therefore this VAP class exists. This class stores the VAP and the requested Product. To correctly handle functions and properties like the resourceBucket (which contains the product but not the VAP, those properties are overridden in this class.
 
+The FQN of a VAP is constructed in the following way:
+
+```
+SAT__SEN2__NDVI__CL
+```
+SAT \| SEN2 \| NDVI \| CL satellite \| source \| vap \| sourceProduct \|
+
 ## Constructors
 
 |  Constructor | Modifiers | Description |
