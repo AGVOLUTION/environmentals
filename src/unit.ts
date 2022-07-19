@@ -1,17 +1,75 @@
 import { Locale, Translation } from "./localization";
 
 /**
- * Class holding information about a value range (min and max values).
+ * Generic class for value ranges
+ *
+ * @public
  */
-export class ValueRange {
-    constructor(public min: number, public max: number) {}
+export abstract class ValueRange {
+    /**
+     * Checks if the given value is valid for this value range
+     *
+     * @public
+     */
+    public abstract isValid(value: unknown): boolean;
+}
+/**
+ * Class holding information about a continous value range (min and max values).
+ *
+ * @public
+ */
+export class ContinousValueRange extends ValueRange {
+    constructor(public min: number, public max: number) {
+        super();
+    }
+
+    public isValid(value: number): boolean {
+        return value >= this.min && value <= this.max;
+    }
 
     public toString(): string {
         return `${this.min}-${this.max}`;
     }
 
-    public static positive(): ValueRange {
-        return new ValueRange(0, Infinity);
+    /**
+     * Create a new continous value range for positive values
+     *
+     * This is a shortcut for `new ContinousValueRange(0, Infinity)`
+     *
+     * @public
+     */
+    public static positive(): ContinousValueRange {
+        return new ContinousValueRange(0, Infinity);
+    }
+}
+
+/**
+ * Class holding information about a discrete value range (possible values).
+ * @public
+ */
+export class DiscreteValueRange extends ValueRange {
+    /**
+     * Create a new discrete value range with the list of possible values
+     *
+     * @param values - List of possible values
+     */
+    constructor(public readonly values: unknown[]) {
+        super();
+    }
+
+    /**
+     * Checks if the given value is valid for this value range (i.e. is one of the possible values
+     *
+     * @param value - Value to check
+     */
+    public isValid(value: unknown): boolean {
+        return Object.values(this.values).includes(value);
+    }
+}
+
+class YesNoValues extends DiscreteValueRange {
+    constructor() {
+        super(["yes", "no"]);
     }
 }
 
@@ -53,18 +111,18 @@ export class Unit {
 }
 
 export const degC = new Unit("°C");
-export const kelvin = new Unit("K", ValueRange.positive());
-export const percent = new Unit("%", new ValueRange(0, 100), {
+export const kelvin = new Unit("K", ContinousValueRange.positive());
+export const percent = new Unit("%", new ContinousValueRange(0, 100), {
     "de-de": "Prozent",
     "en-us": "percent",
 });
 export const hPa = new Unit("hPa");
 export const Jpm2 = new Unit("J/m²");
 export const mm = new Unit("mm");
-export const yesno = new Unit("yes/no");
+export const yesno = new Unit("yes/no", new YesNoValues());
 export const Wpm2 = new Unit("W/m²");
 export const mmpsqm = new Unit("mm/m²");
-export const kmh = new Unit("km/h", ValueRange.positive());
+export const kmh = new Unit("km/h", ContinousValueRange.positive());
 export const degree = new Unit("°");
 export const µSpcm = new Unit("µS/cm");
 export const cbar = new Unit("cbar");

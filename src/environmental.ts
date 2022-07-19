@@ -1,6 +1,6 @@
 import { Locale, Translation } from "./localization";
 import { format } from "d3-format";
-import { Unit, ValueRange } from "./unit";
+import { Unit, ContinousValueRange } from "./unit";
 import { NotFoundError } from "./errors";
 
 /**
@@ -45,7 +45,7 @@ export interface EnvironmentalProperties {
     /**
      * Optional range of possible Values, overrides valueRange of {@see Unit} (if present)
      */
-    valueRange?: ValueRange;
+    valueRange?: ContinousValueRange;
 }
 
 /**
