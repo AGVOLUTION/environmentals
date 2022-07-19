@@ -13,7 +13,13 @@ import { SNOW_MAUS } from "../src/parameters/env/atmo/models";
 import { ENV } from "../src/parameters/env/base";
 import { Model, RequestedModel } from "../src/model";
 import { WEIGHT } from "../src/parameters/obj";
-import { degC, ValueRange } from "../src/unit";
+import {
+    ContinousValueRange,
+    degC,
+    DiscreteValueRange,
+    ValueRange,
+    yesno,
+} from "../src/unit";
 import { CL, NDVI, SEN2 } from "../src/parameters/sat";
 import { SAT, VAP } from "../src/parameters/sat/base";
 
@@ -86,9 +92,13 @@ describe("environmentals", function () {
 
     describe("#valueRange", function () {
         it("should return correct valueRange", function () {
-            expect(RH.valueRange).to.be.instanceof(ValueRange);
-            expect(RH.valueRange?.min).to.eq(0);
-            expect(RH.valueRange?.max).to.eq(100);
+            expect(RH.valueRange).to.be.instanceof(ContinousValueRange);
+            if (RH.valueRange instanceof ContinousValueRange) {
+                expect(RH.valueRange.isValid(99)).to.be.true;
+                expect(RH.valueRange.isValid(199)).to.be.false;
+                expect(RH.valueRange.min).to.eq(0);
+                expect(RH.valueRange.max).to.eq(100);
+            }
         });
     });
 });
@@ -160,5 +170,16 @@ describe("satellite", function () {
         expect(de.vap.name).to.eq("NDVI");
         expect(de.sourceProduct.name).to.eq("CL");
         expect(de.source.name).to.eq("SEN2");
+    });
+});
+
+describe("Units", function () {
+    describe("#discreteValues", function () {
+        it("should return the correct discrete values", function () {
+            expect(yesno.valueRange).to.be.instanceof(DiscreteValueRange);
+            if (yesno.valueRange instanceof DiscreteValueRange) {
+                expect(yesno.valueRange.values).to.be.deep.eq(["yes", "no"]);
+            }
+        });
     });
 });
