@@ -63,7 +63,9 @@ function isFqnPathElements(x: any): x is FqnPathElements {
 export function deserialize(
     fqn: FullyQualifiedName | FqnPathElements
 ): Environmental {
-    const fqnPath = isFqnPathElements(fqn) ? fqn : fqn.split("__");
+    const fqnPath = isFqnPathElements(fqn)
+        ? fqn.map((f) => f.toUpperCase())
+        : fqn.toUpperCase().split("__");
     if (fqnPath[0] == "MODEL") {
         // special case models: We need to get the actual param from the string
         let param;
