@@ -68,7 +68,8 @@ export interface EnvironmentalProperties {
     translation?: Translation;
     // (undocumented)
     unit?: Unit;
-    valueRange?: ValueRange;
+    // Warning: (ae-forgotten-export) The symbol "ContinousValueRange" needs to be exported by the entry point index.d.ts
+    valueRange?: ContinousValueRange;
 }
 
 // @public

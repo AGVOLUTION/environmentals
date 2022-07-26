@@ -4,7 +4,7 @@
 
 ## VAP.sourceProduct property
 
-Get the sourceProduct this VAP is derived from
+Get the sourceProduct this VAP is derived from (CL)
 
 <b>Signature:</b>
 

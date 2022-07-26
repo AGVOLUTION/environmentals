@@ -9,5 +9,5 @@ Returns the valueRange of this data (if set)
 <b>Signature:</b>
 
 ```typescript
-get valueRange(): ValueRange | undefined;
+get valueRange(): import("./unit").ValueRange | undefined;
 ```

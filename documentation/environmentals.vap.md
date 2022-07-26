@@ -23,8 +23,31 @@ The FQN of a VAP is constructed in the following way:
 
 ```
 SAT__SEN2__NDVI__CL
+
+| SAT       | SEN2   | NDVI   | CL            |
+| ----------| -------| -------| --------------|
+| satellite | source | vap    | sourceProduct |
+
 ```
-SAT \| SEN2 \| NDVI \| CL satellite \| source \| vap \| sourceProduct \|
+
+## Example
+
+Access the names and objects of the parts
+
+```
+const v=e.deserialize("SAT__SEN2__NDVI__CL")
+v.name
+// 'CL'
+
+v.vap.name
+// 'RGB'
+
+v.vap.fqn
+// 'SAT__SEN2__RGB'
+
+v.source.name
+// 'SEN2'
+```
 
 ## Constructors
 
@@ -37,7 +60,7 @@ SAT \| SEN2 \| NDVI \| CL satellite \| source \| vap \| sourceProduct \|
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
 |  [resourceBucket](./environmentals.vap.resourcebucket.md) |  | string | Return the resourceBucket of this parameter |
-|  [source](./environmentals.vap.source.md) |  | [SAT](./environmentals.sat.md) | Return the source satellite of this VAP |
-|  [sourceProduct](./environmentals.vap.sourceproduct.md) |  | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from |
-|  [vap](./environmentals.vap.vap.md) |  | [SAT](./environmentals.sat.md) | Get the vap of this environmental |
+|  [source](./environmentals.vap.source.md) |  | [SAT](./environmentals.sat.md) | Return the source satellite of this VAP (SEN2) |
+|  [sourceProduct](./environmentals.vap.sourceproduct.md) |  | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from (CL) |
+|  [vap](./environmentals.vap.vap.md) |  | [SAT](./environmentals.sat.md) | Get the vap of this environmental (NDVI) |
 
