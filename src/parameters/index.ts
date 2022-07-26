@@ -4,7 +4,7 @@ export { env } from "./env";
 import { dev } from "./dev";
 export { dev } from "./dev";
 import { obj } from "./obj";
-import { FqnPathElements } from "..";
+import { EnvironmentalName, FqnPathElements } from "..";
 import { ENV } from "./env/base";
 import { Model } from "../model";
 export { obj } from "./obj";
@@ -98,12 +98,26 @@ export function deserialize(
 /**
  * Try to deserialize a FQN to it's object.
  *
+ * Either provide the complete FQN string, or provide it's parts, which will be concatenated
+ *
  * If no object can be found, undefined will be returned.
  *
- * @param fqn - String with the FullyQualifiedName
+ * @example
+ * ```typescript
+ * tryDeserialize("ENV__ATMO__T")
+ * // returns the object for the environmental parameter "T"
+ * ```
+ * @example
+ * ```typescript
+ * tryDeserialize("ENV", "ATMO__T")
+ * // returns the object for the environmental parameter "T"
+ * ```
+ *
+ * @param fqn - String with the FullyQualifiedName, or parts of the fqn which will be concatenated
  * @public
  */
-export function tryDeserialize(fqn: FullyQualifiedName) {
+export function tryDeserialize(...parts: EnvironmentalName[]) {
+    const fqn = parts.join("__");
     try {
         return deserialize(fqn);
     } catch (e) {
