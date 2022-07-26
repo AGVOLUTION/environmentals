@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { deserialize, env, root } from "../src";
+import { deserialize, env, root, tryDeserialize } from "../src";
 import { RSSI } from "../src/parameters/dev/rf";
 import {
     T,
@@ -55,6 +55,27 @@ describe("environmentals", function () {
             if (de instanceof Model) {
                 expect(de.name).eq("SNOW_MAUS");
             }
+        });
+    });
+
+    describe("#tryDeserialize", function () {
+        it("should correctly deserialize an ENV FQN", function () {
+            const fqn = "ENV__ATMO__T";
+            const de = tryDeserialize(fqn);
+            expect(de).to.equal(T);
+        });
+        it("should return undefined if wrong fqn provided", function () {
+            const fqn = "ENV__ATMO__T__";
+            const de = tryDeserialize(fqn);
+            expect(de).to.be.undefined;
+        });
+        it("should return correct ENV if fqn is provided in parts", function () {
+            let de = tryDeserialize("ENV", "ATMO", "T");
+            expect(de).to.equal(T);
+            de = tryDeserialize("ENV", "ATMO__T");
+            expect(de).to.equal(T);
+            de = tryDeserialize("ENV__wrong", "T");
+            expect(de).to.be.undefined;
         });
     });
 
