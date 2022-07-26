@@ -119,7 +119,7 @@ export class TOPO extends Environmental {
 }
 
 // @public
-export function tryDeserialize(fqn: FullyQualifiedName): Environmental | undefined;
+export function tryDeserialize(...parts: EnvironmentalName[]): Environmental | undefined;
 
 // @public
 export function tryFiltered(fqn: FullyQualifiedName): Environmental | undefined;
