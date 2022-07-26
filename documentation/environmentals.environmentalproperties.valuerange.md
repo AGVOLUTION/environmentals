@@ -9,5 +9,5 @@ Optional range of possible Values, overrides valueRange of  (if present)
 <b>Signature:</b>
 
 ```typescript
-valueRange?: ValueRange;
+valueRange?: ContinousValueRange;
 ```

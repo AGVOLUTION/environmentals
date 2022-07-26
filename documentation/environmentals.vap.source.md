@@ -4,7 +4,7 @@
 
 ## VAP.source property
 
-Return the source satellite of this VAP
+Return the source satellite of this VAP (SEN2)
 
 <b>Signature:</b>
 

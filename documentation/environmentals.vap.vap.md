@@ -4,7 +4,7 @@
 
 ## VAP.vap property
 
-Get the vap of this environmental
+Get the vap of this environmental (NDVI)
 
 <b>Signature:</b>
 

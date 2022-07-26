@@ -136,10 +136,28 @@ export class SAT extends Environmental {
  * The FQN of a VAP is constructed in the following way:
  * ```
  * SAT__SEN2__NDVI__CL
+ *
+ * | SAT       | SEN2   | NDVI   | CL            |
+ * | ----------| -------| -------| --------------|
+ * | satellite | source | vap    | sourceProduct |
+ *
  * ```
  *
- * SAT | SEN2 | NDVI | CL
- * satellite | source | vap | sourceProduct |
+ * @example Access the names and objects of the parts
+ * ```
+ * const v=e.deserialize("SAT__SEN2__NDVI__CL")
+ * v.name
+ * // 'CL'
+ *
+ * v.vap.name
+ * // 'RGB'
+ *
+ * v.vap.fqn
+ * // 'SAT__SEN2__RGB'
+ *
+ * v.source.name
+ * // 'SEN2'
+ * ```
  *
  * @public
  */
@@ -171,7 +189,7 @@ export class VAP extends SAT {
     }
 
     /**
-     * Get the vap of this environmental
+     * Get the vap of this environmental (NDVI)
      *
      * @example ndvi
      * @public
@@ -180,7 +198,7 @@ export class VAP extends SAT {
         return this._vap;
     }
     /**
-     * Get the sourceProduct this VAP is derived from
+     * Get the sourceProduct this VAP is derived from (CL)
      *
      * @example cl
      * @public
@@ -190,7 +208,7 @@ export class VAP extends SAT {
     }
 
     /**
-     * Return the source satellite of this VAP
+     * Return the source satellite of this VAP (SEN2)
      *
      * @example sen2
      * @public

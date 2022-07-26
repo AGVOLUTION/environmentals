@@ -35,7 +35,7 @@ export declare class Environmental
 |  [properties](./environmentals.environmental.properties.md) |  | [EnvironmentalProperties](./environmentals.environmentalproperties.md) | Properties of this node |
 |  [storeInTimestream](./environmentals.environmental.storeintimestream.md) |  | boolean | Should this item be stored in TimeStream? |
 |  [unit](./environmentals.environmental.unit.md) |  | Unit \| undefined | Return the unit of this node |
-|  [valueRange](./environmentals.environmental.valuerange.md) |  | ValueRange \| undefined | Returns the valueRange of this data (if set) |
+|  [valueRange](./environmentals.environmental.valuerange.md) |  | import("./unit").ValueRange \| undefined | Returns the valueRange of this data (if set) |
 
 ## Methods
 
