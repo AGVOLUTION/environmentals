@@ -25,7 +25,7 @@ As a user you will most probably want to use the [deserialize()](./environmental
 |  --- | --- |
 |  [deserialize(fqn)](./environmentals.deserialize.md) | Deserialize a FullyQualifiedName (FQN) to the object |
 |  [initialize({ whitelist, blacklist, })](./environmentals.initialize.md) | Initialize the black-/whitelist for this package<!-- -->Take a look at [tryFiltered()](./environmentals.tryfiltered.md) to learn more about the filter mechanism |
-|  [tryDeserialize(fqn)](./environmentals.trydeserialize.md) | Try to deserialize a FQN to it's object.<!-- -->If no object can be found, undefined will be returned. |
+|  [tryDeserialize(parts)](./environmentals.trydeserialize.md) | Try to deserialize a FQN to it's object.<!-- -->Either provide the complete FQN string, or provide it's parts, which will be concatenated<!-- -->If no object can be found, undefined will be returned. |
 |  [tryFiltered(fqn)](./environmentals.tryfiltered.md) | Try to deserialize a FQN, but consider black-/whitelist |
 
 ## Interfaces

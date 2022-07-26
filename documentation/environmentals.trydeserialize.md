@@ -6,21 +6,39 @@
 
 Try to deserialize a FQN to it's object.
 
+Either provide the complete FQN string, or provide it's parts, which will be concatenated
+
 If no object can be found, undefined will be returned.
 
 <b>Signature:</b>
 
 ```typescript
-export declare function tryDeserialize(fqn: FullyQualifiedName): Environmental | undefined;
+export declare function tryDeserialize(...parts: EnvironmentalName[]): Environmental | undefined;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  fqn | [FullyQualifiedName](./environmentals.fullyqualifiedname.md) | String with the FullyQualifiedName |
+|  parts | [EnvironmentalName](./environmentals.environmentalname.md)<!-- -->\[\] |  |
 
 <b>Returns:</b>
 
 [Environmental](./environmentals.environmental.md) \| undefined
+
+## Example 1
+
+
+```typescript
+tryDeserialize("ENV__ATMO__T")
+// returns the object for the environmental parameter "T"
+```
+
+## Example 2
+
+
+```typescript
+tryDeserialize("ENV", "ATMO__T")
+// returns the object for the environmental parameter "T"
+```
 
