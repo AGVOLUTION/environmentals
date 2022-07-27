@@ -32,10 +32,10 @@
     "winston": "^3.8.1"
   },
   "devDependencies": {
-    "@agv/agv-bump": "^0.1.2",
+    "@agv/agv-bump": "^0.1.6",
     "@agv/prettier-config": "^1.0.6",
-    "@microsoft/api-documenter": "^7.17.17",
-    "@microsoft/api-extractor": "^7.25.0",
+    "@microsoft/api-documenter": "^7.19.0",
+    "@microsoft/api-extractor": "^7.28.6",
     "@types/chai": "^4",
     "@types/d3-format": "^2",
     "@types/fs-extra": "^9.0.13",
