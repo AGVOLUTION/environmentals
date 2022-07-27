@@ -6,16 +6,23 @@
 
 Create a VAP from this sat
 
-This creates a Concrete VAP by using the first defined product in the derivedFrom property
+This creates a concrete VAP by using the given product as the sourceProduct for the VAP. If no product is given, the first product declared (the default one) in the VAP is used.
 
 <b>Signature:</b>
 
 ```typescript
-asVap(): VAP;
+asVap(sourceProduct: SAT): VAP;
 ```
+
+## Parameters
+
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  sourceProduct | [SAT](./environmentals.sat.md) |  |
+
 <b>Returns:</b>
 
 [VAP](./environmentals.vap.md)
 
-This SAT as a concrete VAP from the default sourceProduct. If this is already a VAP, it is returned as is.
+This SAT as a concrete VAP from the given or default sourceProduct. If this is already a VAP, it is returned as is.
 
