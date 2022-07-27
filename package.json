@@ -22,7 +22,7 @@
     "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
     "yalc-push": "yalc push",
     "clean": "rm -r dist",
-    "bump": "yarn run build && yarn docs && yarn run agv-bump --root"
+    "bump": "yarn run build && yarn docs && yarn run agv-bump --root --commit documentation"
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
