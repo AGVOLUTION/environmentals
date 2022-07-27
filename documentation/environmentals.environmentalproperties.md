@@ -14,12 +14,12 @@ export interface EnvironmentalProperties
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [description?](./environmentals.environmentalproperties.description.md) | string | <i>(Optional)</i> |
-|  [format?](./environmentals.environmentalproperties.format.md) | string | <i>(Optional)</i> Format string passed to d3-format to nicely display numeric values |
-|  [storeInTimestream](./environmentals.environmentalproperties.storeintimestream.md) | boolean | Should this parameter be stored in the timestream database? |
-|  [translation?](./environmentals.environmentalproperties.translation.md) | Translation | <i>(Optional)</i> |
-|  [unit?](./environmentals.environmentalproperties.unit.md) | Unit | <i>(Optional)</i> |
-|  [valueRange?](./environmentals.environmentalproperties.valuerange.md) | ContinousValueRange | <i>(Optional)</i> Optional range of possible Values, overrides valueRange of  (if present) |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [description?](./environmentals.environmentalproperties.description.md) |  | string | <i>(Optional)</i> |
+|  [format?](./environmentals.environmentalproperties.format.md) |  | string | <i>(Optional)</i> Format string passed to d3-format to nicely display numeric values |
+|  [storeInTimestream](./environmentals.environmentalproperties.storeintimestream.md) |  | boolean | Should this parameter be stored in the timestream database? |
+|  [translation?](./environmentals.environmentalproperties.translation.md) |  | Translation | <i>(Optional)</i> |
+|  [unit?](./environmentals.environmentalproperties.unit.md) |  | Unit | <i>(Optional)</i> |
+|  [valueRange?](./environmentals.environmentalproperties.valuerange.md) |  | ContinousValueRange | <i>(Optional)</i> Optional range of possible Values, overrides valueRange of  (if present) |
 

@@ -1,6 +1,6 @@
 {
   "name": "@agv/environmentals",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "Definition of environmental parameters",
   "main": "dist/src/index.js",
   "files": [
@@ -22,7 +22,7 @@
     "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
     "yalc-push": "yalc push",
     "clean": "rm -r dist",
-    "bump": "yarn run build && yarn docs && yarn run agv-bump --root --commit documentation"
+    "bump": "yarn run build && yarn docs && yarn run agv-bump --root --commit 'documentation etc' "
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
