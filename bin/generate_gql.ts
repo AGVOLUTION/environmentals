@@ -1,11 +1,10 @@
 //import fs from "fs/promises";
 import fs from "fs-extra";
-import * as Models from "../src/parameters/env/atmo/models";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
-import { root } from "../src/";
-import { Environmental, FullyQualifiedName } from "../src/environmental";
-import { atmo } from "../src/parameters/env/atmo";
+import { root, SAT, VAP } from "../src/";
+import { Environmental } from "../src/environmental";
+import * as Models from "../src/parameters/env/atmo/models";
 
 const DESTINATION_FOLDER = "generated/gql";
 const GENERATED_HINT = "/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/";
@@ -67,12 +66,8 @@ ${modelNames}
 }
 
 function generateAstForGqlEnum() {
-    const leafs = [
-        ...[...root].filter((x) => x.isLeaf),
-        ...Object.values(Models).flatMap((m) =>
-            [...m.provides.values()].map((p) => m.withParameter(p))
-        ),
-    ];
+    const leafs = getAllLeafs();
+
     const code = [
         factory.createImportDeclaration(
             undefined,
@@ -151,6 +146,32 @@ function generateAstForGqlEnum() {
         factory.createToken(SyntaxKind.EndOfFileToken),
         ts.NodeFlags.None
     );
+}
+
+/**
+ * Assemble an array with all the leaf parameters
+ *
+ * As the SAT and MODEL subtrees need special treatment, we can prepare everythin in this
+ * function and return a ready to use list, which contains all the leaf parameters that should be
+ * serialized to the GQL enum.
+ *
+ * @returns  Array with all leaf parameters, that should be serialized to the enum
+ */
+function getAllLeafs() {
+    const sat = (
+        [...root].filter((x) => x.isLeaf && x.fqn.startsWith("SAT__")) as SAT[]
+    )
+        .flatMap((x) => x.properties.derivedFrom?.map((s) => x.asVap(s)))
+        .filter((x): x is VAP => !!x);
+
+    const leafs = [
+        ...[...root].filter((x) => x.isLeaf),
+        ...sat,
+        ...Object.values(Models).flatMap((m) =>
+            [...m.provides.values()].map((p) => m.withParameter(p))
+        ),
+    ].sort();
+    return leafs;
 }
 
 /**
