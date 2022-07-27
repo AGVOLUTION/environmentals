@@ -24,8 +24,8 @@ As a user you will most probably want to use the [deserialize()](./environmental
 |  Function | Description |
 |  --- | --- |
 |  [deserialize(fqn)](./environmentals.deserialize.md) | Deserialize a FullyQualifiedName (FQN) to the object |
-|  [initialize({ whitelist, blacklist, })](./environmentals.initialize.md) | Initialize the black-/whitelist for this package<!-- -->Take a look at [tryFiltered()](./environmentals.tryfiltered.md) to learn more about the filter mechanism |
-|  [tryDeserialize(parts)](./environmentals.trydeserialize.md) | Try to deserialize a FQN to it's object.<!-- -->Either provide the complete FQN string, or provide it's parts, which will be concatenated<!-- -->If no object can be found, undefined will be returned. |
+|  [initialize({ whitelist, blacklist, })](./environmentals.initialize.md) | <p>Initialize the black-/whitelist for this package</p><p>Take a look at [tryFiltered()](./environmentals.tryfiltered.md) to learn more about the filter mechanism</p> |
+|  [tryDeserialize(parts)](./environmentals.trydeserialize.md) | <p>Try to deserialize a FQN to it's object.</p><p>Either provide the complete FQN string, or provide it's parts, which will be concatenated</p><p>If no object can be found, undefined will be returned.</p> |
 |  [tryFiltered(fqn)](./environmentals.tryfiltered.md) | Try to deserialize a FQN, but consider black-/whitelist |
 
 ## Interfaces
@@ -47,7 +47,7 @@ As a user you will most probably want to use the [deserialize()](./environmental
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [EnvironmentalName](./environmentals.environmentalname.md) | The Name of an Environmental<!-- -->This is the name of the actual node in the tree, not the [FullyQualifiedName](./environmentals.fullyqualifiedname.md)<!-- -->. |
+|  [EnvironmentalName](./environmentals.environmentalname.md) | <p>The Name of an Environmental</p><p>This is the name of the actual node in the tree, not the [FullyQualifiedName](./environmentals.fullyqualifiedname.md)<!-- -->.</p> |
 |  [FqnPathElements](./environmentals.fqnpathelements.md) | The Path elements of a FQN |
 |  [FullyQualifiedName](./environmentals.fullyqualifiedname.md) | A fully qualified name (FQN) of an environmental. |
 

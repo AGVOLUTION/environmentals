@@ -95,7 +95,7 @@ export const root: Environmental;
 // @public
 export class SAT extends Environmental {
     constructor(name: string, properties: SatProperties, children?: SAT[]);
-    asVap(sourceProduct: SAT): VAP;
+    asVap(sourceProduct?: SAT): VAP;
     // (undocumented)
     get children(): SAT[];
     // (undocumented)

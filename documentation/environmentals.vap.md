@@ -59,8 +59,8 @@ v.source.name
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [resourceBucket](./environmentals.vap.resourcebucket.md) |  | string | Return the resourceBucket of this parameter |
-|  [source](./environmentals.vap.source.md) |  | [SAT](./environmentals.sat.md) | Return the source satellite of this VAP (SEN2) |
-|  [sourceProduct](./environmentals.vap.sourceproduct.md) |  | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from (CL) |
-|  [vap](./environmentals.vap.vap.md) |  | [SAT](./environmentals.sat.md) | Get the vap of this environmental (NDVI) |
+|  [resourceBucket](./environmentals.vap.resourcebucket.md) | <code>readonly</code> | string | Return the resourceBucket of this parameter |
+|  [source](./environmentals.vap.source.md) | <code>readonly</code> | [SAT](./environmentals.sat.md) | Return the source satellite of this VAP (SEN2) |
+|  [sourceProduct](./environmentals.vap.sourceproduct.md) | <code>readonly</code> | [SAT](./environmentals.sat.md) | Get the sourceProduct this VAP is derived from (CL) |
+|  [vap](./environmentals.vap.vap.md) | <code>readonly</code> | [SAT](./environmentals.sat.md) | Get the vap of this environmental (NDVI) |
 

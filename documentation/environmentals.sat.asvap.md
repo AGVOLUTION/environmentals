@@ -11,14 +11,14 @@ This creates a concrete VAP by using the given product as the sourceProduct for 
 <b>Signature:</b>
 
 ```typescript
-asVap(sourceProduct: SAT): VAP;
+asVap(sourceProduct?: SAT): VAP;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  sourceProduct | [SAT](./environmentals.sat.md) |  |
+|  sourceProduct | [SAT](./environmentals.sat.md) | <i>(Optional)</i> Product to use as sourceProduct for the VAP. If none given, the first product declared is used. |
 
 <b>Returns:</b>
 

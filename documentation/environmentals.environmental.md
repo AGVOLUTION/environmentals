@@ -22,20 +22,20 @@ export declare class Environmental
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [\_children?](./environmentals.environmental._children.md) |  | Map&lt;[EnvironmentalName](./environmentals.environmentalname.md)<!-- -->, [Environmental](./environmentals.environmental.md)<!-- -->&gt; | <i>(Optional)</i> |
-|  [\_parent?](./environmentals.environmental._parent.md) |  | [Environmental](./environmentals.environmental.md) | <i>(Optional)</i> |
-|  [children](./environmentals.environmental.children.md) |  | [Environmental](./environmentals.environmental.md)<!-- -->\[\] | Return this nodes children. If there are none, return an empty Array |
-|  [childrenKeys?](./environmentals.environmental.childrenkeys.md) |  | [EnvironmentalName](./environmentals.environmentalname.md)<!-- -->\[\] | <i>(Optional)</i> |
-|  [description](./environmentals.environmental.description.md) |  | string \| undefined |  |
-|  [fqn](./environmentals.environmental.fqn.md) |  | [FullyQualifiedName](./environmentals.fullyqualifiedname.md) | Return the fully qualified name (FQN) of this node.<!-- -->This basically acts as a deserialisation method, as this string is unique and is used as a string representation by the GraphQL APIs. |
-|  [isLeaf](./environmentals.environmental.isleaf.md) |  | boolean | Is this element a Leaf (i.e. has no more children)? |
-|  [isRoot](./environmentals.environmental.isroot.md) |  | boolean | Is this element the root node? |
-|  [name](./environmentals.environmental.name.md) |  | [EnvironmentalName](./environmentals.environmentalname.md) | The name of this Node |
-|  [parent](./environmentals.environmental.parent.md) |  | [Environmental](./environmentals.environmental.md) \| undefined | Parent node. Undefined if this is the root element |
-|  [properties](./environmentals.environmental.properties.md) |  | [EnvironmentalProperties](./environmentals.environmentalproperties.md) | Properties of this node |
-|  [storeInTimestream](./environmentals.environmental.storeintimestream.md) |  | boolean | Should this item be stored in TimeStream? |
-|  [unit](./environmentals.environmental.unit.md) |  | Unit \| undefined | Return the unit of this node |
-|  [valueRange](./environmentals.environmental.valuerange.md) |  | import("./unit").ValueRange \| undefined | Returns the valueRange of this data (if set) |
+|  [\_children?](./environmentals.environmental._children.md) | <p><code>protected</code></p><p><code>readonly</code></p> | Map&lt;[EnvironmentalName](./environmentals.environmentalname.md)<!-- -->, [Environmental](./environmentals.environmental.md)<!-- -->&gt; | <i>(Optional)</i> |
+|  [\_parent?](./environmentals.environmental._parent.md) | <code>protected</code> | [Environmental](./environmentals.environmental.md) | <i>(Optional)</i> |
+|  [children](./environmentals.environmental.children.md) | <code>readonly</code> | [Environmental](./environmentals.environmental.md)<!-- -->\[\] | Return this nodes children. If there are none, return an empty Array |
+|  [childrenKeys?](./environmentals.environmental.childrenkeys.md) | <code>readonly</code> | [EnvironmentalName](./environmentals.environmentalname.md)<!-- -->\[\] | <i>(Optional)</i> |
+|  [description](./environmentals.environmental.description.md) | <code>readonly</code> | string \| undefined |  |
+|  [fqn](./environmentals.environmental.fqn.md) | <code>readonly</code> | [FullyQualifiedName](./environmentals.fullyqualifiedname.md) | <p>Return the fully qualified name (FQN) of this node.</p><p>This basically acts as a deserialisation method, as this string is unique and is used as a string representation by the GraphQL APIs.</p> |
+|  [isLeaf](./environmentals.environmental.isleaf.md) | <code>readonly</code> | boolean | Is this element a Leaf (i.e. has no more children)? |
+|  [isRoot](./environmentals.environmental.isroot.md) | <code>readonly</code> | boolean | Is this element the root node? |
+|  [name](./environmentals.environmental.name.md) | <code>readonly</code> | [EnvironmentalName](./environmentals.environmentalname.md) | The name of this Node |
+|  [parent](./environmentals.environmental.parent.md) | <code>readonly</code> | [Environmental](./environmentals.environmental.md) \| undefined | Parent node. Undefined if this is the root element |
+|  [properties](./environmentals.environmental.properties.md) | <code>readonly</code> | [EnvironmentalProperties](./environmentals.environmentalproperties.md) | Properties of this node |
+|  [storeInTimestream](./environmentals.environmental.storeintimestream.md) | <code>readonly</code> | boolean | Should this item be stored in TimeStream? |
+|  [unit](./environmentals.environmental.unit.md) | <code>readonly</code> | Unit \| undefined | Return the unit of this node |
+|  [valueRange](./environmentals.environmental.valuerange.md) | <code>readonly</code> | import("./unit").ValueRange \| undefined | Returns the valueRange of this data (if set) |
 
 ## Methods
 
@@ -47,5 +47,5 @@ export declare class Environmental
 |  [format(value)](./environmentals.environmental.format.md) |  | Format a value according to this parameters formatting specification |
 |  [map(callbackfn)](./environmentals.environmental.map.md) |  |  |
 |  [toString()](./environmentals.environmental.tostring.md) |  |  |
-|  [translation(locale)](./environmentals.environmental.translation.md) |  | Return translation for locale.<!-- -->if no translations provided, the FQN of this node will be returned |
+|  [translation(locale)](./environmentals.environmental.translation.md) |  | <p>Return translation for locale.</p><p>if no translations provided, the FQN of this node will be returned</p> |
 
