@@ -11,9 +11,6 @@ export { obj } from "./obj";
 import { sat } from "./sat";
 export { sat } from "./sat";
 import { topo } from "./topo";
-import { childLogger } from "@agv/logging";
-
-const logger = childLogger("environmentals");
 
 let _whitelist: FullyQualifiedName[] | undefined = undefined;
 let _blacklist: FullyQualifiedName[] | undefined = undefined;
@@ -125,7 +122,7 @@ export function tryDeserialize(...parts: EnvironmentalName[]) {
         return deserialize(fqn);
     } catch (e) {
         if (e instanceof Error) {
-            logger.error(e.message);
+            console.error(e.message);
         }
         return undefined;
     }
