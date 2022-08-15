@@ -8,6 +8,7 @@ export const CL = new SEN2("CL", {
     storeInTimestream: false,
     description: "Cloudless imagery from Sentinel 2",
     translation: "cloudless",
+    normalizedName: "cloudless",
 });
 export const NDVI = new SEN2("NDVI", {
     storeInTimestream: false,
@@ -16,6 +17,7 @@ export const NDVI = new SEN2("NDVI", {
     translation: "NDVI",
     derivedFrom: [CL],
     expression: "(b8 - b4) / (b8 + b4)",
+    normalizedName: "ndvi",
 });
 export const RGB = new SEN2("RGB", {
     storeInTimestream: false,
@@ -24,6 +26,7 @@ export const RGB = new SEN2("RGB", {
     derivedFrom: [CL],
     expression:
         "255 * (1.055 * (b4**(1/2.4))) - 0.055, 255 * (1.055 * (b3**(1/2.4))) - 0.055, 255 * (1.055 * (b2**(1/2.4))) - 0.055",
+    normalizedName: "rgb",
 });
 export const KC = new SEN2("KC", {
     storeInTimestream: false,
@@ -31,6 +34,7 @@ export const KC = new SEN2("KC", {
     translation: "KC",
     derivedFrom: [CL],
     expression: "1.4571 * ((b8 - b4) / (b8 + b4)) - 0.1725",
+    normalizedName: "kc",
 });
 export const CIGREEN = new SEN2("CIGREEN", {
     storeInTimestream: false,
@@ -38,6 +42,7 @@ export const CIGREEN = new SEN2("CIGREEN", {
     translation: "CIGREEN",
     derivedFrom: [CL],
     expression: "(b8 / b3) - 1",
+    normalizedName: "cigreen",
 });
 export const SAVI = new SEN2("SAVI", {
     storeInTimestream: false,
@@ -45,6 +50,7 @@ export const SAVI = new SEN2("SAVI", {
     translation: "SAVI",
     derivedFrom: [CL],
     expression: "((1.0 + 0.428) * (b8 - b4)) / (b8 + b4 + 0.428)",
+    normalizedName: "savi",
 });
 export const WDVI = new SEN2("WDVI", {
     storeInTimestream: false,
@@ -52,6 +58,7 @@ export const WDVI = new SEN2("WDVI", {
     translation: "WDVI",
     derivedFrom: [CL],
     expression: "b8 - (1.007 * b4)",
+    normalizedName: "wdvi",
 });
 
 export const sen2 = new SAT(
@@ -59,6 +66,8 @@ export const sen2 = new SAT(
     {
         storeInTimestream: false,
         translation: "Sentinel 2",
+        description: "Sentinel 2 imagery",
+        normalizedName: "sentinel2",
     },
     [NDVI, RGB, KC, CIGREEN, SAVI, WDVI]
 );
@@ -70,11 +79,13 @@ export const ASC = new SEN1("ASC", {
     storeInTimestream: false,
     description: "Ascending imagery from Sentinel 1",
     translation: "Ascending",
+    normalizedName: "asc",
 });
 export const DESC = new SEN1("DESC", {
     storeInTimestream: false,
     description: "Descending imagery from Sentinel 1",
     translation: "Descending",
+    normalizedName: "desc",
 });
 export const RAW = new SEN1("RAW", {
     storeInTimestream: false,
@@ -82,10 +93,16 @@ export const RAW = new SEN1("RAW", {
     translation: "Raw",
     expression: "",
     derivedFrom: [ASC, DESC],
+    normalizedName: "raw",
 });
 export const sen1 = new SAT(
     "SEN1",
-    { storeInTimestream: false, translation: "Sentinel 1" },
+    {
+        storeInTimestream: false,
+        translation: "Sentinel 1",
+        description: "Sentinel 1 imagery",
+        normalizedName: "sentinel1",
+    },
     [RAW]
 );
 //#endregion}}}
@@ -100,6 +117,7 @@ export const sat = new SAT(
     {
         storeInTimestream: false,
         translation: "Satellite",
+        normalizedName: "satellite",
     },
     [sen1, sen2]
 );

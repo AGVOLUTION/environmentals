@@ -6,6 +6,8 @@ export interface SatProperties extends EnvironmentalProperties {
     /** Expression to be used to calculate the value added product from the product */
     expression?: string;
     derivedFrom?: SAT[];
+    /** Normalized name of the parameter. Used to assemble the URI/resourceBucket */
+    normalizedName: string;
 }
 
 /**
@@ -35,7 +37,7 @@ export class SAT extends Environmental {
      * @returns Normalized name
      */
     public get normalizedName(): string {
-        return this.translation("en-us").toLowerCase().replace(/\s/g, "");
+        return this.properties.normalizedName;
     }
 
     /**
