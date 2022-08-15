@@ -747,6 +747,7 @@ Unit | undefined
 StoreInTimestream | false
 Expression | 
 DerivedFrom | ASC,DESC
+NormalizedName | raw
 
 ## SAT__SEN2__NDVI
 
@@ -758,6 +759,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | (b8 - b4) / (b8 + b4)
+NormalizedName | ndvi
 
 ## SAT__SEN2__RGB
 
@@ -769,6 +771,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | 255 * (1.055 * (b4**(1/2.4))) - 0.055, 255 * (1.055 * (b3**(1/2.4))) - 0.055, 255 * (1.055 * (b2**(1/2.4))) - 0.055
+NormalizedName | rgb
 
 ## SAT__SEN2__KC
 
@@ -780,6 +783,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | 1.4571 * ((b8 - b4) / (b8 + b4)) - 0.1725
+NormalizedName | kc
 
 ## SAT__SEN2__CIGREEN
 
@@ -791,6 +795,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | (b8 / b3) - 1
+NormalizedName | cigreen
 
 ## SAT__SEN2__SAVI
 
@@ -802,6 +807,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | ((1.0 + 0.428) * (b8 - b4)) / (b8 + b4 + 0.428)
+NormalizedName | savi
 
 ## SAT__SEN2__WDVI
 
@@ -813,6 +819,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | b8 - (1.007 * b4)
+NormalizedName | wdvi
 
 ## TOPO__TWI
 
