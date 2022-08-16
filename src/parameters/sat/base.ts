@@ -3,7 +3,10 @@ import assert from "assert";
 import { EnvironmentalProperties, FqnPathElements, NotFoundError } from "../..";
 
 export interface SatProperties extends EnvironmentalProperties {
-    /** Expression to be used to calculate the value added product from the product */
+    /** Expression to be used to calculate the value added product from the product
+     *
+     * An empty string means to use all available bands without any processing.
+     */
     expression?: string;
     derivedFrom?: SAT[];
     /** Normalized name of the parameter. Used to assemble the URI/resourceBucket */
