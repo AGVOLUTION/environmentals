@@ -821,6 +821,18 @@ DerivedFrom | CL
 Expression | b8 - (1.007 * b4)
 NormalizedName | wdvi
 
+## SAT__SEN2__RAW
+
+Property | Value
+---------|-------
+Name | Raw
+Description | Raw image from Sentinel 2 imagery containing all Bands
+Unit | undefined
+StoreInTimestream | false
+DerivedFrom | CL
+Expression | 
+NormalizedName | raw
+
 ## TOPO__TWI
 
 Property | Value

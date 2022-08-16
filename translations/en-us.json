@@ -98,6 +98,7 @@
     "SAT__SEN2__CIGREEN": "CIGREEN",
     "SAT__SEN2__SAVI": "SAVI",
     "SAT__SEN2__WDVI": "WDVI",
+    "SAT__SEN2__RAW": "Raw",
     "TOPO": "TOPO",
     "TOPO__TWI": "Topographic Wetness Index",
     "TOPO__DEM": "Digital Elevation Model",
