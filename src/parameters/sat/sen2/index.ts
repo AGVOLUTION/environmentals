@@ -1,3 +1,4 @@
+import { ContinousValueRange } from "../../../unit";
 import { SAT } from "../base";
 
 export class SEN2 extends SAT {}
@@ -14,6 +15,7 @@ export const NDVI = new SEN2("NDVI", {
     translation: "NDVI",
     derivedFrom: [CL],
     expression: "(b8 - b4) / (b8 + b4)",
+    valueRange: new ContinousValueRange(-1, 1),
     normalizedName: "ndvi",
 });
 export const RGB = new SEN2("RGB", {
@@ -23,6 +25,7 @@ export const RGB = new SEN2("RGB", {
     derivedFrom: [CL],
     expression:
         "255 * (1.055 * (b4**(1/2.4))) - 0.055, 255 * (1.055 * (b3**(1/2.4))) - 0.055, 255 * (1.055 * (b2**(1/2.4))) - 0.055",
+    valueRange: new ContinousValueRange(0, 255),
     normalizedName: "rgb",
 });
 export const KC = new SEN2("KC", {
@@ -31,6 +34,7 @@ export const KC = new SEN2("KC", {
     translation: "KC",
     derivedFrom: [CL],
     expression: "1.4571 * ((b8 - b4) / (b8 + b4)) - 0.1725",
+    valueRange: new ContinousValueRange(-1.6296, 1.2846),
     normalizedName: "kc",
 });
 export const CIGREEN = new SEN2("CIGREEN", {
@@ -39,6 +43,7 @@ export const CIGREEN = new SEN2("CIGREEN", {
     translation: "CIGREEN",
     derivedFrom: [CL],
     expression: "(b8 / b3) - 1",
+    valueRange: new ContinousValueRange(-1, 7),
     normalizedName: "cigreen",
 });
 export const SAVI = new SEN2("SAVI", {
