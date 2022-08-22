@@ -759,6 +759,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | (b8 - b4) / (b8 + b4)
+ValueRange | -1-1
 NormalizedName | ndvi
 
 ## SAT__SEN2__RGB
@@ -771,6 +772,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | 255 * (1.055 * (b4**(1/2.4))) - 0.055, 255 * (1.055 * (b3**(1/2.4))) - 0.055, 255 * (1.055 * (b2**(1/2.4))) - 0.055
+ValueRange | 0-255
 NormalizedName | rgb
 
 ## SAT__SEN2__KC
@@ -783,6 +785,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | 1.4571 * ((b8 - b4) / (b8 + b4)) - 0.1725
+ValueRange | -1.6296-1.2846
 NormalizedName | kc
 
 ## SAT__SEN2__CIGREEN
@@ -795,6 +798,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | (b8 / b3) - 1
+ValueRange | -1-7
 NormalizedName | cigreen
 
 ## SAT__SEN2__SAVI
