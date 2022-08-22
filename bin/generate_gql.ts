@@ -31,6 +31,34 @@ export async function main() {
     const categoryEnums = categoryEnumFileNames.map(
         (c) => `export * as ${c[0]}Enums from './${c[0]}'`
     );
+    const storeInTimestreamList = generateStoreInTimestreamList();
+    const modelNames = generateModelsObject();
+
+    const enumsFile = ts.createSourceFile(
+        `${DESTINATION_FOLDER}/enums.ts`,
+        "",
+        ts.ScriptTarget.ES2021,
+        false,
+        ts.ScriptKind.TS
+    );
+    const enumsPrinter = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
+    const enumsResult = enumsPrinter.printNode(
+        ts.EmitHint.Unspecified,
+        generateEnvironmentalParameterNamesEnum(),
+        enumsFile
+    );
+    await fs.writeFile(
+        enumsFile.fileName,
+        `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
+${categoryEnums.join("\n")}
+
+${enumsResult}
+
+export const EnumObject = ${enumObject}
+${storeInTimestreamList}
+${modelNames}
+`
+    );
 
     const resultFile = ts.createSourceFile(
         `${DESTINATION_FOLDER}/index.ts`,
@@ -42,50 +70,24 @@ export async function main() {
     const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
     const result = printer.printNode(
         ts.EmitHint.Unspecified,
-        generateAstForGqlEnum(),
+        generateTypeGraphqlAstForGqlEnum(),
         resultFile
     );
-
-    const storeInTimestreamList = generateStoreInTimestreamList();
-    const modelNames = generateModelsObject();
 
     await fs.writeFile(
         resultFile.fileName,
         `/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/
 import "reflect-metadata"
-
-${categoryEnums.join("\n")}
-
+export * from "./enums"
 ${result}
-
-export const EnumObject = ${enumObject}
-${storeInTimestreamList}
-${modelNames}
 `
     );
 }
 
-function generateAstForGqlEnum() {
+function generateEnvironmentalParameterNamesEnum() {
     const leafs = getAllLeafs();
 
     const code = [
-        factory.createImportDeclaration(
-            undefined,
-            undefined,
-            factory.createImportClause(
-                false,
-                undefined,
-                factory.createNamedImports([
-                    factory.createImportSpecifier(
-                        false,
-                        undefined,
-                        factory.createIdentifier("registerEnumType")
-                    ),
-                ])
-            ),
-            factory.createStringLiteral("type-graphql"),
-            undefined
-        ),
         factory.createVariableStatement(
             [factory.createModifier(ts.SyntaxKind.ExportKeyword)],
             factory.createVariableDeclarationList(
@@ -119,6 +121,51 @@ function generateAstForGqlEnum() {
                 ],
                 ts.NodeFlags.Const
             )
+        ),
+    ];
+
+    return factory.createSourceFile(
+        code,
+        factory.createToken(SyntaxKind.EndOfFileToken),
+        ts.NodeFlags.None
+    );
+}
+
+function generateTypeGraphqlAstForGqlEnum() {
+    const code = [
+        factory.createImportDeclaration(
+            undefined,
+            undefined,
+            factory.createImportClause(
+                false,
+                undefined,
+                factory.createNamedImports([
+                    factory.createImportSpecifier(
+                        false,
+                        undefined,
+                        factory.createIdentifier("EnvironmentalParameterNames")
+                    ),
+                ])
+            ),
+            factory.createStringLiteral("./enums"),
+            undefined
+        ),
+        factory.createImportDeclaration(
+            undefined,
+            undefined,
+            factory.createImportClause(
+                false,
+                undefined,
+                factory.createNamedImports([
+                    factory.createImportSpecifier(
+                        false,
+                        undefined,
+                        factory.createIdentifier("registerEnumType")
+                    ),
+                ])
+            ),
+            factory.createStringLiteral("type-graphql"),
+            undefined
         ),
         factory.createExpressionStatement(
             factory.createCallExpression(
