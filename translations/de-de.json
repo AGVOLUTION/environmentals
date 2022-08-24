@@ -100,8 +100,8 @@
     "SAT__SEN2__WDVI": "WDVI",
     "SAT__SEN2__RAW": "Raw",
     "TOPO": "TOPO",
-    "TOPO__TWI": "Topographic Wetness Index",
-    "TOPO__DEM": "Digital Elevation Model",
-    "TOPO__SLOPE": "Slope",
-    "TOPO__EXPOSITION": "Exposition"
+    "TOPO__TWI": "Feuchte Zonen",
+    "TOPO__DEM": "Digitales Geländemodell",
+    "TOPO__SLOPE": "Hangneigung",
+    "TOPO__EXPOSITION": "Hang Ausrichtung"
 }

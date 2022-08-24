@@ -100,7 +100,7 @@
     "SAT__SEN2__WDVI": "WDVI",
     "SAT__SEN2__RAW": "Raw",
     "TOPO": "TOPO",
-    "TOPO__TWI": "Topographic Wetness Index",
+    "TOPO__TWI": "Wetness Zones",
     "TOPO__DEM": "Digital Elevation Model",
     "TOPO__SLOPE": "Slope",
     "TOPO__EXPOSITION": "Exposition"
