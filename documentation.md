@@ -841,8 +841,8 @@ NormalizedName | raw
 
 Property | Value
 ---------|-------
-Name | Topographic Wetness Index
-Description | Topographic Wetness Index
+Name | Wetness Zones
+Description | Wetness Zones
 Unit | undefined
 StoreInTimestream | false
 
