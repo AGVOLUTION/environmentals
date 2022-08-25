@@ -62,6 +62,14 @@ export const WDVI = new SEN2("WDVI", {
     expression: "b8 - (1.007 * b4)",
     normalizedName: "wdvi",
 });
+export const MSI = new SEN2("MSI", {
+    storeInTimestream: false,
+    description: "Moisture Stress Index from Sentinel 2 imagery",
+    translation: "MSI",
+    derivedFrom: [CL],
+    expression: "b11 / b8",
+    normalizedName: "msi",
+});
 export const RAW = new SEN2("RAW", {
     storeInTimestream: false,
     description: "Raw image from Sentinel 2 imagery containing all Bands",
@@ -79,5 +87,5 @@ export const sen2 = new SAT(
         description: "Sentinel 2 imagery",
         normalizedName: "sentinel2",
     },
-    [NDVI, RGB, KC, CIGREEN, SAVI, WDVI, RAW]
+    [NDVI, RGB, KC, CIGREEN, SAVI, WDVI, MSI, RAW]
 );

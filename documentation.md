@@ -825,6 +825,18 @@ DerivedFrom | CL
 Expression | b8 - (1.007 * b4)
 NormalizedName | wdvi
 
+## SAT__SEN2__MSI
+
+Property | Value
+---------|-------
+Name | MSI
+Description | Moisture Stress Index from Sentinel 2 imagery
+Unit | undefined
+StoreInTimestream | false
+DerivedFrom | CL
+Expression | b11 / b8
+NormalizedName | msi
+
 ## SAT__SEN2__RAW
 
 Property | Value

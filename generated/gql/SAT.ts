@@ -9,6 +9,7 @@ export const EnumSAT = {
     "SEN2__CIGREEN": "SEN2__CIGREEN",
     "SEN2__SAVI": "SEN2__SAVI",
     "SEN2__WDVI": "SEN2__WDVI",
+    "SEN2__MSI": "SEN2__MSI",
     "SEN2__RAW": "SEN2__RAW"
 }
 
@@ -22,5 +23,6 @@ export const EnumSEN2 = {
     "CIGREEN": "CIGREEN",
     "SAVI": "SAVI",
     "WDVI": "WDVI",
+    "MSI": "MSI",
     "RAW": "RAW"
 }
