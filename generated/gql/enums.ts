@@ -96,6 +96,8 @@ export const EnvironmentalParameterNames = {
     SAT__SEN2__CIGREEN__CL: "SAT__SEN2__CIGREEN__CL",
     SAT__SEN2__KC: "SAT__SEN2__KC",
     SAT__SEN2__KC__CL: "SAT__SEN2__KC__CL",
+    SAT__SEN2__MSI: "SAT__SEN2__MSI",
+    SAT__SEN2__MSI__CL: "SAT__SEN2__MSI__CL",
     SAT__SEN2__NDVI: "SAT__SEN2__NDVI",
     SAT__SEN2__NDVI__CL: "SAT__SEN2__NDVI__CL",
     SAT__SEN2__RAW: "SAT__SEN2__RAW",
@@ -227,6 +229,7 @@ export const EnumObject = {
             "CIGREEN": "CIGREEN",
             "SAVI": "SAVI",
             "WDVI": "WDVI",
+            "MSI": "MSI",
             "RAW": "RAW"
         }
     },
