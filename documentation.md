@@ -835,6 +835,7 @@ Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
 Expression | b11 / b8
+ValueRange | 0-4
 NormalizedName | msi
 
 ## SAT__SEN2__RAW
