@@ -67,7 +67,7 @@ export const MSI = new SEN2("MSI", {
     description: "Moisture Stress Index from Sentinel 2 imagery",
     translation: "MSI",
     derivedFrom: [CL],
-    expression: "b11 / b8",
+    expression: "(b11 / b8)",
     // "The values of this index range from 0 to more than 3. The common range for green vegetation is 0.4 to 2."
     // source: https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/msi/
     valueRange: new ContinousValueRange(0, 4),
