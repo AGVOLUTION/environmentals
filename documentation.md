@@ -834,7 +834,7 @@ Description | Moisture Stress Index from Sentinel 2 imagery
 Unit | undefined
 StoreInTimestream | false
 DerivedFrom | CL
-Expression | b11 / b8
+Expression | (b11 / b8)
 ValueRange | 0-4
 NormalizedName | msi
 
