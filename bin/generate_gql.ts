@@ -239,6 +239,9 @@ function generateEnumObjectForTree(m: Environmental): any {
     return { [m.name]: _.merge({}, ...childObjects) };
 }
 
+/**
+ * Produces an enum object for an ENV and its children
+ */
 function generateCategoryEnum(m: Environmental) {
     const names = [...m]
         .filter((x) => x.isLeaf)
@@ -246,15 +249,32 @@ function generateCategoryEnum(m: Environmental) {
     return Object.fromEntries(names.map((x) => [x, x]));
 }
 
+/**
+ * Same as {@see generateCategoryEnum}, but generates an object with all lowercase names
+ *
+ * especially needed for TSOA and the APIs using it
+ */
+function generateCategoryEnumLowercase(m: Environmental) {
+    const obj = generateCategoryEnum(m);
+    return Object.fromEntries(
+        Object.entries(obj).map(([k, v]) => [k.toLowerCase(), v.toLowerCase()])
+    );
+}
+
 async function writeCategoryEnumFile(m: Environmental) {
     const enumObjects = m.children.map((child) => [
         child.name,
         generateCategoryEnum(child),
+        generateCategoryEnumLowercase(child),
     ]);
-    const exports = enumObjects.map(
-        (o) =>
-            `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`
-    );
+    const exports = enumObjects.flatMap((o) => [
+        `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`,
+        `export const Enum${o[0]}Lowercase = ${JSON.stringify(
+            o[2],
+            undefined,
+            4
+        )}`,
+    ]);
     const fileName = `${DESTINATION_FOLDER}/${m.name}.ts`;
     const str = `${GENERATED_HINT}
 export const Enum${m.name} = ${JSON.stringify(
