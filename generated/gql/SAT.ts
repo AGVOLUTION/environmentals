@@ -16,6 +16,9 @@ export const EnumSAT = {
 export const EnumSEN1 = {
     "RAW": "RAW"
 }
+export const EnumSEN1Lowercase = {
+    "raw": "raw"
+}
 export const EnumSEN2 = {
     "NDVI": "NDVI",
     "RGB": "RGB",
@@ -25,4 +28,14 @@ export const EnumSEN2 = {
     "WDVI": "WDVI",
     "MSI": "MSI",
     "RAW": "RAW"
+}
+export const EnumSEN2Lowercase = {
+    "ndvi": "ndvi",
+    "rgb": "rgb",
+    "kc": "kc",
+    "cigreen": "cigreen",
+    "savi": "savi",
+    "wdvi": "wdvi",
+    "msi": "msi",
+    "raw": "raw"
 }

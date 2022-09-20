@@ -19,13 +19,25 @@ export const EnumENERGY = {
     "VCAP": "VCAP",
     "LOWLIGHT": "LOWLIGHT"
 }
+export const EnumENERGYLowercase = {
+    "vcap": "vcap",
+    "lowlight": "lowlight"
+}
 export const EnumALERT = {
     "TRIGGERED": "TRIGGERED",
     "ARMED": "ARMED"
 }
+export const EnumALERTLowercase = {
+    "triggered": "triggered",
+    "armed": "armed"
+}
 export const EnumPOSITION = {
     "LATITUDE": "LATITUDE",
     "LONGITUDE": "LONGITUDE"
+}
+export const EnumPOSITIONLowercase = {
+    "latitude": "latitude",
+    "longitude": "longitude"
 }
 export const EnumRF = {
     "RSSI": "RSSI",
@@ -33,6 +45,15 @@ export const EnumRF = {
     "RSRQ": "RSRQ",
     "SINR": "SINR"
 }
+export const EnumRFLowercase = {
+    "rssi": "rssi",
+    "rsrp": "rsrp",
+    "rsrq": "rsrq",
+    "sinr": "sinr"
+}
 export const EnumSOILSENSOR = {
     "ID": "ID"
+}
+export const EnumSOILSENSORLowercase = {
+    "id": "id"
 }
