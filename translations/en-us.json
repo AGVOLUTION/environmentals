@@ -34,6 +34,7 @@
     "ENV__SOIL__SOC": "ENV__SOIL__SOC",
     "ENV__SOIL__OCD": "ENV__SOIL__OCD",
     "ENV__SOIL__OCS": "ENV__SOIL__OCS",
+    "ENV__SOIL__RT": "ENV__SOIL__RT",
     "ENV__SOIL__RD": "ENV__SOIL__RD",
     "ENV__SOIL__TH": "ENV__SOIL__TH",
     "ENV__SOIL__OM": "ENV__SOIL__OM",
