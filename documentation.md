@@ -291,6 +291,15 @@ Description | Organic carbon stocks
 Unit | kg/m³
 StoreInTimestream | false
 
+## ENV__SOIL__RT
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__RT
+Description | Maxiumum rooting thickness
+Unit | mm
+StoreInTimestream | false
+
 ## ENV__SOIL__RD
 
 Property | Value

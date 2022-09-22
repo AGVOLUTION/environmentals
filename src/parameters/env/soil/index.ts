@@ -117,6 +117,11 @@ export const OCS = new SOIL("OCS", {
     description: "Organic carbon stocks",
     unit: kgpm3,
 });
+export const RT = new SOIL("RT", {
+    storeInTimestream: false,
+    description: "Maxiumum rooting thickness",
+    unit: mm,
+});
 export const RD = new SOIL("RD", {
     storeInTimestream: false,
     description: "Maxiumum rooting depth",
@@ -289,6 +294,7 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     SOC,
     OCD,
     OCS,
+    RT,
     RD,
     TH,
     OM,
