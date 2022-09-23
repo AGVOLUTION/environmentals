@@ -19,6 +19,7 @@ import {
 import { ENV } from "../base";
 import { AGV, AG_BODEN, H2O, KCL, VDLUFA_CAL, VDLUFA_CAT } from "./models";
 import { capacitance } from "./capacitance";
+import { SoilTypeNames } from "./soilTypes";
 
 export const T = new SOIL("T", {
     translation: { "de-de": "Bodentemperatur", "en-us": "Soil Temperature" },
@@ -277,6 +278,12 @@ export const NA = new SOIL("NA", {
 });
 // }}}
 
+export const type = new SOIL("TYPE", {
+    storeInTimestream: false,
+    description: "The type of the soil",
+    unit: SoilTypeNames,
+});
+
 export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     T,
     EC,
@@ -326,4 +333,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     MN,
     NA,
     capacitance,
+    type,
 ]);

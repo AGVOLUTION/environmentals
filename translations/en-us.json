@@ -69,6 +69,7 @@
     "ENV__SOIL__CAPACITANCE__A": "Capacitance A",
     "ENV__SOIL__CAPACITANCE__B": "Capacitance B",
     "ENV__SOIL__CAPACITANCE__OFFSET": "Capacitance Offset",
+    "ENV__SOIL__TYPE": "ENV__SOIL__TYPE",
     "DEV": "DEV",
     "DEV__ENERGY": "DEV__ENERGY",
     "DEV__ENERGY__VCAP": "Battery",
