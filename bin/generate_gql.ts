@@ -1,10 +1,14 @@
 //import fs from "fs/promises";
+import { writeFileSync } from "fs";
 import fs from "fs-extra";
 import _ from "lodash";
 import ts, { factory, SyntaxKind } from "typescript";
 import { root, SAT, VAP } from "../src/";
 import { Environmental } from "../src/environmental";
 import * as Models from "../src/parameters/env/atmo/models";
+import { soil } from "../src/parameters/env/soil";
+import { SoilTypes } from "../src/parameters/env/soil/soilTypes";
+import { DiscreteValueRange } from "../src/unit";
 
 const DESTINATION_FOLDER = "generated/gql";
 const GENERATED_HINT = "/*\n * THIS IS A GENERATED FILE. DO NOT EDIT !!!\n*/";
@@ -33,6 +37,7 @@ export async function main() {
     );
     const storeInTimestreamList = generateStoreInTimestreamList();
     const modelNames = generateModelsObject();
+    const unitEnums = generateUnitsFile();
 
     const enumsFile = ts.createSourceFile(
         `${DESTINATION_FOLDER}/enums.ts`,
@@ -57,6 +62,7 @@ ${enumsResult}
 export const EnumObject = ${enumObject}
 ${storeInTimestreamList}
 ${modelNames}
+${unitEnums}
 `
     );
 
@@ -314,4 +320,17 @@ ${m.name}:'${m.name}'`
 function generateEnumObject(environmentals: Environmental[]) {
     const entries = environmentals.map((e) => [e.fqn, e.fqn]);
     return Object.fromEntries(entries);
+}
+
+function generateDiscreteUnit(u: DiscreteValueRange, name: string): string {
+    const values = u.values.map((v) => `${v} = '${v}',`).join("\n");
+    return `${GENERATED_HINT}\nexport enum ${name} {
+        ${values}
+    }`;
+}
+
+function generateUnitsFile() {
+    const soiltypes = generateDiscreteUnit(new SoilTypes(), "SoilTypes");
+    writeFileSync(`${DESTINATION_FOLDER}/units.ts`, [soiltypes].join("\n"));
+    return ' export * from "./units";';
 }

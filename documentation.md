@@ -617,6 +617,15 @@ Unit | pF
 StoreInTimestream | true
 Format | .2f
 
+## ENV__SOIL__TYPE
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__TYPE
+Description | The type of the soil
+Unit | Soil types
+StoreInTimestream | false
+
 ## DEV__ENERGY__VCAP
 
 Property | Value

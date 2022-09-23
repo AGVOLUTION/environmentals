@@ -82,6 +82,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__T: "ENV__SOIL__T",
     ENV__SOIL__TH: "ENV__SOIL__TH",
     ENV__SOIL__TN: "ENV__SOIL__TN",
+    ENV__SOIL__TYPE: "ENV__SOIL__TYPE",
     ENV__SOIL__VWC: "ENV__SOIL__VWC",
     MODEL__IMG__ENV__ATMO__ETC__ETC: "MODEL__IMG__ENV__ATMO__ETC__ETC",
     MODEL__NUM__ENV__ATMO__ETO__ETO: "MODEL__NUM__ENV__ATMO__ETO__ETO",
@@ -190,7 +191,8 @@ export const EnumObject = {
                 "A": "A",
                 "B": "B",
                 "OFFSET": "OFFSET"
-            }
+            },
+            "TYPE": "TYPE"
         }
     },
     "DEV": {
@@ -288,3 +290,4 @@ ETO:'ETO',
   - ENV__ATMO__ETC
  */
 ETC:'ETC'} as const
+ export * from "./units";

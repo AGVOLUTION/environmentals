@@ -69,6 +69,7 @@
     "ENV__SOIL__CAPACITANCE__A": "Kapazität A",
     "ENV__SOIL__CAPACITANCE__B": "Kapazität B",
     "ENV__SOIL__CAPACITANCE__OFFSET": "Kapazität Offset",
+    "ENV__SOIL__TYPE": "ENV__SOIL__TYPE",
     "DEV": "DEV",
     "DEV__ENERGY": "DEV__ENERGY",
     "DEV__ENERGY__VCAP": "Akkustand",

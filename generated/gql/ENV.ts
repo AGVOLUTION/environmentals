@@ -65,7 +65,8 @@ export const EnumENV = {
     "SOIL__CAPACITANCE__DIFFERENTIAL": "SOIL__CAPACITANCE__DIFFERENTIAL",
     "SOIL__CAPACITANCE__A": "SOIL__CAPACITANCE__A",
     "SOIL__CAPACITANCE__B": "SOIL__CAPACITANCE__B",
-    "SOIL__CAPACITANCE__OFFSET": "SOIL__CAPACITANCE__OFFSET"
+    "SOIL__CAPACITANCE__OFFSET": "SOIL__CAPACITANCE__OFFSET",
+    "SOIL__TYPE": "SOIL__TYPE"
 }
 
 export const EnumATMO = {
@@ -150,7 +151,8 @@ export const EnumSOIL = {
     "CAPACITANCE__DIFFERENTIAL": "CAPACITANCE__DIFFERENTIAL",
     "CAPACITANCE__A": "CAPACITANCE__A",
     "CAPACITANCE__B": "CAPACITANCE__B",
-    "CAPACITANCE__OFFSET": "CAPACITANCE__OFFSET"
+    "CAPACITANCE__OFFSET": "CAPACITANCE__OFFSET",
+    "TYPE": "TYPE"
 }
 export const EnumSOILLowercase = {
     "t": "t",
@@ -202,5 +204,6 @@ export const EnumSOILLowercase = {
     "capacitance__differential": "capacitance__differential",
     "capacitance__a": "capacitance__a",
     "capacitance__b": "capacitance__b",
-    "capacitance__offset": "capacitance__offset"
+    "capacitance__offset": "capacitance__offset",
+    "type": "type"
 }
