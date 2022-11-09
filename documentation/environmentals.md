@@ -38,6 +38,7 @@ As a user you will most probably want to use the [deserialize()](./environmental
 
 |  Variable | Description |
 |  --- | --- |
+|  [crop](./environmentals.crop.md) |  |
 |  [dev](./environmentals.dev.md) | The DEV subtree containing parameters regarding any devices related data |
 |  [env](./environmentals.env.md) | The ENV subtree, containing all the environment parameters. |
 |  [root](./environmentals.root.md) | The root node for the environmentals tree |

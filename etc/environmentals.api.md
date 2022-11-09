@@ -4,6 +4,11 @@
 
 ```ts
 
+// Warning: (ae-forgotten-export) The symbol "ENV" needs to be exported by the entry point index.d.ts
+//
+// @public (undocumented)
+export const crop: ENV;
+
 // @public
 export function deserialize(fqn: FullyQualifiedName | FqnPathElements): Environmental;
 
@@ -12,8 +17,6 @@ export function deserialize(fqn: FullyQualifiedName | FqnPathElements): Environm
 // @public
 export const dev: DEV;
 
-// Warning: (ae-forgotten-export) The symbol "ENV" needs to be exported by the entry point index.d.ts
-//
 // @public
 export const env: ENV;
 
