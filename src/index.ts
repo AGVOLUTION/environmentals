@@ -19,6 +19,7 @@ export {
     sat,
     initialize,
     tryFiltered,
+    crop,
 } from "./parameters";
 export {
     Environmental,

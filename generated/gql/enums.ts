@@ -6,8 +6,21 @@ export * as DEVEnums from './DEV'
 export * as OBJEnums from './OBJ'
 export * as SATEnums from './SAT'
 export * as TOPOEnums from './TOPO'
+export * as CROPEnums from './CROP'
 
 export const EnvironmentalParameterNames = {
+    CROP__DRY_MATTER__DAILY_GROWTH: "CROP__DRY_MATTER__DAILY_GROWTH",
+    CROP__LEAF__LAI: "CROP__LEAF__LAI",
+    CROP__LEAF__LAI_MAX: "CROP__LEAF__LAI_MAX",
+    CROP__LEAF__STEM_NODE: "CROP__LEAF__STEM_NODE",
+    CROP__MASS_YIELD__CGRAIN: "CROP__MASS_YIELD__CGRAIN",
+    CROP__MASS_YIELD__DAILY_GROWTH: "CROP__MASS_YIELD__DAILY_GROWTH",
+    CROP__NITROGEN__CNU: "CROP__NITROGEN__CNU",
+    CROP__PHENO__ACTUALRD: "CROP__PHENO__ACTUALRD",
+    CROP__PHENO__CBD: "CROP__PHENO__CBD",
+    CROP__WATER__DEVELOPMENT_STRESS: "CROP__WATER__DEVELOPMENT_STRESS",
+    CROP__WATER__GROWTH_STRESS: "CROP__WATER__GROWTH_STRESS",
+    CROP__WATER__LEAF_STRESS: "CROP__WATER__LEAF_STRESS",
     DEV__ALERT__ARMED: "DEV__ALERT__ARMED",
     DEV__ALERT__TRIGGERED: "DEV__ALERT__TRIGGERED",
     DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT",
@@ -50,6 +63,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__CU: "ENV__SOIL__CU",
     ENV__SOIL__DRAINF: "ENV__SOIL__DRAINF",
     ENV__SOIL__EC: "ENV__SOIL__EC",
+    ENV__SOIL__EP: "ENV__SOIL__EP",
     ENV__SOIL__FC: "ENV__SOIL__FC",
     ENV__SOIL__FMIN: "ENV__SOIL__FMIN",
     ENV__SOIL__K: "ENV__SOIL__K",
@@ -192,7 +206,8 @@ export const EnumObject = {
                 "B": "B",
                 "OFFSET": "OFFSET"
             },
-            "TYPE": "TYPE"
+            "TYPE": "TYPE",
+            "EP": "EP"
         }
     },
     "DEV": {
@@ -242,6 +257,32 @@ export const EnumObject = {
         "DEM": "DEM",
         "SLOPE": "SLOPE",
         "EXPOSITION": "EXPOSITION"
+    },
+    "CROP": {
+        "PHENO": {
+            "ACTUALRD": "ACTUALRD",
+            "CBD": "CBD"
+        },
+        "DRY_MATTER": {
+            "DAILY_GROWTH": "DAILY_GROWTH"
+        },
+        "LEAF": {
+            "LAI": "LAI",
+            "LAI_MAX": "LAI_MAX",
+            "STEM_NODE": "STEM_NODE"
+        },
+        "MASS_YIELD": {
+            "DAILY_GROWTH": "DAILY_GROWTH",
+            "CGRAIN": "CGRAIN"
+        },
+        "NITROGEN": {
+            "CNU": "CNU"
+        },
+        "WATER": {
+            "DEVELOPMENT_STRESS": "DEVELOPMENT_STRESS",
+            "LEAF_STRESS": "LEAF_STRESS",
+            "GROWTH_STRESS": "GROWTH_STRESS"
+        }
     }
 }
 export const StoreInTimestreamParameters = [
@@ -264,13 +305,26 @@ export const StoreInTimestreamParameters = [
     "ENV__SOIL__CAPACITANCE__A",
     "ENV__SOIL__CAPACITANCE__B",
     "ENV__SOIL__CAPACITANCE__OFFSET",
+    "ENV__SOIL__EP",
     "DEV__ENERGY__VCAP",
     "DEV__RF__RSSI",
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",
     "DEV__RF__SINR",
     "OBJ__LIQUIDLEVEL",
-    "OBJ__WEIGHT"
+    "OBJ__WEIGHT",
+    "CROP__PHENO__ACTUALRD",
+    "CROP__PHENO__CBD",
+    "CROP__DRY_MATTER__DAILY_GROWTH",
+    "CROP__LEAF__LAI",
+    "CROP__LEAF__LAI_MAX",
+    "CROP__LEAF__STEM_NODE",
+    "CROP__MASS_YIELD__DAILY_GROWTH",
+    "CROP__MASS_YIELD__CGRAIN",
+    "CROP__NITROGEN__CNU",
+    "CROP__WATER__DEVELOPMENT_STRESS",
+    "CROP__WATER__LEAF_STRESS",
+    "CROP__WATER__GROWTH_STRESS"
 ] as const
 export const ModelNames = {
 /**

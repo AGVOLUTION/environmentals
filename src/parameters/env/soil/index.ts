@@ -278,6 +278,34 @@ export const NA = new SOIL("NA", {
 });
 // }}}
 
+export const EP = new SOIL("EP", {
+    storeInTimestream: true,
+    translation: "Evaporation",
+});
+export const CEP = new SOIL("EP", {
+    storeInTimestream: true,
+    translation: "Cumulative Evaporation",
+});
+export const RUNOFF = new SOIL("EP", {
+    storeInTimestream: true,
+});
+export const CRUNOFF = new SOIL("EP", {
+    storeInTimestream: true,
+});
+export const DRAIN = new SOIL("EP", {
+    storeInTimestream: true,
+});
+export const CDRAIN = new SOIL("EP", {
+    storeInTimestream: true,
+});
+export const CNMIN = new SOIL("EP", {
+    storeInTimestream: true,
+    translation: {
+        "en-us": "Cumulative nitrogen mineralization",
+        "de-de": "Kumulierte Stickstoffmineralisation",
+    },
+});
+
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
     description: "The type of the soil",
@@ -334,4 +362,11 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     NA,
     capacitance,
     type,
+    EP,
+    CEP,
+    RUNOFF,
+    CRUNOFF,
+    DRAIN,
+    CDRAIN,
+    CNMIN,
 ]);

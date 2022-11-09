@@ -11,6 +11,8 @@ export { obj } from "./obj";
 import { sat } from "./sat";
 export { sat } from "./sat";
 import { topo } from "./topo";
+import { crop } from "./crop";
+export { crop } from "./crop";
 
 let _whitelist: FullyQualifiedName[] | undefined = undefined;
 let _blacklist: FullyQualifiedName[] | undefined = undefined;
@@ -46,6 +48,7 @@ export const root = new Environmental("ROOT", { storeInTimestream: false }, [
     obj,
     sat,
     topo,
+    crop,
 ]);
 
 function isFqnPathElements(x: any): x is FqnPathElements {
