@@ -626,6 +626,15 @@ Description | The type of the soil
 Unit | Soil types
 StoreInTimestream | false
 
+## ENV__SOIL__EP
+
+Property | Value
+---------|-------
+Name | Cumulative nitrogen mineralization
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
 ## DEV__ENERGY__VCAP
 
 Property | Value
@@ -903,5 +912,113 @@ Name | Exposition
 Description | Exposition
 Unit | undefined
 StoreInTimestream | false
+
+## CROP__PHENO__ACTUALRD
+
+Property | Value
+---------|-------
+Name | Actual rooting depth
+Description | undefined
+Unit | mm
+StoreInTimestream | true
+
+## CROP__PHENO__CBD
+
+Property | Value
+---------|-------
+Name | Cumulative biological day
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__DRY_MATTER__DAILY_GROWTH
+
+Property | Value
+---------|-------
+Name | CROP__DRY_MATTER__DAILY_GROWTH
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__LEAF__LAI
+
+Property | Value
+---------|-------
+Name | Leaf Area Index
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__LEAF__LAI_MAX
+
+Property | Value
+---------|-------
+Name | Maximal Leaf Area Index
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__LEAF__STEM_NODE
+
+Property | Value
+---------|-------
+Name | main stem node number
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__MASS_YIELD__DAILY_GROWTH
+
+Property | Value
+---------|-------
+Name | CROP__MASS_YIELD__DAILY_GROWTH
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__MASS_YIELD__CGRAIN
+
+Property | Value
+---------|-------
+Name | Accumulated grain dry matter
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__NITROGEN__CNU
+
+Property | Value
+---------|-------
+Name | Cumulative nitrogen uptake
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__WATER__DEVELOPMENT_STRESS
+
+Property | Value
+---------|-------
+Name | Development water stress
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__WATER__LEAF_STRESS
+
+Property | Value
+---------|-------
+Name | Leaf water stress
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## CROP__WATER__GROWTH_STRESS
+
+Property | Value
+---------|-------
+Name | Growth water stress
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
 
     
