@@ -967,11 +967,11 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
-## CROP__MASS_YIELD__DAILY_GROWTH
+## CROP__MASS_YIELD__TRANSLOCATION
 
 Property | Value
 ---------|-------
-Name | CROP__MASS_YIELD__DAILY_GROWTH
+Name | CROP__MASS_YIELD__TRANSLOCATION
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
