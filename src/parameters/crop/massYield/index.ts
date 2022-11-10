@@ -2,7 +2,7 @@ import { CROP } from "../base";
 
 export class MASS_YIELD extends CROP {}
 
-export const TRANSLOCATION = new MASS_YIELD("DAILY_GROWTH", {
+export const TRANSLOCATION = new MASS_YIELD("TRANSLOCATION", {
     storeInTimestream: true,
 });
 export const CGRAIN = new MASS_YIELD("CGRAIN", {

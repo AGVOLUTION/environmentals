@@ -8,7 +8,7 @@ export const EnumCROP = {
     "LEAF__LAI": "LEAF__LAI",
     "LEAF__LAI_MAX": "LEAF__LAI_MAX",
     "LEAF__STEM_NODE": "LEAF__STEM_NODE",
-    "MASS_YIELD__DAILY_GROWTH": "MASS_YIELD__DAILY_GROWTH",
+    "MASS_YIELD__TRANSLOCATION": "MASS_YIELD__TRANSLOCATION",
     "MASS_YIELD__CGRAIN": "MASS_YIELD__CGRAIN",
     "NITROGEN__CNU": "NITROGEN__CNU",
     "WATER__DEVELOPMENT_STRESS": "WATER__DEVELOPMENT_STRESS",
@@ -41,11 +41,11 @@ export const EnumLEAFLowercase = {
     "stem_node": "stem_node"
 }
 export const EnumMASS_YIELD = {
-    "DAILY_GROWTH": "DAILY_GROWTH",
+    "TRANSLOCATION": "TRANSLOCATION",
     "CGRAIN": "CGRAIN"
 }
 export const EnumMASS_YIELDLowercase = {
-    "daily_growth": "daily_growth",
+    "translocation": "translocation",
     "cgrain": "cgrain"
 }
 export const EnumNITROGEN = {

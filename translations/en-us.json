@@ -119,7 +119,7 @@
     "CROP__LEAF__LAI_MAX": "Maximal Leaf Area Index",
     "CROP__LEAF__STEM_NODE": "main stem node number",
     "CROP__MASS_YIELD": "CROP__MASS_YIELD",
-    "CROP__MASS_YIELD__DAILY_GROWTH": "CROP__MASS_YIELD__DAILY_GROWTH",
+    "CROP__MASS_YIELD__TRANSLOCATION": "CROP__MASS_YIELD__TRANSLOCATION",
     "CROP__MASS_YIELD__CGRAIN": "Accumulated grain dry matter",
     "CROP__NITROGEN": "CROP__NITROGEN",
     "CROP__NITROGEN__CNU": "Cumulative nitrogen uptake",
