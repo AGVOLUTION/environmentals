@@ -282,23 +282,23 @@ export const EP = new SOIL("EP", {
     storeInTimestream: true,
     translation: "Evaporation",
 });
-export const CEP = new SOIL("EP", {
+export const CEP = new SOIL("CEP", {
     storeInTimestream: true,
     translation: "Cumulative Evaporation",
 });
-export const RUNOFF = new SOIL("EP", {
+export const RUNOFF = new SOIL("RUNOFF", {
     storeInTimestream: true,
 });
-export const CRUNOFF = new SOIL("EP", {
+export const CRUNOFF = new SOIL("CRUNOFF", {
     storeInTimestream: true,
 });
-export const DRAIN = new SOIL("EP", {
+export const DRAIN = new SOIL("DRAIN", {
     storeInTimestream: true,
 });
-export const CDRAIN = new SOIL("EP", {
+export const CDRAIN = new SOIL("CDRAIN", {
     storeInTimestream: true,
 });
-export const CNMIN = new SOIL("EP", {
+export const CNMIN = new SOIL("CNMIN", {
     storeInTimestream: true,
     translation: {
         "en-us": "Cumulative nitrogen mineralization",

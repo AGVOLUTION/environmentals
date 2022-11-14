@@ -67,7 +67,13 @@ export const EnumENV = {
     "SOIL__CAPACITANCE__B": "SOIL__CAPACITANCE__B",
     "SOIL__CAPACITANCE__OFFSET": "SOIL__CAPACITANCE__OFFSET",
     "SOIL__TYPE": "SOIL__TYPE",
-    "SOIL__EP": "SOIL__EP"
+    "SOIL__EP": "SOIL__EP",
+    "SOIL__CEP": "SOIL__CEP",
+    "SOIL__RUNOFF": "SOIL__RUNOFF",
+    "SOIL__CRUNOFF": "SOIL__CRUNOFF",
+    "SOIL__DRAIN": "SOIL__DRAIN",
+    "SOIL__CDRAIN": "SOIL__CDRAIN",
+    "SOIL__CNMIN": "SOIL__CNMIN"
 }
 
 export const EnumATMO = {
@@ -154,7 +160,13 @@ export const EnumSOIL = {
     "CAPACITANCE__B": "CAPACITANCE__B",
     "CAPACITANCE__OFFSET": "CAPACITANCE__OFFSET",
     "TYPE": "TYPE",
-    "EP": "EP"
+    "EP": "EP",
+    "CEP": "CEP",
+    "RUNOFF": "RUNOFF",
+    "CRUNOFF": "CRUNOFF",
+    "DRAIN": "DRAIN",
+    "CDRAIN": "CDRAIN",
+    "CNMIN": "CNMIN"
 }
 export const EnumSOILLowercase = {
     "t": "t",
@@ -208,5 +220,11 @@ export const EnumSOILLowercase = {
     "capacitance__b": "capacitance__b",
     "capacitance__offset": "capacitance__offset",
     "type": "type",
-    "ep": "ep"
+    "ep": "ep",
+    "cep": "cep",
+    "runoff": "runoff",
+    "crunoff": "crunoff",
+    "drain": "drain",
+    "cdrain": "cdrain",
+    "cnmin": "cnmin"
 }
