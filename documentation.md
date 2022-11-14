@@ -630,6 +630,60 @@ StoreInTimestream | false
 
 Property | Value
 ---------|-------
+Name | Evaporation
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__CEP
+
+Property | Value
+---------|-------
+Name | Cumulative Evaporation
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__RUNOFF
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__RUNOFF
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__CRUNOFF
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CRUNOFF
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__DRAIN
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__DRAIN
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__CDRAIN
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CDRAIN
+Description | undefined
+Unit | undefined
+StoreInTimestream | true
+
+## ENV__SOIL__CNMIN
+
+Property | Value
+---------|-------
 Name | Cumulative nitrogen mineralization
 Description | undefined
 Unit | undefined
