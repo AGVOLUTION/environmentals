@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: environmentals
+  annotations:
+    github.com/project-slug: AGVOLUTION/environmentals
+  title: environmentals
+  description: Central repository for all environmental parameters 
+  tags:
+    - python
+    - environmentals
+    - typescript
+spec:
+  type: library
+  lifecycle: production
+  owner: user:default/schneidemar
