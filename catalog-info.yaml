@@ -4,6 +4,7 @@ metadata:
   name: environmentals
   annotations:
     github.com/project-slug: AGVOLUTION/environmentals
+    backstage.io/techdocs-ref: dir:.
   title: environmentals
   description: Central repository for all environmental parameters 
   tags:
