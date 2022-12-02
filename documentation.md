@@ -1075,11 +1075,4 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
-## CROP__PHENO__MAT
-
-Property | Value
----------|-------
-Name | MAT
-Description | A variable that indicates crop maturity. It has a value of 0 before crop maturity and 1 at crop maturity
-Unit | 0,1
-StoreInTimestream | true    
+    

@@ -8,6 +8,7 @@ import { Environmental } from "../src/environmental";
 import * as Models from "../src/parameters/env/atmo/models";
 import { soil } from "../src/parameters/env/soil";
 import { SoilTypes } from "../src/parameters/env/soil/soilTypes";
+import { RAW, sen1, SEN1 } from "../src/parameters/sat";
 import { DiscreteValueRange } from "../src/unit";
 
 const DESTINATION_FOLDER = "generated/gql";
@@ -64,6 +65,20 @@ ${storeInTimestreamList}
 ${modelNames}
 ${unitEnums}
 `
+    );
+
+    // TODO: make this a proper function, this whole file is a mess...
+    const sen1Derived = RAW.properties.derivedFrom!.map((x) => [
+        x.name.toLowerCase(),
+        x.name.toLowerCase(),
+    ]);
+    fs.writeFileSync(
+        `${DESTINATION_FOLDER}/derived.ts`,
+        `export const EnumSEN1DerivedFrom = ${JSON.stringify(
+            Object.fromEntries(sen1Derived),
+            undefined,
+            4
+        )}`
     );
 
     const resultFile = ts.createSourceFile(
