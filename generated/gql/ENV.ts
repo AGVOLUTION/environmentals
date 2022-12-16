@@ -74,7 +74,7 @@ export const EnumENV = {
     "SOIL__DRAIN": "SOIL__DRAIN",
     "SOIL__CDRAIN": "SOIL__CDRAIN",
     "SOIL__CNMIN": "SOIL__CNMIN"
-}
+} as const
 
 export const EnumATMO = {
     "T": "T",
@@ -91,7 +91,7 @@ export const EnumATMO = {
     "SNOW__HEIGHT": "SNOW__HEIGHT",
     "SNOW__INSULATION": "SNOW__INSULATION",
     "SNOW__MELT": "SNOW__MELT"
-}
+} as const
 export const EnumATMOLowercase = {
     "t": "t",
     "p": "p",
@@ -107,7 +107,7 @@ export const EnumATMOLowercase = {
     "snow__height": "snow__height",
     "snow__insulation": "snow__insulation",
     "snow__melt": "snow__melt"
-}
+} as const
 export const EnumSOIL = {
     "T": "T",
     "EC": "EC",
@@ -167,7 +167,7 @@ export const EnumSOIL = {
     "DRAIN": "DRAIN",
     "CDRAIN": "CDRAIN",
     "CNMIN": "CNMIN"
-}
+} as const
 export const EnumSOILLowercase = {
     "t": "t",
     "ec": "ec",
@@ -227,4 +227,4 @@ export const EnumSOILLowercase = {
     "drain": "drain",
     "cdrain": "cdrain",
     "cnmin": "cnmin"
-}
+} as const
