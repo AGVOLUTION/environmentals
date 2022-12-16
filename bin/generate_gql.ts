@@ -289,12 +289,16 @@ async function writeCategoryEnumFile(m: Environmental) {
         generateCategoryEnumLowercase(child),
     ]);
     const exports = enumObjects.flatMap((o) => [
-        `export const Enum${o[0]} = ${JSON.stringify(o[1], undefined, 4)}`,
+        `export const Enum${o[0]} = ${JSON.stringify(
+            o[1],
+            undefined,
+            4
+        )} as const`,
         `export const Enum${o[0]}Lowercase = ${JSON.stringify(
             o[2],
             undefined,
             4
-        )}`,
+        )} as const`,
     ]);
     const fileName = `${DESTINATION_FOLDER}/${m.name}.ts`;
     const str = `${GENERATED_HINT}
@@ -302,7 +306,7 @@ export const Enum${m.name} = ${JSON.stringify(
         generateCategoryEnum(m),
         undefined,
         4
-    )}
+    )} as const
 
 ${exports.join("\n")}`;
     await fs.writeFile(fileName, str);

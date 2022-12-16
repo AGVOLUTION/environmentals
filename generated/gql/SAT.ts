@@ -11,14 +11,14 @@ export const EnumSAT = {
     "SEN2__WDVI": "SEN2__WDVI",
     "SEN2__MSI": "SEN2__MSI",
     "SEN2__RAW": "SEN2__RAW"
-}
+} as const
 
 export const EnumSEN1 = {
     "RAW": "RAW"
-}
+} as const
 export const EnumSEN1Lowercase = {
     "raw": "raw"
-}
+} as const
 export const EnumSEN2 = {
     "NDVI": "NDVI",
     "RGB": "RGB",
@@ -28,7 +28,7 @@ export const EnumSEN2 = {
     "WDVI": "WDVI",
     "MSI": "MSI",
     "RAW": "RAW"
-}
+} as const
 export const EnumSEN2Lowercase = {
     "ndvi": "ndvi",
     "rgb": "rgb",
@@ -38,4 +38,4 @@ export const EnumSEN2Lowercase = {
     "wdvi": "wdvi",
     "msi": "msi",
     "raw": "raw"
-}
+} as const
