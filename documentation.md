@@ -270,7 +270,7 @@ Property | Value
 ---------|-------
 Name | ENV__SOIL__SOC
 Description | Soil organic carbon content in the fine earth fraction
-Unit | g/kg
+Unit | g/100g (%)
 StoreInTimestream | false
 
 ## ENV__SOIL__OCD
