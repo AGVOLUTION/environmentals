@@ -106,7 +106,7 @@ export const SILT = new SOIL("SILT", {
 export const SOC = new SOIL("SOC", {
     storeInTimestream: false,
     description: "Soil organic carbon content in the fine earth fraction",
-    unit: gpkg,
+    unit: gp100g,
 });
 export const OCD = new SOIL("OCD", {
     storeInTimestream: false,
