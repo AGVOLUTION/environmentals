@@ -116,6 +116,7 @@ export const percent = new Unit("%", new ContinousValueRange(0, 100), {
     "de-de": "Prozent",
     "en-us": "percent",
 });
+export const V = new Unit("V"); // Voltage
 export const hPa = new Unit("hPa");
 export const Jpm2 = new Unit("J/m²");
 export const mm = new Unit("mm");
