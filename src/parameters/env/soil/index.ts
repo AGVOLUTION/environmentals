@@ -53,6 +53,15 @@ export const VWC = new SOIL("VWC", {
     unit: percent,
     format: "d",
 });
+export const FTSW = new SOIL("FTSW", {
+    storeInTimestream: true,
+    translation: {
+        "de-de": "Nutzbare Feldkapazität",
+        "en-us": "Fraction of Transpirable Soil Water",
+    },
+    unit: percent,
+    format: "d",
+});
 export const MATRIX_POTENTIAL = new SOIL("MATRIX_POTENTIAL", {
     storeInTimestream: true,
     translation: { "de-de": "Matrixpotential", "en-us": "Matrix Potential" },
@@ -317,6 +326,7 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     EC,
     NORM_ER,
     VWC,
+    FTSW,
     MATRIX_POTENTIAL,
     BD,
     CEC,
