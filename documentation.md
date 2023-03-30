@@ -508,15 +508,6 @@ Description | Soil CA
 Unit | undefined
 StoreInTimestream | false
 
-## ENV__SOIL__PAWC
-
-Property | Value
----------|-------
-Name | ENV__SOIL__PAWC
-Description | Plant available water capacity
-Unit | mm
-StoreInTimestream | false
-
 
 ## ENV__SOIL__CACL2
 
