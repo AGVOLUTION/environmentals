@@ -314,6 +314,16 @@ export const CNMIN = new SOIL("CNMIN", {
         "de-de": "Kumulierte Stickstoffmineralisation",
     },
 });
+export const PAWC = new SOIL("PAWC", {
+    storeInTimestream: false,
+    description:
+        "Plant available water capacity summed up over the whole profile until max rooting depth",
+    unit: mm,
+    translation: {
+        "en-us": "Plant available water capacity",
+        "de-de": "Pflanzenverfügbare Wasserkapazität",
+    },
+});
 
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
@@ -379,4 +389,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     DRAIN,
     CDRAIN,
     CNMIN,
+    PAWC,
 ]);

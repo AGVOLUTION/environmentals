@@ -20,6 +20,7 @@ export const EnumENV = {
     "SOIL__EC": "SOIL__EC",
     "SOIL__NORM_ER": "SOIL__NORM_ER",
     "SOIL__VWC": "SOIL__VWC",
+    "SOIL__FTSW": "SOIL__FTSW",
     "SOIL__MATRIX_POTENTIAL": "SOIL__MATRIX_POTENTIAL",
     "SOIL__BD": "SOIL__BD",
     "SOIL__CEC": "SOIL__CEC",
@@ -73,7 +74,8 @@ export const EnumENV = {
     "SOIL__CRUNOFF": "SOIL__CRUNOFF",
     "SOIL__DRAIN": "SOIL__DRAIN",
     "SOIL__CDRAIN": "SOIL__CDRAIN",
-    "SOIL__CNMIN": "SOIL__CNMIN"
+    "SOIL__CNMIN": "SOIL__CNMIN",
+    "SOIL__PAWC": "SOIL__PAWC"
 } as const
 
 export const EnumATMO = {
@@ -113,6 +115,7 @@ export const EnumSOIL = {
     "EC": "EC",
     "NORM_ER": "NORM_ER",
     "VWC": "VWC",
+    "FTSW": "FTSW",
     "MATRIX_POTENTIAL": "MATRIX_POTENTIAL",
     "BD": "BD",
     "CEC": "CEC",
@@ -166,13 +169,15 @@ export const EnumSOIL = {
     "CRUNOFF": "CRUNOFF",
     "DRAIN": "DRAIN",
     "CDRAIN": "CDRAIN",
-    "CNMIN": "CNMIN"
+    "CNMIN": "CNMIN",
+    "PAWC": "PAWC"
 } as const
 export const EnumSOILLowercase = {
     "t": "t",
     "ec": "ec",
     "norm_er": "norm_er",
     "vwc": "vwc",
+    "ftsw": "ftsw",
     "matrix_potential": "matrix_potential",
     "bd": "bd",
     "cec": "cec",
@@ -226,5 +231,6 @@ export const EnumSOILLowercase = {
     "crunoff": "crunoff",
     "drain": "drain",
     "cdrain": "cdrain",
-    "cnmin": "cnmin"
+    "cnmin": "cnmin",
+    "pawc": "pawc"
 } as const

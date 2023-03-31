@@ -181,6 +181,16 @@ Unit | %
 StoreInTimestream | true
 Format | d
 
+## ENV__SOIL__FTSW
+
+Property | Value
+---------|-------
+Name | Fraction of Transpirable Soil Water
+Description | undefined
+Unit | %
+StoreInTimestream | true
+Format | d
+
 ## ENV__SOIL__MATRIX_POTENTIAL
 
 Property | Value
@@ -508,7 +518,6 @@ Description | Soil CA
 Unit | undefined
 StoreInTimestream | false
 
-
 ## ENV__SOIL__CACL2
 
 Property | Value
@@ -690,6 +699,15 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+## ENV__SOIL__PAWC
+
+Property | Value
+---------|-------
+Name | Plant available water capacity
+Description | Plant available water capacity summed up over the whole profile until max rooting depth
+Unit | mm
+StoreInTimestream | false
+
 ## DEV__ENERGY__VCAP
 
 Property | Value
@@ -699,6 +717,16 @@ Description | undefined
 Unit | %
 StoreInTimestream | true
 Format | d
+
+## DEV__ENERGY__VBAT
+
+Property | Value
+---------|-------
+Name | Battery Voltage
+Description | undefined
+Unit | V
+StoreInTimestream | true
+Format | .3f
 
 ## DEV__ENERGY__LOWLIGHT
 

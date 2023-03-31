@@ -24,6 +24,7 @@ export const EnvironmentalParameterNames = {
     DEV__ALERT__ARMED: "DEV__ALERT__ARMED",
     DEV__ALERT__TRIGGERED: "DEV__ALERT__TRIGGERED",
     DEV__ENERGY__LOWLIGHT: "DEV__ENERGY__LOWLIGHT",
+    DEV__ENERGY__VBAT: "DEV__ENERGY__VBAT",
     DEV__ENERGY__VCAP: "DEV__ENERGY__VCAP",
     DEV__POSITION__LATITUDE: "DEV__POSITION__LATITUDE",
     DEV__POSITION__LONGITUDE: "DEV__POSITION__LONGITUDE",
@@ -71,6 +72,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__EP: "ENV__SOIL__EP",
     ENV__SOIL__FC: "ENV__SOIL__FC",
     ENV__SOIL__FMIN: "ENV__SOIL__FMIN",
+    ENV__SOIL__FTSW: "ENV__SOIL__FTSW",
     ENV__SOIL__K: "ENV__SOIL__K",
     ENV__SOIL__K2O: "ENV__SOIL__K2O",
     ENV__SOIL__LDRAIN: "ENV__SOIL__LDRAIN",
@@ -89,6 +91,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__OM: "ENV__SOIL__OM",
     ENV__SOIL__P: "ENV__SOIL__P",
     ENV__SOIL__P2O5: "ENV__SOIL__P2O5",
+    ENV__SOIL__PAWC: "ENV__SOIL__PAWC",
     ENV__SOIL__PH: "ENV__SOIL__PH",
     ENV__SOIL__PWP: "ENV__SOIL__PWP",
     ENV__SOIL__RD: "ENV__SOIL__RD",
@@ -164,6 +167,7 @@ export const EnumObject = {
             "EC": "EC",
             "NORM_ER": "NORM_ER",
             "VWC": "VWC",
+            "FTSW": "FTSW",
             "MATRIX_POTENTIAL": "MATRIX_POTENTIAL",
             "BD": "BD",
             "CEC": "CEC",
@@ -219,12 +223,14 @@ export const EnumObject = {
             "CRUNOFF": "CRUNOFF",
             "DRAIN": "DRAIN",
             "CDRAIN": "CDRAIN",
-            "CNMIN": "CNMIN"
+            "CNMIN": "CNMIN",
+            "PAWC": "PAWC"
         }
     },
     "DEV": {
         "ENERGY": {
             "VCAP": "VCAP",
+            "VBAT": "VBAT",
             "LOWLIGHT": "LOWLIGHT"
         },
         "ALERT": {
@@ -311,6 +317,7 @@ export const StoreInTimestreamParameters = [
     "ENV__SOIL__EC",
     "ENV__SOIL__NORM_ER",
     "ENV__SOIL__VWC",
+    "ENV__SOIL__FTSW",
     "ENV__SOIL__MATRIX_POTENTIAL",
     "ENV__SOIL__CAPACITANCE__ABSOLUTE",
     "ENV__SOIL__CAPACITANCE__DIFFERENTIAL",
@@ -325,6 +332,7 @@ export const StoreInTimestreamParameters = [
     "ENV__SOIL__CDRAIN",
     "ENV__SOIL__CNMIN",
     "DEV__ENERGY__VCAP",
+    "DEV__ENERGY__VBAT",
     "DEV__RF__RSSI",
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",

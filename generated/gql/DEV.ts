@@ -3,6 +3,7 @@
 */
 export const EnumDEV = {
     "ENERGY__VCAP": "ENERGY__VCAP",
+    "ENERGY__VBAT": "ENERGY__VBAT",
     "ENERGY__LOWLIGHT": "ENERGY__LOWLIGHT",
     "ALERT__TRIGGERED": "ALERT__TRIGGERED",
     "ALERT__ARMED": "ALERT__ARMED",
@@ -17,10 +18,12 @@ export const EnumDEV = {
 
 export const EnumENERGY = {
     "VCAP": "VCAP",
+    "VBAT": "VBAT",
     "LOWLIGHT": "LOWLIGHT"
 } as const
 export const EnumENERGYLowercase = {
     "vcap": "vcap",
+    "vbat": "vbat",
     "lowlight": "lowlight"
 } as const
 export const EnumALERT = {
