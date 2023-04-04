@@ -75,7 +75,10 @@ export const EnumENV = {
     "SOIL__DRAIN": "SOIL__DRAIN",
     "SOIL__CDRAIN": "SOIL__CDRAIN",
     "SOIL__CNMIN": "SOIL__CNMIN",
-    "SOIL__PAWC": "SOIL__PAWC"
+    "SOIL__PAWC": "SOIL__PAWC",
+    "SOIL__COLOR": "SOIL__COLOR",
+    "SOIL__DESCRIPTION": "SOIL__DESCRIPTION",
+    "SOIL__SV": "SOIL__SV"
 } as const
 
 export const EnumATMO = {
@@ -170,7 +173,10 @@ export const EnumSOIL = {
     "DRAIN": "DRAIN",
     "CDRAIN": "CDRAIN",
     "CNMIN": "CNMIN",
-    "PAWC": "PAWC"
+    "PAWC": "PAWC",
+    "COLOR": "COLOR",
+    "DESCRIPTION": "DESCRIPTION",
+    "SV": "SV"
 } as const
 export const EnumSOILLowercase = {
     "t": "t",
@@ -232,5 +238,8 @@ export const EnumSOILLowercase = {
     "drain": "drain",
     "cdrain": "cdrain",
     "cnmin": "cnmin",
-    "pawc": "pawc"
+    "pawc": "pawc",
+    "color": "color",
+    "description": "description",
+    "sv": "sv"
 } as const

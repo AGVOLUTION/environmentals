@@ -708,6 +708,33 @@ Description | Plant available water capacity summed up over the whole profile un
 Unit | mm
 StoreInTimestream | false
 
+## ENV__SOIL__COLOR
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__COLOR
+Description | The param allows the user to enter a qualitativ descriuption of the soil color, the description follows a method/protocol. So far we have just Ag boden protocol.
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__DESCRIPTION
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__DESCRIPTION
+Description | The param allows the user to enter a qualitativ descriuption of teh soil, the description follows a method/protocol. So far we have just Ag boden protocol.
+Unit | undefined
+StoreInTimestream | false
+
+## ENV__SOIL__SV
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__SV
+Description | LD-Substanzvolumen (SV) classification according to German Ag-Boden
+Unit | undefined
+StoreInTimestream | false
+
 ## DEV__ENERGY__VCAP
 
 Property | Value

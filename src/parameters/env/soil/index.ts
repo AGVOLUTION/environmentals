@@ -334,6 +334,11 @@ export const DESCRIPTION = new SOIL("DESCRIPTION", {
     description:
         "The param allows the user to enter a qualitativ descriuption of teh soil, the description follows a method/protocol. So far we have just Ag boden protocol.",
 });
+export const SV = new SOIL("SV", {
+    storeInTimestream: false,
+    description:
+        "LD-Substanzvolumen (SV) classification according to German Ag-Boden",
+});
 
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
@@ -402,4 +407,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     PAWC,
     COLOR,
     DESCRIPTION,
+    SV,
 ]);

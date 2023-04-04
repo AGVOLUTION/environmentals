@@ -64,8 +64,10 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__CLAY: "ENV__SOIL__CLAY",
     ENV__SOIL__CN2BARE: "ENV__SOIL__CN2BARE",
     ENV__SOIL__CNMIN: "ENV__SOIL__CNMIN",
+    ENV__SOIL__COLOR: "ENV__SOIL__COLOR",
     ENV__SOIL__CRUNOFF: "ENV__SOIL__CRUNOFF",
     ENV__SOIL__CU: "ENV__SOIL__CU",
+    ENV__SOIL__DESCRIPTION: "ENV__SOIL__DESCRIPTION",
     ENV__SOIL__DRAIN: "ENV__SOIL__DRAIN",
     ENV__SOIL__DRAINF: "ENV__SOIL__DRAINF",
     ENV__SOIL__EC: "ENV__SOIL__EC",
@@ -102,6 +104,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__SAT: "ENV__SOIL__SAT",
     ENV__SOIL__SILT: "ENV__SOIL__SILT",
     ENV__SOIL__SOC: "ENV__SOIL__SOC",
+    ENV__SOIL__SV: "ENV__SOIL__SV",
     ENV__SOIL__T: "ENV__SOIL__T",
     ENV__SOIL__TH: "ENV__SOIL__TH",
     ENV__SOIL__TN: "ENV__SOIL__TN",
@@ -224,7 +227,10 @@ export const EnumObject = {
             "DRAIN": "DRAIN",
             "CDRAIN": "CDRAIN",
             "CNMIN": "CNMIN",
-            "PAWC": "PAWC"
+            "PAWC": "PAWC",
+            "COLOR": "COLOR",
+            "DESCRIPTION": "DESCRIPTION",
+            "SV": "SV"
         }
     },
     "DEV": {
