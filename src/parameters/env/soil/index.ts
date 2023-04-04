@@ -324,6 +324,11 @@ export const PAWC = new SOIL("PAWC", {
         "de-de": "Pflanzenverfügbare Wasserkapazität",
     },
 });
+export const COLOR = new SOIL("COLOR", {
+    storeInTimestream: false,
+    description:
+        "The param allows the user to enter a qualitativ descriuption of the soil color, the description follows a method/protocol. So far we have just Ag boden protocol.",
+});
 
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
@@ -390,4 +395,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     CDRAIN,
     CNMIN,
     PAWC,
+    COLOR,
 ]);
