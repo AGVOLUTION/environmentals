@@ -82,6 +82,7 @@
     "ENV__SOIL__COLOR": "ENV__SOIL__COLOR",
     "ENV__SOIL__DESCRIPTION": "ENV__SOIL__DESCRIPTION",
     "ENV__SOIL__SV": "ENV__SOIL__SV",
+    "ENV__SOIL__HUMUS": "ENV__SOIL__HUMUS",
     "DEV": "DEV",
     "DEV__ENERGY": "DEV__ENERGY",
     "DEV__ENERGY__VCAP": "Battery",

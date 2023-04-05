@@ -339,6 +339,10 @@ export const SV = new SOIL("SV", {
     description:
         "LD-Substanzvolumen (SV) classification according to German Ag-Boden",
 });
+export const HUMUS = new SOIL("HUMUS", {
+    storeInTimestream: false,
+    description: "Humus content",
+});
 
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
@@ -408,4 +412,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     COLOR,
     DESCRIPTION,
     SV,
+    HUMUS,
 ]);

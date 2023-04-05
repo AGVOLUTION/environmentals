@@ -735,6 +735,15 @@ Description | LD-Substanzvolumen (SV) classification according to German Ag-Bode
 Unit | undefined
 StoreInTimestream | false
 
+## ENV__SOIL__HUMUS
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__HUMUS
+Description | Humus content
+Unit | undefined
+StoreInTimestream | false
+
 ## DEV__ENERGY__VCAP
 
 Property | Value

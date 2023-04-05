@@ -75,6 +75,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__FC: "ENV__SOIL__FC",
     ENV__SOIL__FMIN: "ENV__SOIL__FMIN",
     ENV__SOIL__FTSW: "ENV__SOIL__FTSW",
+    ENV__SOIL__HUMUS: "ENV__SOIL__HUMUS",
     ENV__SOIL__K: "ENV__SOIL__K",
     ENV__SOIL__K2O: "ENV__SOIL__K2O",
     ENV__SOIL__LDRAIN: "ENV__SOIL__LDRAIN",
@@ -230,7 +231,8 @@ export const EnumObject = {
             "PAWC": "PAWC",
             "COLOR": "COLOR",
             "DESCRIPTION": "DESCRIPTION",
-            "SV": "SV"
+            "SV": "SV",
+            "HUMUS": "HUMUS"
         }
     },
     "DEV": {
