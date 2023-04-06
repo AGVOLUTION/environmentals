@@ -744,6 +744,15 @@ Description | Humus content
 Unit | undefined
 StoreInTimestream | false
 
+## ENV__SOIL__CACO3
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CACO3
+Description | Calcium carbonate content
+Unit | undefined
+StoreInTimestream | false
+
 ## DEV__ENERGY__VCAP
 
 Property | Value

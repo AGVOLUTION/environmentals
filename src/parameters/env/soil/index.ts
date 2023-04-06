@@ -343,6 +343,10 @@ export const HUMUS = new SOIL("HUMUS", {
     storeInTimestream: false,
     description: "Humus content",
 });
+export const CACO3 = new SOIL("CACO3", {
+    storeInTimestream: false,
+    description: "Calcium carbonate content",
+});
 
 export const type = new SOIL("TYPE", {
     storeInTimestream: false,
@@ -413,4 +417,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     DESCRIPTION,
     SV,
     HUMUS,
+    CACO3,
 ]);

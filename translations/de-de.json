@@ -83,6 +83,7 @@
     "ENV__SOIL__DESCRIPTION": "ENV__SOIL__DESCRIPTION",
     "ENV__SOIL__SV": "ENV__SOIL__SV",
     "ENV__SOIL__HUMUS": "ENV__SOIL__HUMUS",
+    "ENV__SOIL__CACO3": "ENV__SOIL__CACO3",
     "DEV": "DEV",
     "DEV__ENERGY": "DEV__ENERGY",
     "DEV__ENERGY__VCAP": "Akkustand",
