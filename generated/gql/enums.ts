@@ -14,6 +14,7 @@ export const EnvironmentalParameterNames = {
     CROP__LEAF__LAI_MAX: "CROP__LEAF__LAI_MAX",
     CROP__LEAF__STEM_NODE: "CROP__LEAF__STEM_NODE",
     CROP__MASS_YIELD__CGRAIN: "CROP__MASS_YIELD__CGRAIN",
+    CROP__MASS_YIELD__DRYMATTER: "CROP__MASS_YIELD__DRYMATTER",
     CROP__MASS_YIELD__TRANSLOCATION: "CROP__MASS_YIELD__TRANSLOCATION",
     CROP__NITROGEN__CNU: "CROP__NITROGEN__CNU",
     CROP__PHENO__ACTUALRD: "CROP__PHENO__ACTUALRD",
@@ -299,7 +300,8 @@ export const EnumObject = {
         },
         "MASS_YIELD": {
             "TRANSLOCATION": "TRANSLOCATION",
-            "CGRAIN": "CGRAIN"
+            "CGRAIN": "CGRAIN",
+            "DRYMATTER": "DRYMATTER"
         },
         "NITROGEN": {
             "CNU": "CNU"
@@ -355,6 +357,7 @@ export const StoreInTimestreamParameters = [
     "CROP__LEAF__STEM_NODE",
     "CROP__MASS_YIELD__TRANSLOCATION",
     "CROP__MASS_YIELD__CGRAIN",
+    "CROP__MASS_YIELD__DRYMATTER",
     "CROP__NITROGEN__CNU",
     "CROP__WATER__DEVELOPMENT_STRESS",
     "CROP__WATER__LEAF_STRESS",

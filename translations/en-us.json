@@ -134,6 +134,7 @@
     "CROP__MASS_YIELD": "CROP__MASS_YIELD",
     "CROP__MASS_YIELD__TRANSLOCATION": "CROP__MASS_YIELD__TRANSLOCATION",
     "CROP__MASS_YIELD__CGRAIN": "Accumulated grain dry matter",
+    "CROP__MASS_YIELD__DRYMATTER": "Dry matter yield (total biomass) of a crop",
     "CROP__NITROGEN": "CROP__NITROGEN",
     "CROP__NITROGEN__CNU": "Cumulative nitrogen uptake",
     "CROP__WATER": "CROP__WATER",

@@ -140,4 +140,7 @@ export const ph = new Unit("pH");
 export const kgpm3 = new Unit("kg/m³");
 export const mmpmm = new Unit("mm/mm");
 export const kgpha = new Unit("kg/ha");
+/** Gram per milliliter */
 export const gpml = new Unit("g/ml");
+/** Gram per square meter */
+export const gpm2 = new Unit("g/m²");

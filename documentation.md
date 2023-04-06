@@ -1104,6 +1104,15 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+## CROP__MASS_YIELD__DRYMATTER
+
+Property | Value
+---------|-------
+Name | Dry matter yield (total biomass) of a crop
+Description | undefined
+Unit | g/m²
+StoreInTimestream | true
+
 ## CROP__NITROGEN__CNU
 
 Property | Value
