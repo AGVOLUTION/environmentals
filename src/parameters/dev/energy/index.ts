@@ -1,4 +1,4 @@
-import { percent, V } from "../../../unit";
+import { mV, percent, V } from "../../../unit";
 import { DEV } from "../base";
 
 export class ENERGY extends DEV {}
@@ -12,7 +12,7 @@ export const VCAP = new ENERGY("VCAP", {
 export const VBAT = new ENERGY("VBAT", {
     storeInTimestream: true,
     translation: { "de-de": "Akku-Spannung", "en-us": "Battery Voltage" },
-    unit: V,
+    unit: mV,
     format: ".3f",
 });
 export const LOWLIGHT = new ENERGY("LOWLIGHT", {
