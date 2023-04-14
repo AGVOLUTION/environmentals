@@ -771,7 +771,7 @@ Property | Value
 ---------|-------
 Name | Battery Voltage
 Description | undefined
-Unit | V
+Unit | mV
 StoreInTimestream | true
 Format | .3f
 

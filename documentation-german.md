@@ -568,7 +568,7 @@ Einheit | %
 Eigenschaft | Wert
 ---------|-------
 Name | Akku-Spannung
-Einheit | V
+Einheit | mV
 
 ## DEV__ENERGY__LOWLIGHT
 
