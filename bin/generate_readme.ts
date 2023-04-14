@@ -5,7 +5,7 @@ function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export async function main() {
+async function english() {
     const leafText = getLeafs().map(
         (leaf) => `## ${leaf.fqn}
 
@@ -25,9 +25,35 @@ ${Object.entries(leaf.properties)
     const content = `<!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->
 # Environmental Documentation
 
+[Deutsch](./documentation-german.md)
+
 ${leafText.join("\n")}
     `;
     await fs.writeFile("./documentation.md", content);
+}
+
+async function german() {
+    const leafText = getLeafs().map(
+        (leaf) => `## ${leaf.fqn}
+
+Eigenschaft | Wert
+---------|-------
+Name | ${leaf.translation("de-de")}
+Einheit | ${leaf.unit?.symbol}
+`
+    );
+    const content = `<!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->
+# Dokumentation der Umweltparameter
+
+[English](./documentation.md)
+
+${leafText.join("\n")}
+    `;
+    await fs.writeFile("./documentation-german.md", content);
+}
+
+export async function main() {
+    await Promise.all([english(), german()]);
 }
 
 (async function () {

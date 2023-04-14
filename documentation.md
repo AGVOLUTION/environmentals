@@ -1,6 +1,8 @@
 <!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->
 # Environmental Documentation
 
+[Deutsch](./documentation-german.md)
+
 ## ENV__ATMO__T
 
 Property | Value
