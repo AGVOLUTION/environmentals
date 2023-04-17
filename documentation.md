@@ -829,8 +829,8 @@ Format | .6f
 
 Property | Value
 ---------|-------
-Name | DEV__RF__RSSI
-Description | undefined
+Name | Received Signal Strength Indication
+Description | Indicator for the receiver signal strength over a wide spectral range.
 Unit | dBm
 StoreInTimestream | true
 Format | d
@@ -839,8 +839,8 @@ Format | d
 
 Property | Value
 ---------|-------
-Name | DEV__RF__RSRP
-Description | undefined
+Name | Reference Signal Received Power
+Description | Indicator for the receiver signal strength of a single carrier (reference signal)
 Unit | dBm
 StoreInTimestream | true
 Format | d
@@ -849,8 +849,8 @@ Format | d
 
 Property | Value
 ---------|-------
-Name | DEV__RF__RSRQ
-Description | undefined
+Name | Reference Signal Received Quality
+Description | RSRP divided by RSSI, to measure the quality of a single carrier reception with respect to a wider spectral range.
 Unit | dB
 StoreInTimestream | true
 Format | .2f
@@ -859,8 +859,8 @@ Format | .2f
 
 Property | Value
 ---------|-------
-Name | DEV__RF__SINR
-Description | undefined
+Name | Signal to Interference plus Noise Ratio
+Description | Receive signal strength divided by noise + interference floor.
 Unit | dB
 StoreInTimestream | true
 Format | .2f

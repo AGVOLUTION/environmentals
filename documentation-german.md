@@ -609,28 +609,28 @@ Einheit | °
 
 Eigenschaft | Wert
 ---------|-------
-Name | DEV__RF__RSSI
+Name | Empfangssignalstärke
 Einheit | dBm
 
 ## DEV__RF__RSRP
 
 Eigenschaft | Wert
 ---------|-------
-Name | DEV__RF__RSRP
+Name | Empfangssignalstärke eines Referenzsignals
 Einheit | dBm
 
 ## DEV__RF__RSRQ
 
 Eigenschaft | Wert
 ---------|-------
-Name | DEV__RF__RSRQ
+Name | Referenzsignalqualität
 Einheit | dB
 
 ## DEV__RF__SINR
 
 Eigenschaft | Wert
 ---------|-------
-Name | DEV__RF__SINR
+Name | Signal zu Rausch- und Interferenzverhältnis
 Einheit | dB
 
 ## DEV__SOILSENSOR__ID
