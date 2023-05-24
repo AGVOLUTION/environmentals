@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import { getLeafs } from "../src/parameters";
+import { ENV } from "../src/parameters/env/base";
 
 function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -16,10 +17,21 @@ Description | ${leaf.description}
 Unit | ${leaf.unit?.symbol}
 ${Object.entries(leaf.properties)
     .filter(
-        ([key]) => !["name", "translation", "unit", "description"].includes(key)
+        ([key]) =>
+            !["name", "translation", "unit", "description", "models"].includes(
+                key
+            )
     )
     .map(([key, value]) => `${capitalize(key)} | ${value}`)
     .join("\n")}
+${
+    (leaf as ENV).properties.models
+        ?.map(
+            (model) =>
+                `Model | ${model.name}: ${model.withParameter(leaf as ENV).fqn}`
+        )
+        .join("\n") ?? ""
+}
 `
     );
     const content = `<!-- THIS IS A GENERATED FILE. DO NOT EDIT MANUALLY! -->

@@ -13,6 +13,7 @@ Unit | °C
 StoreInTimestream | true
 Format | .1f
 
+
 ## ENV__ATMO__P
 
 Property | Value
@@ -22,6 +23,7 @@ Description | Atmospheric pressure
 Unit | hPa
 StoreInTimestream | true
 Format | .1f
+
 
 ## ENV__ATMO__RH
 
@@ -33,6 +35,7 @@ Unit | %
 StoreInTimestream | true
 Format | d
 
+
 ## ENV__ATMO__IRRADIATION
 
 Property | Value
@@ -42,6 +45,7 @@ Description | Irradiance or irradiation (deutsch: Bestrahlungsstärke) is a radi
 Unit | W/m²
 StoreInTimestream | true
 Format | d
+
 
 ## ENV__ATMO__RADIANT_EXPOSURE
 
@@ -53,6 +57,7 @@ Unit | J/m²
 StoreInTimestream | true
 Format | .0e
 
+
 ## ENV__ATMO__RAIN
 
 Property | Value
@@ -63,6 +68,7 @@ Unit | mm/m²
 StoreInTimestream | true
 Format | .1f
 
+
 ## ENV__ATMO__ETO
 
 Property | Value
@@ -71,7 +77,7 @@ Name | ENV__ATMO__ETO
 Description | undefined
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__NUM
+Model | ETO: MODEL__NUM__ENV__ATMO__ETO__ETO
 
 ## ENV__ATMO__ETC
 
@@ -80,8 +86,8 @@ Property | Value
 Name | ENV__ATMO__ETC
 Description | undefined
 Unit | undefined
-Models | MODEL__IMG
 StoreInTimestream | false
+Model | ETC: MODEL__IMG__ENV__ATMO__ETC__ETC
 
 ## ENV__ATMO__WIND__SPEED
 
@@ -93,6 +99,7 @@ Unit | km/h
 StoreInTimestream | true
 Format | .1f
 
+
 ## ENV__ATMO__WIND__GUSTINESS
 
 Property | Value
@@ -102,6 +109,7 @@ Description | undefined
 Unit | km/h
 StoreInTimestream | true
 Format | .1f
+
 
 ## ENV__ATMO__WIND__DIRECTION
 
@@ -113,6 +121,7 @@ Unit | °
 StoreInTimestream | true
 Format | d
 
+
 ## ENV__ATMO__SNOW__HEIGHT
 
 Property | Value
@@ -121,7 +130,7 @@ Name | snow height
 Description | undefined
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__NUM
+Model | SNOW_MAUS: MODEL__NUM__ENV__ATMO__SNOW__HEIGHT__SNOW_MAUS
 
 ## ENV__ATMO__SNOW__INSULATION
 
@@ -131,7 +140,7 @@ Name | snow insulation
 Description | undefined
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__NUM
+Model | SNOW_MAUS: MODEL__NUM__ENV__ATMO__SNOW__INSULATION__SNOW_MAUS
 
 ## ENV__ATMO__SNOW__MELT
 
@@ -141,7 +150,7 @@ Name | snow melt
 Description | undefined
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__NUM
+Model | SNOW_MAUS: MODEL__NUM__ENV__ATMO__SNOW__MELT__SNOW_MAUS
 
 ## ENV__SOIL__T
 
@@ -153,6 +162,7 @@ Unit | °C
 StoreInTimestream | true
 Format | .2f
 
+
 ## ENV__SOIL__EC
 
 Property | Value
@@ -162,6 +172,7 @@ Description | undefined
 Unit | µS/cm
 StoreInTimestream | true
 Format | .1f
+
 
 ## ENV__SOIL__NORM_ER
 
@@ -173,6 +184,7 @@ Unit | undefined
 StoreInTimestream | true
 Format | .2f
 
+
 ## ENV__SOIL__VWC
 
 Property | Value
@@ -182,6 +194,7 @@ Description | undefined
 Unit | %
 StoreInTimestream | true
 Format | d
+
 
 ## ENV__SOIL__FTSW
 
@@ -193,6 +206,7 @@ Unit | %
 StoreInTimestream | true
 Format | d
 
+
 ## ENV__SOIL__MATRIX_POTENTIAL
 
 Property | Value
@@ -203,6 +217,7 @@ Unit | cbar
 StoreInTimestream | true
 Format | d
 
+
 ## ENV__SOIL__BD
 
 Property | Value
@@ -211,6 +226,7 @@ Name | Bulk density
 Description | Bulk density of the fine earth fraction
 Unit | kg/dm³
 StoreInTimestream | false
+
 
 ## ENV__SOIL__CEC
 
@@ -221,6 +237,7 @@ Description | Cation Exchange Capacity of the soil
 Unit | mm( c )/kg
 StoreInTimestream | false
 
+
 ## ENV__SOIL__CFVO
 
 Property | Value
@@ -229,6 +246,7 @@ Name | ENV__SOIL__CFVO
 Description | Volumetric fraction of coarse fragments (> 2 mm)
 Unit | cm³/dm³ (vol%)
 StoreInTimestream | false
+
 
 ## ENV__SOIL__CLAY
 
@@ -239,6 +257,7 @@ Description | Proportion of clay particles (< 0.002 mm) in the fine earth fracti
 Unit | g/100g (%)
 StoreInTimestream | false
 
+
 ## ENV__SOIL__TN
 
 Property | Value
@@ -248,6 +267,7 @@ Description | Total nitrogen (N)
 Unit | g/kg
 StoreInTimestream | false
 
+
 ## ENV__SOIL__PH
 
 Property | Value
@@ -256,7 +276,8 @@ Name | ENV__SOIL__PH
 Description | Soil pH
 Unit | pH
 StoreInTimestream | false
-Models | MODEL__IMG,MODEL__IMG
+Model | H2O: MODEL__IMG__ENV__SOIL__PH__H2O
+Model | KCL: MODEL__IMG__ENV__SOIL__PH__KCL
 
 ## ENV__SOIL__SAND
 
@@ -267,6 +288,7 @@ Description | Proportion of sand particles (> 0.05 mm) in the fine earth fractio
 Unit | g/100g (%)
 StoreInTimestream | false
 
+
 ## ENV__SOIL__SILT
 
 Property | Value
@@ -275,6 +297,7 @@ Name | ENV__SOIL__SILT
 Description | Proportion of silt particles (? 0.002 mm and ? 0.05 mm) in the fine earth fraction
 Unit | g/100g (%)
 StoreInTimestream | false
+
 
 ## ENV__SOIL__SOC
 
@@ -285,6 +308,7 @@ Description | Soil organic carbon content in the fine earth fraction
 Unit | g/100g (%)
 StoreInTimestream | false
 
+
 ## ENV__SOIL__OCD
 
 Property | Value
@@ -293,6 +317,7 @@ Name | ENV__SOIL__OCD
 Description | Organic carbon density
 Unit | kg/m³
 StoreInTimestream | false
+
 
 ## ENV__SOIL__OCS
 
@@ -303,6 +328,7 @@ Description | Organic carbon stocks
 Unit | kg/m³
 StoreInTimestream | false
 
+
 ## ENV__SOIL__RT
 
 Property | Value
@@ -311,6 +337,7 @@ Name | ENV__SOIL__RT
 Description | Maxiumum rooting thickness
 Unit | mm
 StoreInTimestream | false
+
 
 ## ENV__SOIL__RD
 
@@ -321,6 +348,7 @@ Description | Maxiumum rooting depth
 Unit | mm
 StoreInTimestream | false
 
+
 ## ENV__SOIL__TH
 
 Property | Value
@@ -329,6 +357,7 @@ Name | ENV__SOIL__TH
 Description | Layer thickness
 Unit | mm
 StoreInTimestream | false
+
 
 ## ENV__SOIL__OM
 
@@ -339,6 +368,7 @@ Description | organic matter, OC * 1.752
 Unit | %
 StoreInTimestream | false
 
+
 ## ENV__SOIL__ALB
 
 Property | Value
@@ -347,7 +377,7 @@ Name | ENV__SOIL__ALB
 Description | Soil albedo
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AGV: MODEL__IMG__ENV__SOIL__ALB__AGV
 
 ## ENV__SOIL__SAT
 
@@ -357,7 +387,7 @@ Name | ENV__SOIL__SAT
 Description | Soil saturation
 Unit | mm/mm
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AG_BODEN: MODEL__IMG__ENV__SOIL__SAT__AG_BODEN
 
 ## ENV__SOIL__FC
 
@@ -367,7 +397,7 @@ Name | ENV__SOIL__FC
 Description | Soil field capacity
 Unit | mm/mm
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AG_BODEN: MODEL__IMG__ENV__SOIL__FC__AG_BODEN
 
 ## ENV__SOIL__NFC
 
@@ -377,7 +407,7 @@ Name | ENV__SOIL__NFC
 Description | usable field capacity
 Unit | mm/mm
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AG_BODEN: MODEL__IMG__ENV__SOIL__NFC__AG_BODEN
 
 ## ENV__SOIL__DRAINF
 
@@ -388,6 +418,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__NORG
 
 Property | Value
@@ -396,6 +427,7 @@ Name | ENV__SOIL__NORG
 Description | organic nitrogen
 Unit | undefined
 StoreInTimestream | false
+
 
 ## ENV__SOIL__FMIN
 
@@ -406,6 +438,7 @@ Description | mineralisable N
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__PWP
 
 Property | Value
@@ -414,7 +447,7 @@ Name | ENV__SOIL__PWP
 Description | permanent wilting point
 Unit | mm/mm
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AG_BODEN: MODEL__IMG__ENV__SOIL__PWP__AG_BODEN
 
 ## ENV__SOIL__NH4
 
@@ -425,6 +458,7 @@ Description | ammonium
 Unit | kg/ha
 StoreInTimestream | false
 
+
 ## ENV__SOIL__NO3
 
 Property | Value
@@ -433,6 +467,7 @@ Name | ENV__SOIL__NO3
 Description | nitrate
 Unit | kg/ha
 StoreInTimestream | false
+
 
 ## ENV__SOIL__MAI
 
@@ -443,6 +478,7 @@ Description | Moisture index
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__CN2BARE
 
 Property | Value
@@ -451,7 +487,7 @@ Name | ENV__SOIL__CN2BARE
 Description | Runoff curve number
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | AGV: MODEL__IMG__ENV__SOIL__CN2BARE__AGV
 
 ## ENV__SOIL__LDRAIN
 
@@ -462,6 +498,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__K2O
 
 Property | Value
@@ -470,7 +507,7 @@ Name | ENV__SOIL__K2O
 Description | Soil K2O
 Unit | g/ml
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAL: MODEL__IMG__ENV__SOIL__K2O__VDLUFA_CAL
 
 ## ENV__SOIL__K
 
@@ -480,7 +517,7 @@ Name | ENV__SOIL__K
 Description | Soil K
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAL: MODEL__IMG__ENV__SOIL__K__VDLUFA_CAL
 
 ## ENV__SOIL__P2O5
 
@@ -490,7 +527,7 @@ Name | ENV__SOIL__P2O5
 Description | Soil P2O5
 Unit | g/ml
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAL: MODEL__IMG__ENV__SOIL__P2O5__VDLUFA_CAL
 
 ## ENV__SOIL__P
 
@@ -500,7 +537,7 @@ Name | ENV__SOIL__P
 Description | Soil P
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAL: MODEL__IMG__ENV__SOIL__P__VDLUFA_CAL
 
 ## ENV__SOIL__MG
 
@@ -511,6 +548,7 @@ Description | Soil MG
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__CA
 
 Property | Value
@@ -519,6 +557,7 @@ Name | ENV__SOIL__CA
 Description | Soil CA
 Unit | undefined
 StoreInTimestream | false
+
 
 ## ENV__SOIL__CACL2
 
@@ -529,6 +568,7 @@ Description | Lime
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__B
 
 Property | Value
@@ -537,7 +577,7 @@ Name | ENV__SOIL__B
 Description | Soil Boron
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAT: MODEL__IMG__ENV__SOIL__B__VDLUFA_CAT
 
 ## ENV__SOIL__CU
 
@@ -547,7 +587,7 @@ Name | ENV__SOIL__CU
 Description | Soil Copper
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAT: MODEL__IMG__ENV__SOIL__CU__VDLUFA_CAT
 
 ## ENV__SOIL__S
 
@@ -557,7 +597,7 @@ Name | ENV__SOIL__S
 Description | Soil Sulfur
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAT: MODEL__IMG__ENV__SOIL__S__VDLUFA_CAT
 
 ## ENV__SOIL__MN
 
@@ -567,7 +607,7 @@ Name | ENV__SOIL__MN
 Description | Soil Manganese
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAT: MODEL__IMG__ENV__SOIL__MN__VDLUFA_CAT
 
 ## ENV__SOIL__NA
 
@@ -577,7 +617,7 @@ Name | ENV__SOIL__NA
 Description | Soil Sodium
 Unit | undefined
 StoreInTimestream | false
-Models | MODEL__IMG
+Model | VDLUFA_CAT: MODEL__IMG__ENV__SOIL__NA__VDLUFA_CAT
 
 ## ENV__SOIL__CAPACITANCE__ABSOLUTE
 
@@ -589,6 +629,7 @@ Unit | pF
 StoreInTimestream | true
 Format | .2f
 
+
 ## ENV__SOIL__CAPACITANCE__DIFFERENTIAL
 
 Property | Value
@@ -598,6 +639,7 @@ Description | undefined
 Unit | pF
 StoreInTimestream | true
 Format | .2f
+
 
 ## ENV__SOIL__CAPACITANCE__A
 
@@ -609,6 +651,7 @@ Unit | pF
 StoreInTimestream | true
 Format | .2f
 
+
 ## ENV__SOIL__CAPACITANCE__B
 
 Property | Value
@@ -618,6 +661,7 @@ Description | Leg B of the soil sensor
 Unit | pF
 StoreInTimestream | true
 Format | .2f
+
 
 ## ENV__SOIL__CAPACITANCE__OFFSET
 
@@ -629,6 +673,7 @@ Unit | pF
 StoreInTimestream | true
 Format | .2f
 
+
 ## ENV__SOIL__TYPE
 
 Property | Value
@@ -637,6 +682,7 @@ Name | ENV__SOIL__TYPE
 Description | The type of the soil
 Unit | Soil types
 StoreInTimestream | false
+
 
 ## ENV__SOIL__EP
 
@@ -647,6 +693,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## ENV__SOIL__CEP
 
 Property | Value
@@ -655,6 +702,7 @@ Name | Cumulative Evaporation
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## ENV__SOIL__RUNOFF
 
@@ -665,6 +713,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## ENV__SOIL__CRUNOFF
 
 Property | Value
@@ -673,6 +722,7 @@ Name | ENV__SOIL__CRUNOFF
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## ENV__SOIL__DRAIN
 
@@ -683,6 +733,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## ENV__SOIL__CDRAIN
 
 Property | Value
@@ -691,6 +742,7 @@ Name | ENV__SOIL__CDRAIN
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## ENV__SOIL__CNMIN
 
@@ -701,6 +753,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## ENV__SOIL__PAWC
 
 Property | Value
@@ -709,6 +762,7 @@ Name | Plant available water capacity
 Description | Plant available water capacity summed up over the whole profile until max rooting depth
 Unit | mm
 StoreInTimestream | false
+
 
 ## ENV__SOIL__COLOR
 
@@ -719,6 +773,7 @@ Description | The param allows the user to enter a qualitativ descriuption of th
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__DESCRIPTION
 
 Property | Value
@@ -727,6 +782,7 @@ Name | ENV__SOIL__DESCRIPTION
 Description | The param allows the user to enter a qualitativ descriuption of teh soil, the description follows a method/protocol. So far we have just Ag boden protocol.
 Unit | undefined
 StoreInTimestream | false
+
 
 ## ENV__SOIL__SV
 
@@ -737,6 +793,7 @@ Description | LD-Substanzvolumen (SV) classification according to German Ag-Bode
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__HUMUS
 
 Property | Value
@@ -746,6 +803,7 @@ Description | Humus content
 Unit | undefined
 StoreInTimestream | false
 
+
 ## ENV__SOIL__CACO3
 
 Property | Value
@@ -754,6 +812,7 @@ Name | ENV__SOIL__CACO3
 Description | Calcium carbonate content
 Unit | undefined
 StoreInTimestream | false
+
 
 ## DEV__ENERGY__VCAP
 
@@ -765,6 +824,7 @@ Unit | %
 StoreInTimestream | true
 Format | d
 
+
 ## DEV__ENERGY__VBAT
 
 Property | Value
@@ -774,6 +834,7 @@ Description | undefined
 Unit | mV
 StoreInTimestream | true
 Format | .3f
+
 
 ## DEV__ENERGY__LOWLIGHT
 
@@ -785,6 +846,7 @@ Unit | undefined
 StoreInTimestream | false
 Format | d
 
+
 ## DEV__ALERT__TRIGGERED
 
 Property | Value
@@ -794,6 +856,7 @@ Description | A device alert (motion, theft detection) was triggered
 Unit | undefined
 StoreInTimestream | false
 Format | d
+
 
 ## DEV__ALERT__ARMED
 
@@ -805,6 +868,7 @@ Unit | undefined
 StoreInTimestream | false
 Format | d
 
+
 ## DEV__POSITION__LATITUDE
 
 Property | Value
@@ -814,6 +878,7 @@ Description | undefined
 Unit | °
 StoreInTimestream | false
 Format | .6f
+
 
 ## DEV__POSITION__LONGITUDE
 
@@ -825,6 +890,7 @@ Unit | °
 StoreInTimestream | false
 Format | .6f
 
+
 ## DEV__RF__RSSI
 
 Property | Value
@@ -834,6 +900,7 @@ Description | Indicator for the receiver signal strength over a wide spectral ra
 Unit | dBm
 StoreInTimestream | true
 Format | d
+
 
 ## DEV__RF__RSRP
 
@@ -845,6 +912,7 @@ Unit | dBm
 StoreInTimestream | true
 Format | d
 
+
 ## DEV__RF__RSRQ
 
 Property | Value
@@ -854,6 +922,7 @@ Description | RSRP divided by RSSI, to measure the quality of a single carrier r
 Unit | dB
 StoreInTimestream | true
 Format | .2f
+
 
 ## DEV__RF__SINR
 
@@ -865,6 +934,7 @@ Unit | dB
 StoreInTimestream | true
 Format | .2f
 
+
 ## DEV__SOILSENSOR__ID
 
 Property | Value
@@ -873,6 +943,7 @@ Name | Soil Moisture Sensor ID
 Description | The ID (=serial number or EUI) of the Agvolution Soil Moisture sensor.
 Unit | undefined
 StoreInTimestream | false
+
 
 ## OBJ__LIQUIDLEVEL
 
@@ -884,6 +955,7 @@ Unit | mm
 StoreInTimestream | true
 Format | d
 
+
 ## OBJ__WEIGHT
 
 Property | Value
@@ -893,6 +965,7 @@ Description | undefined
 Unit | kg
 StoreInTimestream | true
 Format | .3f
+
 
 ## SAT__SEN1__RAW
 
@@ -905,6 +978,7 @@ StoreInTimestream | false
 Expression | 
 DerivedFrom | ASC,DESC
 NormalizedName | raw
+
 
 ## SAT__SEN2__NDVI
 
@@ -919,6 +993,7 @@ Expression | (b8 - b4) / (b8 + b4)
 ValueRange | -1-1
 NormalizedName | ndvi
 
+
 ## SAT__SEN2__RGB
 
 Property | Value
@@ -931,6 +1006,7 @@ DerivedFrom | CL
 Expression | 255 * (1.055 * (b4**(1/2.4))) - 0.055, 255 * (1.055 * (b3**(1/2.4))) - 0.055, 255 * (1.055 * (b2**(1/2.4))) - 0.055
 ValueRange | 0-255
 NormalizedName | rgb
+
 
 ## SAT__SEN2__KC
 
@@ -945,6 +1021,7 @@ Expression | 1.4571 * ((b8 - b4) / (b8 + b4)) - 0.1725
 ValueRange | -1.6296-1.2846
 NormalizedName | kc
 
+
 ## SAT__SEN2__CIGREEN
 
 Property | Value
@@ -958,6 +1035,7 @@ Expression | (b8 / b3) - 1
 ValueRange | -1-7
 NormalizedName | cigreen
 
+
 ## SAT__SEN2__SAVI
 
 Property | Value
@@ -970,6 +1048,7 @@ DerivedFrom | CL
 Expression | ((1.0 + 0.428) * (b8 - b4)) / (b8 + b4 + 0.428)
 NormalizedName | savi
 
+
 ## SAT__SEN2__WDVI
 
 Property | Value
@@ -981,6 +1060,7 @@ StoreInTimestream | false
 DerivedFrom | CL
 Expression | b8 - (1.007 * b4)
 NormalizedName | wdvi
+
 
 ## SAT__SEN2__MSI
 
@@ -995,6 +1075,7 @@ Expression | (b11 / b8)
 ValueRange | 0-4
 NormalizedName | msi
 
+
 ## SAT__SEN2__RAW
 
 Property | Value
@@ -1007,6 +1088,7 @@ DerivedFrom | CL
 Expression | 
 NormalizedName | raw
 
+
 ## TOPO__TWI
 
 Property | Value
@@ -1015,6 +1097,7 @@ Name | Wetness Zones
 Description | Wetness Zones
 Unit | undefined
 StoreInTimestream | false
+
 
 ## TOPO__DEM
 
@@ -1025,6 +1108,7 @@ Description | Digital Elevation Model
 Unit | undefined
 StoreInTimestream | false
 
+
 ## TOPO__SLOPE
 
 Property | Value
@@ -1033,6 +1117,7 @@ Name | Slope
 Description | Slope
 Unit | undefined
 StoreInTimestream | false
+
 
 ## TOPO__EXPOSITION
 
@@ -1043,6 +1128,7 @@ Description | Exposition
 Unit | undefined
 StoreInTimestream | false
 
+
 ## CROP__PHENO__ACTUALRD
 
 Property | Value
@@ -1051,6 +1137,7 @@ Name | Actual rooting depth
 Description | undefined
 Unit | mm
 StoreInTimestream | true
+
 
 ## CROP__PHENO__CBD
 
@@ -1061,6 +1148,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__DRY_MATTER__DAILY_GROWTH
 
 Property | Value
@@ -1069,6 +1157,7 @@ Name | CROP__DRY_MATTER__DAILY_GROWTH
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## CROP__LEAF__LAI
 
@@ -1079,6 +1168,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__LEAF__LAI_MAX
 
 Property | Value
@@ -1087,6 +1177,7 @@ Name | Maximal Leaf Area Index
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## CROP__LEAF__STEM_NODE
 
@@ -1097,6 +1188,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__MASS_YIELD__TRANSLOCATION
 
 Property | Value
@@ -1105,6 +1197,7 @@ Name | CROP__MASS_YIELD__TRANSLOCATION
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## CROP__MASS_YIELD__CGRAIN
 
@@ -1115,6 +1208,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__MASS_YIELD__DRYMATTER
 
 Property | Value
@@ -1123,6 +1217,7 @@ Name | Dry matter yield (total biomass) of a crop
 Description | undefined
 Unit | g/m²
 StoreInTimestream | true
+
 
 ## CROP__NITROGEN__CNU
 
@@ -1133,6 +1228,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__WATER__DEVELOPMENT_STRESS
 
 Property | Value
@@ -1141,6 +1237,7 @@ Name | Development water stress
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
 ## CROP__WATER__LEAF_STRESS
 
@@ -1151,6 +1248,7 @@ Description | undefined
 Unit | undefined
 StoreInTimestream | true
 
+
 ## CROP__WATER__GROWTH_STRESS
 
 Property | Value
@@ -1159,5 +1257,6 @@ Name | Growth water stress
 Description | undefined
 Unit | undefined
 StoreInTimestream | true
+
 
     
