@@ -117,6 +117,8 @@
     "SAT__SEN2__WDVI": "WDVI",
     "SAT__SEN2__MSI": "MSI",
     "SAT__SEN2__RAW": "Raw",
+    "SAT__SEN2__S2CLOUDLESS": "S2Cloudless",
+    "SAT__SEN2__ORIGINAL": "original",
     "TOPO": "TOPO",
     "TOPO__TWI": "Wetness Zones",
     "TOPO__DEM": "Digital Elevation Model",

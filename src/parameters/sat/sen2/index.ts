@@ -8,6 +8,20 @@ export const CL = new SEN2("CL", {
     translation: "cloudless",
     normalizedName: "cloudless",
 });
+export const S2CLOUDLESS = new SEN2("S2CLOUDLESS", {
+    storeInTimestream: false,
+    description:
+        "Cloud maps from Sentinel 2 imagery derived with the s2cloudless algorithm",
+    translation: "S2Cloudless",
+    normalizedName: "s2cloudless",
+});
+export const ORIGINAL = new SEN2("ORIGINAL", {
+    storeInTimestream: false,
+    description: "Original, unprocessed but reprojected, Sentinel 2 imagery. ",
+    translation: "original",
+    normalizedName: "original",
+});
+
 export const NDVI = new SEN2("NDVI", {
     storeInTimestream: false,
     description:
@@ -77,7 +91,7 @@ export const RAW = new SEN2("RAW", {
     storeInTimestream: false,
     description: "Raw image from Sentinel 2 imagery containing all Bands",
     translation: "Raw",
-    derivedFrom: [CL],
+    derivedFrom: [CL, S2CLOUDLESS, ORIGINAL],
     expression: "",
     normalizedName: "raw",
 });
@@ -90,5 +104,5 @@ export const sen2 = new SAT(
         description: "Sentinel 2 imagery",
         normalizedName: "sentinel2",
     },
-    [NDVI, RGB, KC, CIGREEN, SAVI, WDVI, MSI, RAW]
+    [NDVI, RGB, KC, CIGREEN, SAVI, WDVI, MSI, RAW, S2CLOUDLESS, ORIGINAL]
 );

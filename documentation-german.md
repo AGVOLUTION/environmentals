@@ -717,6 +717,20 @@ Eigenschaft | Wert
 Name | Raw
 Einheit | undefined
 
+## SAT__SEN2__S2CLOUDLESS
+
+Eigenschaft | Wert
+---------|-------
+Name | S2Cloudless
+Einheit | undefined
+
+## SAT__SEN2__ORIGINAL
+
+Eigenschaft | Wert
+---------|-------
+Name | original
+Einheit | undefined
+
 ## TOPO__TWI
 
 Eigenschaft | Wert

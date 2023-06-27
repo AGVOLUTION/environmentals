@@ -131,10 +131,14 @@ export const EnvironmentalParameterNames = {
     SAT__SEN2__MSI__CL: "SAT__SEN2__MSI__CL",
     SAT__SEN2__NDVI: "SAT__SEN2__NDVI",
     SAT__SEN2__NDVI__CL: "SAT__SEN2__NDVI__CL",
+    SAT__SEN2__ORIGINAL: "SAT__SEN2__ORIGINAL",
     SAT__SEN2__RAW: "SAT__SEN2__RAW",
     SAT__SEN2__RAW__CL: "SAT__SEN2__RAW__CL",
+    SAT__SEN2__RAW__ORIGINAL: "SAT__SEN2__RAW__ORIGINAL",
+    SAT__SEN2__RAW__S2CLOUDLESS: "SAT__SEN2__RAW__S2CLOUDLESS",
     SAT__SEN2__RGB: "SAT__SEN2__RGB",
     SAT__SEN2__RGB__CL: "SAT__SEN2__RGB__CL",
+    SAT__SEN2__S2CLOUDLESS: "SAT__SEN2__S2CLOUDLESS",
     SAT__SEN2__SAVI: "SAT__SEN2__SAVI",
     SAT__SEN2__SAVI__CL: "SAT__SEN2__SAVI__CL",
     SAT__SEN2__WDVI: "SAT__SEN2__WDVI",
@@ -278,7 +282,9 @@ export const EnumObject = {
             "SAVI": "SAVI",
             "WDVI": "WDVI",
             "MSI": "MSI",
-            "RAW": "RAW"
+            "RAW": "RAW",
+            "S2CLOUDLESS": "S2CLOUDLESS",
+            "ORIGINAL": "ORIGINAL"
         }
     },
     "TOPO": {

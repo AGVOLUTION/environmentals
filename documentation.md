@@ -1084,9 +1084,31 @@ Name | Raw
 Description | Raw image from Sentinel 2 imagery containing all Bands
 Unit | undefined
 StoreInTimestream | false
-DerivedFrom | CL
+DerivedFrom | CL,SAT__SEN2__S2CLOUDLESS,SAT__SEN2__ORIGINAL
 Expression | 
 NormalizedName | raw
+
+
+## SAT__SEN2__S2CLOUDLESS
+
+Property | Value
+---------|-------
+Name | S2Cloudless
+Description | Cloud maps from Sentinel 2 imagery derived with the s2cloudless algorithm
+Unit | undefined
+StoreInTimestream | false
+NormalizedName | s2cloudless
+
+
+## SAT__SEN2__ORIGINAL
+
+Property | Value
+---------|-------
+Name | original
+Description | Original, unprocessed but reprojected, Sentinel 2 imagery. 
+Unit | undefined
+StoreInTimestream | false
+NormalizedName | original
 
 
 ## TOPO__TWI
