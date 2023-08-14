@@ -42,6 +42,9 @@ ${
 ${leafText.join("\n")}
     `;
     await fs.writeFile("./documentation.md", content);
+    // also write a copy to the documentation folder, where it will be included
+    // in the techdocs
+    await fs.writeFile("./documentation/parameters.md", content);
 }
 
 async function german() {
