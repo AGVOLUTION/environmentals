@@ -13,6 +13,12 @@ export const EnumDEV = {
     "RF__RSRP": "RF__RSRP",
     "RF__RSRQ": "RF__RSRQ",
     "RF__SINR": "RF__SINR",
+    "RF__RAT": "RF__RAT",
+    "RF__BAND": "RF__BAND",
+    "RF__MCC": "RF__MCC",
+    "RF__MNC": "RF__MNC",
+    "RF__LAC": "RF__LAC",
+    "RF__CID": "RF__CID",
     "SOILSENSOR__ID": "SOILSENSOR__ID"
 } as const
 
@@ -46,13 +52,25 @@ export const EnumRF = {
     "RSSI": "RSSI",
     "RSRP": "RSRP",
     "RSRQ": "RSRQ",
-    "SINR": "SINR"
+    "SINR": "SINR",
+    "RAT": "RAT",
+    "BAND": "BAND",
+    "MCC": "MCC",
+    "MNC": "MNC",
+    "LAC": "LAC",
+    "CID": "CID"
 } as const
 export const EnumRFLowercase = {
     "rssi": "rssi",
     "rsrp": "rsrp",
     "rsrq": "rsrq",
-    "sinr": "sinr"
+    "sinr": "sinr",
+    "rat": "rat",
+    "band": "band",
+    "mcc": "mcc",
+    "mnc": "mnc",
+    "lac": "lac",
+    "cid": "cid"
 } as const
 export const EnumSOILSENSOR = {
     "ID": "ID"

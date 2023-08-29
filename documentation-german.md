@@ -633,6 +633,48 @@ Eigenschaft | Wert
 Name | Signal zu Rausch- und Interferenzverhältnis
 Einheit | dB
 
+## DEV__RF__RAT
+
+Eigenschaft | Wert
+---------|-------
+Name | Zugangstechnologie
+Einheit | undefined
+
+## DEV__RF__BAND
+
+Eigenschaft | Wert
+---------|-------
+Name | Frequenzband
+Einheit | undefined
+
+## DEV__RF__MCC
+
+Eigenschaft | Wert
+---------|-------
+Name | Mobilfunk-Ländercode
+Einheit | undefined
+
+## DEV__RF__MNC
+
+Eigenschaft | Wert
+---------|-------
+Name | Mobilfunk-Netzwerkcode
+Einheit | undefined
+
+## DEV__RF__LAC
+
+Eigenschaft | Wert
+---------|-------
+Name | Standortbereichscode
+Einheit | undefined
+
+## DEV__RF__CID
+
+Eigenschaft | Wert
+---------|-------
+Name | Zellen-ID
+Einheit | undefined
+
 ## DEV__SOILSENSOR__ID
 
 Eigenschaft | Wert

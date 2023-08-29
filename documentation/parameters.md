@@ -935,6 +935,72 @@ StoreInTimestream | true
 Format | .2f
 
 
+## DEV__RF__RAT
+
+Property | Value
+---------|-------
+Name | Radio Access Technology
+Description | Cellular Radio Access Technology (0 = GSM, 8 = LTE-M, 9 = NB-IOT)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
+## DEV__RF__BAND
+
+Property | Value
+---------|-------
+Name | Radio Frequency Band
+Description | Radio Frequency Band that is used by the cellular connection (e.g. Band 3, 5, 20, etc.)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
+## DEV__RF__MCC
+
+Property | Value
+---------|-------
+Name | Mobile Country Code
+Description | Mobile Country Code of the cellular connection (between 001 and 999)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
+## DEV__RF__MNC
+
+Property | Value
+---------|-------
+Name | Mobile Network Code
+Description | Mobile Network Code of the cellular connection (between 01 and 99)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
+## DEV__RF__LAC
+
+Property | Value
+---------|-------
+Name | Location Area Code
+Description | Location Area Code (between 0 and 65535)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
+## DEV__RF__CID
+
+Property | Value
+---------|-------
+Name | Cell ID
+Description | Cell ID (between 0 and 2^32-1)
+Unit | undefined
+StoreInTimestream | true
+Format | d
+
+
 ## DEV__SOILSENSOR__ID
 
 Property | Value
