@@ -5,13 +5,13 @@ export class POSITION extends DEV {}
 
 export const LATITUDE = new POSITION("LATITUDE", {
     translation: { "de-de": "Breitengrad", "en-us": "latitude" },
-    storeInTimestream: false,
+    storeInTimestream: true,
     unit: degree,
     format: ".6f",
 });
 export const LONGITUDE = new POSITION("LONGITUDE", {
     translation: { "de-de": "Längengrad", "en-us": "longitude" },
-    storeInTimestream: false,
+    storeInTimestream: true,
     unit: degree,
     format: ".6f",
 });

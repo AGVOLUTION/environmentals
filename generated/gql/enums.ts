@@ -363,6 +363,8 @@ export const StoreInTimestreamParameters = [
     "ENV__SOIL__CNMIN",
     "DEV__ENERGY__VCAP",
     "DEV__ENERGY__VBAT",
+    "DEV__POSITION__LATITUDE",
+    "DEV__POSITION__LONGITUDE",
     "DEV__RF__RSSI",
     "DEV__RF__RSRP",
     "DEV__RF__RSRQ",
