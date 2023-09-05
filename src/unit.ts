@@ -145,3 +145,5 @@ export const kgpha = new Unit("kg/ha");
 export const gpml = new Unit("g/ml");
 /** Gram per square meter */
 export const gpm2 = new Unit("g/m²");
+/** Tons per hectare */
+export const tpha = new Unit("t/ha");

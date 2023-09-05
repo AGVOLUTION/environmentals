@@ -5,6 +5,7 @@ import { massYield } from "./massYield";
 import { nitrogen } from "./nitrogen";
 import { pheno } from "./pheno";
 import { water } from "./water";
+import { yieldPotential } from "./yieldPotential";
 
 export const crop = new ENV("CROP", { storeInTimestream: false }, [
     pheno,
@@ -13,4 +14,5 @@ export const crop = new ENV("CROP", { storeInTimestream: false }, [
     massYield,
     nitrogen,
     water,
+    yieldPotential,
 ]);

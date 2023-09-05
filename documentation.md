@@ -1347,4 +1347,14 @@ Unit | undefined
 StoreInTimestream | true
 
 
+## CROP__YIELD_POTENTIAL__ABOLUTE
+
+Property | Value
+---------|-------
+Name | CROP__YIELD_POTENTIAL__ABOLUTE
+Description | Combined output from EMS and Lookup
+Unit | t/ha
+StoreInTimestream | false
+
+
     

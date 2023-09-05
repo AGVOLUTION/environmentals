@@ -149,5 +149,7 @@
     "CROP__WATER": "CROP__WATER",
     "CROP__WATER__DEVELOPMENT_STRESS": "Development water stress",
     "CROP__WATER__LEAF_STRESS": "Leaf water stress",
-    "CROP__WATER__GROWTH_STRESS": "Growth water stress"
+    "CROP__WATER__GROWTH_STRESS": "Growth water stress",
+    "CROP__YIELD_POTENTIAL": "CROP__YIELD_POTENTIAL",
+    "CROP__YIELD_POTENTIAL__ABOLUTE": "CROP__YIELD_POTENTIAL__ABOLUTE"
 }
