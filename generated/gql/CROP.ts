@@ -14,7 +14,8 @@ export const EnumCROP = {
     "NITROGEN__CNU": "NITROGEN__CNU",
     "WATER__DEVELOPMENT_STRESS": "WATER__DEVELOPMENT_STRESS",
     "WATER__LEAF_STRESS": "WATER__LEAF_STRESS",
-    "WATER__GROWTH_STRESS": "WATER__GROWTH_STRESS"
+    "WATER__GROWTH_STRESS": "WATER__GROWTH_STRESS",
+    "YIELD_POTENTIAL__ABOLUTE": "YIELD_POTENTIAL__ABOLUTE"
 } as const
 
 export const EnumPHENO = {
@@ -66,4 +67,10 @@ export const EnumWATERLowercase = {
     "development_stress": "development_stress",
     "leaf_stress": "leaf_stress",
     "growth_stress": "growth_stress"
+} as const
+export const EnumYIELD_POTENTIAL = {
+    "ABOLUTE": "ABOLUTE"
+} as const
+export const EnumYIELD_POTENTIALLowercase = {
+    "abolute": "abolute"
 } as const
