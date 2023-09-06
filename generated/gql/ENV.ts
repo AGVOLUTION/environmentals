@@ -80,7 +80,8 @@ export const EnumENV = {
     "SOIL__DESCRIPTION": "SOIL__DESCRIPTION",
     "SOIL__SV": "SOIL__SV",
     "SOIL__HUMUS": "SOIL__HUMUS",
-    "SOIL__CACO3": "SOIL__CACO3"
+    "SOIL__CACO3": "SOIL__CACO3",
+    "SOIL__CROP_YIELD__DUL": "SOIL__CROP_YIELD__DUL"
 } as const
 
 export const EnumATMO = {
@@ -180,7 +181,8 @@ export const EnumSOIL = {
     "DESCRIPTION": "DESCRIPTION",
     "SV": "SV",
     "HUMUS": "HUMUS",
-    "CACO3": "CACO3"
+    "CACO3": "CACO3",
+    "CROP_YIELD__DUL": "CROP_YIELD__DUL"
 } as const
 export const EnumSOILLowercase = {
     "t": "t",
@@ -247,5 +249,6 @@ export const EnumSOILLowercase = {
     "description": "description",
     "sv": "sv",
     "humus": "humus",
-    "caco3": "caco3"
+    "caco3": "caco3",
+    "crop_yield__dul": "crop_yield__dul"
 } as const

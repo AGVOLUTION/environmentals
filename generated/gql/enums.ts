@@ -74,6 +74,7 @@ export const EnvironmentalParameterNames = {
     ENV__SOIL__CN2BARE: "ENV__SOIL__CN2BARE",
     ENV__SOIL__CNMIN: "ENV__SOIL__CNMIN",
     ENV__SOIL__COLOR: "ENV__SOIL__COLOR",
+    ENV__SOIL__CROP_YIELD__DUL: "ENV__SOIL__CROP_YIELD__DUL",
     ENV__SOIL__CRUNOFF: "ENV__SOIL__CRUNOFF",
     ENV__SOIL__CU: "ENV__SOIL__CU",
     ENV__SOIL__DESCRIPTION: "ENV__SOIL__DESCRIPTION",
@@ -246,7 +247,10 @@ export const EnumObject = {
             "DESCRIPTION": "DESCRIPTION",
             "SV": "SV",
             "HUMUS": "HUMUS",
-            "CACO3": "CACO3"
+            "CACO3": "CACO3",
+            "CROP_YIELD": {
+                "DUL": "DUL"
+            }
         }
     },
     "DEV": {

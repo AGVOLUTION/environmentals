@@ -814,6 +814,16 @@ Unit | undefined
 StoreInTimestream | false
 
 
+## ENV__SOIL__CROP_YIELD__DUL
+
+Property | Value
+---------|-------
+Name | ENV__SOIL__CROP_YIELD__DUL
+Description | This categorises the soil texture into three classes: light, moderate, heavy. This is based on the DUL value in the model. The output is needed for the KTBL filter (that is why we kept the CROP__YIELD
+Unit | t/ha
+StoreInTimestream | false
+
+
 ## DEV__ENERGY__VCAP
 
 Property | Value

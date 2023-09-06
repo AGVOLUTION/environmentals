@@ -20,6 +20,7 @@ import { ENV } from "../base";
 import { AGV, AG_BODEN, H2O, KCL, VDLUFA_CAL, VDLUFA_CAT } from "./models";
 import { capacitance } from "./capacitance";
 import { SoilTypeNames } from "./soilTypes";
+import { crop_yield } from "./cropYield";
 
 export const T = new SOIL("T", {
     translation: { "de-de": "Bodentemperatur", "en-us": "Soil Temperature" },
@@ -418,4 +419,5 @@ export const soil = new ENV("SOIL", { storeInTimestream: false }, [
     SV,
     HUMUS,
     CACO3,
+    crop_yield,
 ]);
