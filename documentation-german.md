@@ -556,6 +556,13 @@ Eigenschaft | Wert
 Name | ENV__SOIL__CACO3
 Einheit | undefined
 
+## ENV__SOIL__CROP_YIELD__DUL
+
+Eigenschaft | Wert
+---------|-------
+Name | ENV__SOIL__CROP_YIELD__DUL
+Einheit | t/ha
+
 ## DEV__ENERGY__VCAP
 
 Eigenschaft | Wert
