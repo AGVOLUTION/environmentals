@@ -899,11 +899,11 @@ Eigenschaft | Wert
 Name | Growth water stress
 Einheit | undefined
 
-## CROP__YIELD_POTENTIAL__ABOLUTE
+## CROP__YIELD_POTENTIAL__ABSOLUTE
 
 Eigenschaft | Wert
 ---------|-------
-Name | CROP__YIELD_POTENTIAL__ABOLUTE
+Name | CROP__YIELD_POTENTIAL__ABSOLUTE
 Einheit | t/ha
 
     

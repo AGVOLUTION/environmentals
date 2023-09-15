@@ -1357,11 +1357,11 @@ Unit | undefined
 StoreInTimestream | true
 
 
-## CROP__YIELD_POTENTIAL__ABOLUTE
+## CROP__YIELD_POTENTIAL__ABSOLUTE
 
 Property | Value
 ---------|-------
-Name | CROP__YIELD_POTENTIAL__ABOLUTE
+Name | CROP__YIELD_POTENTIAL__ABSOLUTE
 Description | Combined output from EMS and Lookup
 Unit | t/ha
 StoreInTimestream | false
