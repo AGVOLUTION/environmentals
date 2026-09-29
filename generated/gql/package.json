@@ -8,10 +8,9 @@
         "*.d.ts",
         "*.d.ts.map"
     ],
-    "license": "PROPRIETARY",
+    "license": "Apache-2.0",
     "publishConfig": {
-        "access": "restricted",
-        "registry": "https://agv-000000000000.d.codeartifact.eu-central-1.amazonaws.com/npm/agv-node/"
+        "access": "restricted"
     },
     "packageManager": "yarn@3.1.1",
     "scripts": {

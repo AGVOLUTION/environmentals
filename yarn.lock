@@ -5,18 +5,6 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@agv/agv-bump@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@agv/agv-bump@npm:0.1.6::__archiveUrl=https%3A%2F%2Fagv-000000000000.d.codeartifact.eu-central-1.amazonaws.com%3A443%2Fnpm%2Fagv-node%2F%40agv%2Fagv-bump%2F-%2Fagv-bump-0.1.6.tgz"
-  dependencies:
-    commander: ^9.3.0
-    semver: ^7.3.5
-  bin:
-    agv-bump: dist/src/cli.js
-  checksum: bae931abedb164f0ab246e8299be669721a9085ea851210fae02e4c98ea49effa375bd800223f20677c84dfb2989fe676485b86a8287062a8d3c472d649c9014
-  languageName: node
-  linkType: hard
-
 "@agv/environmentals-gql@workspace:generated/gql":
   version: 0.0.0-use.local
   resolution: "@agv/environmentals-gql@workspace:generated/gql"
@@ -29,8 +17,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@agv/environmentals@workspace:."
   dependencies:
-    "@agv/agv-bump": ^0.1.6
-    "@agv/prettier-config": ^1.0.6
     "@microsoft/api-documenter": ^7.19.0
     "@microsoft/api-extractor": ^7.28.6
     "@types/chai": ^4
@@ -55,15 +41,6 @@ __metadata:
     typescript: ^4.5.5
   languageName: unknown
   linkType: soft
-
-"@agv/prettier-config@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@agv/prettier-config@npm:1.0.6::__archiveUrl=https%3A%2F%2Fagv-000000000000.d.codeartifact.eu-central-1.amazonaws.com%3A443%2Fnpm%2Fagv-node%2F%40agv%2Fprettier-config%2F-%2Fprettier-config-1.0.6.tgz"
-  peerDependencies:
-    prettier: ^2.5.1
-  checksum: 720316a4ff6beb9ab5656a45b2c2cc3d35bedcdd474e5ceb02e075f8021d544d7fb99aed8b863ddeb052d3184ed75584affa9bb1fe46d61610d7d720e3feecfd
-  languageName: node
-  linkType: hard
 
 "@babel/helper-validator-identifier@npm:^7.16.7":
   version: 7.16.7
@@ -860,13 +837,6 @@ __metadata:
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 53501cbeee61d5157546c0bef0fedb6cdfc763a882136284bed9a07225f09a14b82d2a84e7637edfd1a679fb35ed9502fd58ef1d091e6287f60d790147f68ddc
-  languageName: node
-  linkType: hard
-
-"commander@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "commander@npm:9.3.0"
-  checksum: d421ce66fee25792a1470c69aa8d1b86434bf873a96483aa92c8267f81a6f20c6f7c426f5e82f88ac50a8ec4855d3f2787aebcdef8aa559e1080a2337a95a217
   languageName: node
   linkType: hard
 

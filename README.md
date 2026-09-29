@@ -41,3 +41,7 @@ attribute `.fqn`.
 Please [create a new issue](https://github.com/AGVOLUTION/environmentals/issues/new/choose) and
 choose the proper template to either add a new parameter or modify an existing
 one.
+
+## License
+
+Apache License 2.0 — see [LICENSE](./LICENSE).

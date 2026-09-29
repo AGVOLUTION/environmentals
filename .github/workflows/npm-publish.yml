@@ -1,5 +1,6 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+# Builds and publishes the package (and the generated gql package) to the
+# private registry when a GitHub release is created.
+# Required repository secrets: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_ACCOUNT_ID
 
 name: Node.js Package
 
@@ -8,31 +9,37 @@ on:
     types: [created]
 
 jobs:
-  publish-gpr:
-    runs-on: self-hosted
+  publish:
+    runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
-      - name: "Configure AWS Credentials"
-        uses: aws-actions/configure-aws-credentials@v1
+          node-version: 18
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'eu-central-1'
-      - name: Obtain AWS Token for CodeArtifact
-        run: echo "CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --region eu-central-1 --domain agv --domain-owner 000000000000 --query authorizationToken --output text --duration-seconds 900)" >> $GITHUB_ENV
-      - name: Mask token from logs
-        run: echo "::add-mask::$CODEARTIFACT_AUTH_TOKEN"
-      - run: yarn
+          aws-region: eu-central-1
+      - name: Obtain CodeArtifact token and registry URL
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+        run: |
+          TOKEN=$(aws codeartifact get-authorization-token --region eu-central-1 --domain agv --domain-owner "$AWS_ACCOUNT_ID" --query authorizationToken --output text --duration-seconds 900)
+          echo "::add-mask::$TOKEN"
+          echo "CODEARTIFACT_AUTH_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+          echo "AGV_NPM_REGISTRY=https://agv-${AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/npm/agv-node/" >> "$GITHUB_ENV"
+      - run: yarn install --immutable
+        env:
+          # the type-graphql git dependency is packed from source; its peer ranges predate npm 7
+          npm_config_legacy_peer_deps: "true"
       - run: yarn build
-      - name: update version of gql package
+      - name: Update version of gql package
         run: yarn ts-node bin/update-versions.ts
-      - name: publish generated gql package
+      - name: Publish generated gql package
         run: yarn workspace @agv/environmentals-gql run publish
-      - name: publish actual package
+      - name: Publish package
         run: yarn npm publish

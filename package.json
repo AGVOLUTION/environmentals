@@ -9,10 +9,9 @@
   ],
   "repository": "https://github.com/AGVOLUTION/environmentals",
   "author": "Marcel Schneider <m.schneider@agvolution.com>",
-  "license": "PROPRIETARY",
+  "license": "Apache-2.0",
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://agv-000000000000.d.codeartifact.eu-central-1.amazonaws.com/npm/agv-node/"
+    "access": "restricted"
   },
   "scripts": {
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
@@ -22,7 +21,6 @@
     "generate-img": "yarn node -r ts-node/register bin/generate_tree_dot.ts| dot -Tsvg>  docs/parameter-tree.svg",
     "yalc-push": "yalc push",
     "clean": "rm -r dist",
-    "bump": "yarn run build && yarn docs && yarn run agv-bump --root --commit 'documentation etc documentation.md' ",
     "yalc-gql": "yarn run build && cd generated/gql/ &&  yalc publish"
   },
   "packageManager": "yarn@3.1.1",
@@ -31,8 +29,6 @@
     "typescript": "^4.5.5"
   },
   "devDependencies": {
-    "@agv/agv-bump": "^0.1.6",
-    "@agv/prettier-config": "^1.0.6",
     "@microsoft/api-documenter": "^7.19.0",
     "@microsoft/api-extractor": "^7.28.6",
     "@types/chai": "^4",
@@ -54,7 +50,9 @@
     "ts-node": "^10.4.0",
     "type-graphql": "AGVOLUTION/type-graphql#v1.1.1-withExtendType-package"
   },
-  "prettier": "@agv/prettier-config",
+  "prettier": {
+    "tabWidth": 4
+  },
   "workspaces": [
     "generated/*"
   ]
