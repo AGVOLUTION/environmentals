@@ -10,7 +10,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: agvolution-k8s
     permissions:
       contents: read
     steps:
@@ -18,6 +18,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      # The k8s runner image has no Yarn; corepack provides it (packageManager / yarnPath).
+      - name: Enable Yarn
+        run: corepack enable
+      # The k8s runner image has no AWS CLI; one is kept in the persistent tool cache
+      # (reinstalled whenever it does not run, e.g. after an interrupted install).
+      - name: AWS CLI
+        run: |
+          dir="$RUNNER_TOOL_CACHE/awscli/v2"
+          if ! "$dir/bin/aws" --version > /dev/null 2>&1; then
+            rm -rf "$dir"
+            tmp=$(mktemp -d)
+            trap 'rm -rf "$tmp"' EXIT
+            curl -fsSL --retry 3 -o "$tmp/awscliv2.zip" https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+            unzip -q "$tmp/awscliv2.zip" -d "$tmp"
+            "$tmp/aws/install" --install-dir "$dir/dist" --bin-dir "$dir/bin"
+          fi
+          "$dir/bin/aws" --version
+          echo "$dir/bin" >> "$GITHUB_PATH"
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
